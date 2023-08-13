@@ -277,6 +277,20 @@ fi
 
 
 
+## Download GitKraken
+if [ -e gitkraken-amd64.deb ];then
+    echo "O arquivo  gitkraken-amd64.deb  ja existe"
+else
+  echo -e "\n\n\n\n GitKraken"
+  fileId=1i47sx1P0cdtykTXw3aFrZY9t1XMJ2yAC
+  fileName=gitkraken-amd64.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+fi
+
+
+
 ## Download Insomnia
 if [ -e Insomnia.Core-2023.4.0.deb ];then
     echo "O arquivo  Insomnia.Core-2023.4.0.deb  ja existe"
@@ -333,11 +347,11 @@ fi
 
 
 
-## Download Only OFfice
+## Download Only Office
 if [ -e onlyoffice-desktopeditors_amd64.deb ];then
     echo "O arquivo  onlyoffice-desktopeditors_amd64.deb  ja existe"
 else
-  echo -e "\n\n\n\n Only OFfice"
+  echo -e "\n\n\n\n Only Office"
   fileId=11Stf18xGX31jm5inMxStUvk0g6VpwuNl
   fileName=onlyoffice-desktopeditors_amd64.deb
   curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
@@ -431,6 +445,20 @@ else
 fi
 
 
+## Download VMware Workstation
+if [ -e VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle ];then
+    echo "O arquivo  VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle  ja existe"
+else
+  echo -e "\n\n\n\n VMware Workstation"
+  fileId=1M1h1hN4nIG-OqAXoPePEneM-H17yCfIv
+  fileName=VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+fi
+
+
+
 
 ## Download Waterfox
 if [ -e waterfox-G5.1.10.deb ];then
@@ -447,8 +475,8 @@ fi
 
 
 ## Download Tomcat
-if [ -d /home/$USER/Servidores/apache-tomcat-9.0.68 ];then
-    echo "O diretorio  /home/$USER/Servidores/apache-tomcat-9.0.68  ja existe"
+if [ -d /home/$USER/Servidores/tomcat-9.0.68 ];then
+    echo "O diretorio  /home/$USER/Servidores/tomcat-9.0.68  ja existe"
 else
   echo -e "\n\n\n\n Tomcat"
   fileId=1EqMonKmeOMh3r0eP1c_2UStAN6JWrM49
@@ -457,16 +485,16 @@ else
   code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
   curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
-  descompactar-tar-gz apache-tomcat-9.0.68.tar.gz
-  cp -r apache-tomcat-9.0.68 /home/$USER/Servidores/
-  rm apache-tomcat-9.0.68.tar.gz
+  descompactar-tar-gz tomcat-9.0.68.tar.gz
+  cp -r tomcat-9.0.68 /home/$USER/Servidores/
+  rm tomcat-9.0.68.tar.gz
 fi
 
 
 
 ## Download Wildfly
 if [ -d /home/$USER/Servidores/wildfly-29.0.0.Final ];then
-    echo "O diretorio  /home/$USER/Servidores/apache-tomcat-9.0.68  ja existe"
+    echo "O diretorio  /home/$USER/Servidores/wildfly-29.0.0.Final  ja existe"
 else
   echo -e "\n\n\n\n Wildfly"
   fileId=1q8-3vFReU_t6ZZcnvwSPrYNLUUx906BY
@@ -486,7 +514,7 @@ fi
 if [ -d /home/$USER/Instalacao/netbeans-plugins ];then
       echo "O diretorio  /home/$USER/Instalacao/netbeans-plugins  ja existe"
 else
-  echo -e "\n\n\n\n Apache Netbeans Plugins"
+  echo -e "\n\n\n\n Netbeans Plugins"
   fileId=1jl-Dl6DnzUDEDq-XBnfT8MDZRL2vKJJk
   fileName=netbeans-plugins.tar.gz
   curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
@@ -576,7 +604,7 @@ fi
 if [ -d /home/$USER/.icons/Deepin ];then
     echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
 else
-  echo -e "\n\n\n\n Big Sur"
+  echo -e "\n\n\n\n Deepin"
   fileId=1UJRlswtZPNUSUNYEBg6G_3XOyhSvgCSK
   fileName=Deepin.tar.gz
   curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
