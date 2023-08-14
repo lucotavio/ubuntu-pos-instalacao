@@ -236,7 +236,7 @@ if [ -e docker-compose ];then
 else
   echo -e "\n\n\n\n Docker Compose"
   fileId=1q-vqLH0LfMasksSVytw7HfkTrOxJlCyA
-  fileName=docker-compose
+  fileName=docker-composeplayer
   curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
   code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
   curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
@@ -316,7 +316,7 @@ else
   curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
-
+player
 
 ## Download Intellij Community
 if [ -e intellij-community-2023.2.deb ];then
@@ -339,6 +339,20 @@ else
   echo -e "\n\n\n\n Lombok"
   fileId=1ZD-QAd5aky-DzDxYUrs9JEsAZS9gul5k-
   fileName=lombok.jar
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+fi
+
+
+
+## Download MegaSync
+if [ -e megasync-xUbuntu_22.04_amd64.deb ];then
+    echo "O arquivo megasync-xUbuntu_22.04_amd64.deb ja existe"
+else
+  echo -e "\n\n\n\n MegaSync"
+  fileId=1Cru0mzT1V5l-p_IRHsKCxt1Eh42-fwcV
+  fileName=megasync-xUbuntu_22.04_amd64.deb
   curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
   code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
   curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
