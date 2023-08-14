@@ -231,12 +231,12 @@ fi
 
 
 ## Download Docker Compose
-if [ -e docker-compose-2.20.3 ];then
-    echo "O arquivo  docker-compose-2.20.3  ja existe"
+if [ -e docker-compose ];then
+    echo "O arquivo  docker-compose  ja existe"
 else
   echo -e "\n\n\n\n Docker Compose"
   fileId=1q-vqLH0LfMasksSVytw7HfkTrOxJlCyA
-  fileName=docker-compose-2.20.3
+  fileName=docker-compose
   curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
   code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
   curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
@@ -734,8 +734,8 @@ echo "**************************************************************************
 
 echo -e "\n\n\n************************************************ INSTALANDO  O  DOCKER  COMPOSE  *****************************************************"
 
-sudo chmod +x docker-compose-2.20.3
-sudo cp docker-compose-2.20.3 /usr/local/bin/
+chmod +x docker-compose
+sudo cp docker-compose /usr/local/bin/
 
 echo "***********************************************************************************************************************************************"
 
