@@ -91,17 +91,14 @@ sudo apt install -y p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ark 
 sudo apt install -y curl
 
 
+
 ## Download Compactador
 if [ -e compactar-tar-gz ];then
     echo "O arquivo  compactar-tar-gz  ja existe e vai ser copiado para pasta  /usr/local/bin/"
     sudo cp compactar-tar-gz /usr/local/bin/
 else
   echo -e "\n\n\n Compactador-tar-gz"
-  fileId=1kWXdmTjqzyCpoIFxgB1zctX1msprYEVJ
-  fileName=compactar-tar-gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1kWXdmTjqzyCpoIFxgB1zctX1msprYEVJ' -O compactar-tar-gz
 
   chmod +x compactar-tar-gz
   sudo cp compactar-tar-gz /usr/local/bin/
@@ -115,11 +112,7 @@ if [ -e descompactar-tar-gz ];then
     sudo cp descompactar-tar-gz /usr/local/bin/
 else
   echo -e "\n\n\n Descompactar-tar-gz"
-  fileId=1h3KbeWkbDyBqZCW69FlQo5l3hp5ISJOf
-  fileName=descompactar-tar-gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1h3KbeWkbDyBqZCW69FlQo5l3hp5ISJOf' -O descompactar-tar-gz
 
   chmod +x descompactar-tar-gz
   sudo cp descompactar-tar-gz /usr/local/bin/
@@ -133,11 +126,10 @@ then
     echo "O arquivo  4kvideodownloader_4.21.7-1_amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n 4K Video Downloader"
-    fileId=1Y_M5XaadEMoN5mkwbfHgB3aQIyS08YcK
-    fileName=4kvideodownloader_4.21.7-1_amd64.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget --load-cookies /tmp/cookies.txt \
+    "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+        'https://docs.google.com/uc?export=download&id=1Y_M5XaadEMoN5mkwbfHgB3aQIyS08YcK' -O- | \
+    sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1Y_M5XaadEMoN5mkwbfHgB3aQIyS08YcK" -O 4kvideodownloader_4.21.7-1_amd64.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -148,11 +140,10 @@ then
     echo "O arquivo  android-studio-2022.3.1.deb  ja existe"
 else
     echo -e "\n\n\n\n Android Studio"
-    fileId=1Vzqml8ccrXcSZ-QOFhaZH2TGQnHA7-0C
-    fileName=android-studio-2022.3.1.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget --load-cookies /tmp/cookies.txt \
+    "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+        'https://docs.google.com/uc?export=download&id=1Vzqml8ccrXcSZ-QOFhaZH2TGQnHA7-0C' -O- | \
+    sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1Vzqml8ccrXcSZ-QOFhaZH2TGQnHA7-0C" -O android-studio-2022.3.1.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -163,11 +154,10 @@ then
     echo "O arquivo  apache-netbeans_18-1_all.deb  ja existe"
 else
     echo -e "\n\n\n\n Apache Netbeans"
-    fileId=1la7Y5_GT3vSB8f9dg9EhcPA9VfQ80lv6
-    fileName=apache-netbeans_18-1_all.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget --load-cookies /tmp/cookies.txt \
+    "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+        'https://docs.google.com/uc?export=download&id=1la7Y5_GT3vSB8f9dg9EhcPA9VfQ80lv6' -O- | \
+    sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1la7Y5_GT3vSB8f9dg9EhcPA9VfQ80lv6" -O apache-netbeans_18-1_all.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -178,11 +168,10 @@ then
     echo "O arquivo  atom-amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n Atom"
-    fileId=1xazxsCtLFbMctp7SgrrWREC-Z8Ky_1u-
-    fileName=atom-amd64.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget --load-cookies /tmp/cookies.txt \
+    "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+        'https://docs.google.com/uc?export=download&id=1xazxsCtLFbMctp7SgrrWREC-Z8Ky_1u-' -O- | \
+    sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1xazxsCtLFbMctp7SgrrWREC-Z8Ky_1u-" -O atom-amd64.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -193,11 +182,10 @@ then
     echo "O arquivo  balena-etcher_1.18.11_amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n Balena Etcher"
-    fileId=1wTLeIL_PGxMmkukdzGNosQ-vBLhsXuAK
-    fileName=balena-etcher_1.18.11_amd64.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget --load-cookies /tmp/cookies.txt \
+    "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+        'https://docs.google.com/uc?export=download&id=1wTLeIL_PGxMmkukdzGNosQ-vBLhsXuAK' -O- | \
+    sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1wTLeIL_PGxMmkukdzGNosQ-vBLhsXuAK" -O balena-etcher_1.18.11_amd64.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -207,11 +195,10 @@ if [ -e chrome-stable_current_amd64.deb ];then
     echo "O arquivo  chrome-stable_current_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Chrome"
-  fileId=119PJ78GXF5hFl2D0yvrR5WTjYDVjBRbY
-  fileName=chrome-stable_current_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=119PJ78GXF5hFl2D0yvrR5WTjYDVjBRbY' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=119PJ78GXF5hFl2D0yvrR5WTjYDVjBRbY" -O chrome-stable_current_amd64.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -221,11 +208,10 @@ if [ -e dbeaver-le_23.1.0_amd64.deb ];then
     echo "O arquivo  dbeaver-le_23.1.0_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n DBeaver"
-  fileId=1rmBnEjP_cxVfuLhNayaWUT1T5zqCBeOP
-  fileName=dbeaver-le_23.1.0_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=1rmBnEjP_cxVfuLhNayaWUT1T5zqCBeOP' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1rmBnEjP_cxVfuLhNayaWUT1T5zqCBeOP" -O dbeaver-le_23.1.0_amd64.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -235,11 +221,10 @@ if [ -e docker-compose ];then
     echo "O arquivo  docker-compose  ja existe"
 else
   echo -e "\n\n\n\n Docker Compose"
-  fileId=1q-vqLH0LfMasksSVytw7HfkTrOxJlCyA
-  fileName=docker-compose
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=1q-vqLH0LfMasksSVytw7HfkTrOxJlCyA' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1q-vqLH0LfMasksSVytw7HfkTrOxJlCyA" -O docker-compose && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -249,11 +234,7 @@ if [ -d /home/$USER/Instalacao/docker-compose-files ];then
     echo "O diretorio  /home/$USER/Instalacao/docker-compose-files ja existe"
 else
   echo -e "\n\n\n\n Docker Compose files"
-  fileId=1wAPMxZdkvdZ4VE5LQe_xRjF2ZF0PDeZw
-  fileName=docker-compose-files.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1wAPMxZdkvdZ4VE5LQe_xRjF2ZF0PDeZw' -O docker-compose-files.tar.gz
 
   descompactar-tar-gz docker-compose-files.tar.gz
   cp -r docker-compose-files /home/$USER/Instalacao/
@@ -267,11 +248,7 @@ if [ -e dropbox_2020.03.04_amd64.deb ];then
     echo "O arquivo  dropbox_2020.03.04_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Dropbox"
-  fileId=12CO9lVV40Zmqx7cFb5Lmo3F_-lURqFjF
-  fileName=dropbox_2020.03.04_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=12CO9lVV40Zmqx7cFb5Lmo3F_-lURqFjF' -O dropbox_2020.03.04_amd64.deb
 fi
 
 
@@ -281,11 +258,10 @@ if [ -e gitkraken-amd64.deb ];then
     echo "O arquivo  gitkraken-amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n GitKraken"
-  fileId=1i47sx1P0cdtykTXw3aFrZY9t1XMJ2yAC
-  fileName=gitkraken-amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=1i47sx1P0cdtykTXw3aFrZY9t1XMJ2yAC' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1i47sx1P0cdtykTXw3aFrZY9t1XMJ2yAC" -O gitkraken-amd64.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -295,11 +271,10 @@ if [ -e Insomnia.Core-2023.4.0.deb ];then
     echo "O arquivo  Insomnia.Core-2023.4.0.deb  ja existe"
 else
   echo -e "\n\n\n\n Insomnia"
-  fileId=1M-6axTc8LNI_66iLwvvY-SyyNTmZ77Ic
-  fileName=Insomnia.Core-2023.4.0.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=1M-6axTc8LNI_66iLwvvY-SyyNTmZ77Ic' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1M-6axTc8LNI_66iLwvvY-SyyNTmZ77Ic" -O Insomnia.Core-2023.4.0.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -309,25 +284,23 @@ if [ -e insync_3.8.6.50504-jammy_amd64.deb ];then
     echo "O arquivo  insync_3.8.6.50504-jammy_amd64.deb ja existe"
 else
   echo -e "\n\n\n\n Insync"
-  fileId=15Y8zCGHiXsEntMqTme_0pILFLlRv063Z
-  fileName=insync_3.8.6.50504-jammy_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=15Y8zCGHiXsEntMqTme_0pILFLlRv063Z' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=15Y8zCGHiXsEntMqTme_0pILFLlRv063Z" -O insync_3.8.6.50504-jammy_amd64.deb && rm -rf /tmp/cookies.txt \;
 fi
 
-player
+
 
 ## Download Intellij Community
 if [ -e intellij-community-2023.2.deb ];then
     echo "O arquivo  intellij-community-2023.2.deb ja existe"
 else
   echo -e "\n\n\n\n Intellij Community"
-  fileId=1_GvKUI8e7Htttu0LxJgSl2SdpGCWV-9X
-  fileName=intellij-community-2023.2.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=1_GvKUI8e7Htttu0LxJgSl2SdpGCWV-9X' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1_GvKUI8e7Htttu0LxJgSl2SdpGCWV-9X" -O intellij-community-2023.2.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -337,11 +310,7 @@ if [ -e lombok.jar ];then
     echo "O arquivo lombok.jar ja existe"
 else
   echo -e "\n\n\n\n Lombok"
-  fileId=1ZD-QAd5aky-DzDxYUrs9JEsAZS9gul5k-
-  fileName=lombok.jar
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1ZD-QAd5aky-DzDxYUrs9JEsAZS9gul5k-' -O lombok.jar
 fi
 
 
@@ -351,11 +320,10 @@ if [ -e megasync-xUbuntu_22.04_amd64.deb ];then
     echo "O arquivo megasync-xUbuntu_22.04_amd64.deb ja existe"
 else
   echo -e "\n\n\n\n MegaSync"
-  fileId=1Cru0mzT1V5l-p_IRHsKCxt1Eh42-fwcV
-  fileName=megasync-xUbuntu_22.04_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=1Cru0mzT1V5l-p_IRHsKCxt1Eh42-fwcV' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1Cru0mzT1V5l-p_IRHsKCxt1Eh42-fwcV" -O megasync-xUbuntu_22.04_amd64.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -365,25 +333,10 @@ if [ -e onlyoffice-desktopeditors_amd64.deb ];then
     echo "O arquivo  onlyoffice-desktopeditors_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Only Office"
-  fileId=11Stf18xGX31jm5inMxStUvk0g6VpwuNl
-  fileName=onlyoffice-desktopeditors_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
-fi
-
-
-
-## Download Opera Browser
-if [ -e opera-stable_101.0.4843.43_amd64.deb ];then
-    echo "O arquivo  opera-stable_101.0.4843.43_amd64.deb  ja existe"
-else
-  echo -e "\n\n\n\n Opera Browser"
-  fileId=1cn0uRQtwGwF5hemaYP0Bs6O-2lBleyzd
-  fileName=opera-stable_101.0.4843.43_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=11Stf18xGX31jm5inMxStUvk0g6VpwuNl' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=11Stf18xGX31jm5inMxStUvk0g6VpwuNl" -O onlyoffice-desktopeditors_amd64.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -393,25 +346,23 @@ if [ -e postman-10.17.1.deb ];then
     echo "O arquivo  postman-10.17.1.deb  ja existe"
 else
   echo -e "\n\n\n\n Postman"
-  fileId=1_3P-NmeAH-9F35voO1__Niz4lhr_eSx1
-  fileName=postman-10.17.1.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=1_3P-NmeAH-9F35voO1__Niz4lhr_eSx1' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1_3P-NmeAH-9F35voO1__Niz4lhr_eSx1" -O postman-10.17.1.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
 
-## Download Spring Tool Suite
+## Download Spring tool Suite
 if [ -e spring-tool-suite-4.19.1.RELEASE.deb ];then
     echo "O arquivo  spring-tool-suite-4.19.1.RELEASE.deb  ja existe"
 else
   echo -e "\n\n\n\n Spring Tool Suite"
-  fileId=1enbYDfIX9MXXKdKR8g-zm5Gx0uAcCfPL
-  fileName=spring-tool-suite-4.19.1.RELEASE.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=1enbYDfIX9MXXKdKR8g-zm5Gx0uAcCfPL' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1enbYDfIX9MXXKdKR8g-zm5Gx0uAcCfPL" -O spring-tool-suite-4.19.1.RELEASE.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -421,11 +372,10 @@ if [ -e StarUML_5.1.0_amd64.deb ];then
     echo "O arquivo  StarUML_5.1.0_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n StarUML"
-  fileId=1LH-IOmVRljnv-J35qQkWQnCwPI2t5r-a
-  fileName=StarUML_5.1.0_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=1LH-IOmVRljnv-J35qQkWQnCwPI2t5r-a' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1LH-IOmVRljnv-J35qQkWQnCwPI2t5r-a" -O StarUML_5.1.0_amd64.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -435,27 +385,12 @@ if [ -e visual_code_1.81.1-1691620686_amd64.deb ];then
     echo "O arquivo  visual_code_1.81.1-1691620686_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Visual Studio Code"
-  fileId=15W3wFK2uVHSeUHW4V3HUC2PKS2KrLJUu
-  fileName=visual_code_1.81.1-1691620686_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=15W3wFK2uVHSeUHW4V3HUC2PKS2KrLJUu' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=15W3wFK2uVHSeUHW4V3HUC2PKS2KrLJUu" -O visual_code_1.81.1-1691620686_amd64.deb && rm -rf /tmp/cookies.txt \;
 fi
 
-
-
-
-## Download Vivaldi Browser
-if [ -e vivaldi-stable_6.1.3035.257-1_amd64.deb ];then
-    echo "O arquivo  vivaldi-stable_6.1.3035.257-1_amd64.deb  ja existe"
-else
-  echo -e "\n\n\n\n Vivaldi Browser"
-  fileId=1-RfOy9Opg7CILTJIGmbJ_4TagBnsg8-K
-  fileName=vivaldi-stable_6.1.3035.257-1_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
-fi
 
 
 ## Download VMware Workstation
@@ -463,13 +398,11 @@ if [ -e VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle ];then
     echo "O arquivo  VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle  ja existe"
 else
   echo -e "\n\n\n\n VMware Workstation"
-  fileId=1M1h1hN4nIG-OqAXoPePEneM-H17yCfIv
-  fileName=VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=1M1h1hN4nIG-OqAXoPePEneM-H17yCfIv' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1M1h1hN4nIG-OqAXoPePEneM-H17yCfIv" -O VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle && rm -rf /tmp/cookies.txt \;
 fi
-
 
 
 
@@ -478,11 +411,10 @@ if [ -e waterfox-G5.1.10.deb ];then
     echo "O arquivo  waterfox-G5.1.10.deb  ja existe"
 else
   echo -e "\n\n\n\n Waterfox"
-  fileId=1dgHPXFJjTo8WkWIzsez5PljYAwD6S5ix
-  fileName=waterfox-G5.1.10.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=1dgHPXFJjTo8WkWIzsez5PljYAwD6S5ix' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1dgHPXFJjTo8WkWIzsez5PljYAwD6S5ix" -O waterfox-G5.1.10.deb && rm -rf /tmp/cookies.txt \;
 fi
 
 
@@ -492,11 +424,7 @@ if [ -d /home/$USER/Servidores/tomcat-9.0.68 ];then
     echo "O diretorio  /home/$USER/Servidores/tomcat-9.0.68  ja existe"
 else
   echo -e "\n\n\n\n Tomcat"
-  fileId=1EqMonKmeOMh3r0eP1c_2UStAN6JWrM49
-  fileName=tomcat-9.0.68.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1EqMonKmeOMh3r0eP1c_2UStAN6JWrM49' -O tomcat-9.0.68.tar.gz
 
   descompactar-tar-gz tomcat-9.0.68.tar.gz
   cp -r tomcat-9.0.68 /home/$USER/Servidores/
@@ -510,11 +438,10 @@ if [ -d /home/$USER/Servidores/wildfly-29.0.0.Final ];then
     echo "O diretorio  /home/$USER/Servidores/wildfly-29.0.0.Final  ja existe"
 else
   echo -e "\n\n\n\n Wildfly"
-  fileId=1q8-3vFReU_t6ZZcnvwSPrYNLUUx906BY
-  fileName=wildfly-29.0.0.Final.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --load-cookies /tmp/cookies.txt \
+  "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate \
+      'https://docs.google.com/uc?export=download&id=1q8-3vFReU_t6ZZcnvwSPrYNLUUx906BY' -O- | \
+  sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1q8-3vFReU_t6ZZcnvwSPrYNLUUx906BY" -O wildfly-29.0.0.Final.tar.gz && rm -rf /tmp/cookies.txt \;
 
   descompactar-tar-gz wildfly-29.0.0.Final.tar.gz
   cp -r wildfly-29.0.0.Final /home/$USER/Servidores/
@@ -528,11 +455,7 @@ if [ -d /home/$USER/Instalacao/netbeans-plugins ];then
       echo "O diretorio  /home/$USER/Instalacao/netbeans-plugins  ja existe"
 else
   echo -e "\n\n\n\n Netbeans Plugins"
-  fileId=1jl-Dl6DnzUDEDq-XBnfT8MDZRL2vKJJk
-  fileName=netbeans-plugins.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1jl-Dl6DnzUDEDq-XBnfT8MDZRL2vKJJk' -O netbeans-plugins.tar.gz
 
   descompactar-tar-gz netbeans-plugins.tar.gz
   cp -r netbeans-plugins /home/$USER/Instalacao/
@@ -546,11 +469,7 @@ if [ -d /home/$USER/Instalacao/drivers-JDBC ];then
     echo "O diretorio  /home/$USER/Instalacao/drivers-JDBC  ja existe"
 else
   echo -e "\n\n\n\n Drivers JDBC"
-  fileId=1FP1TVh-xppkiwjvQkwMEf5SyY4e6JwJ4
-  fileName=drivers-JDBC.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1FP1TVh-xppkiwjvQkwMEf5SyY4e6JwJ4' -O drivers-JDBC.tar.gz
 
   descompactar-tar-gz drivers-JDBC.tar.gz
   cp -r drivers-JDBC /home/$USER/Instalacao/
@@ -559,16 +478,13 @@ fi
 
 
 
+
 ## Download Wallpapers
 if [ -d /home/$USER/Imagens/wallpaper ];then
     echo "O diretorio  /home/$USER/Imagens/wallpaper  ja existe"
 else
   echo -e "\n\n\n\n Wallpapers"
-  fileId=1Lg97MHyo-Nt1katamB7rbLHJGmQw29AT
-  fileName=wallpaper.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Lg97MHyo-Nt1katamB7rbLHJGmQw29AT' -O wallpaper.tar.gz
 
   descompactar-tar-gz wallpaper.tar.gz
   cp -r wallpaper /home/$USER/Imagens/
@@ -582,11 +498,7 @@ if [ -d /home/$USER/.themes/WhiteSur-dark-solid ];then
     echo "O diretorio  /home/$USER/.themes/WhiteSur-dark-solid  ja existe"
 else
   echo -e "\n\n\n\n WhiteSur Dark solid"
-  fileId=1P5kHLIcFWJHFmvQXhC8aB32SQAYOAOor
-  fileName=WhiteSur-dark-solid.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1P5kHLIcFWJHFmvQXhC8aB32SQAYOAOor' -O WhiteSur-dark-solid.tar.gz
 
   descompactar-tar-gz WhiteSur-dark-solid.tar.gz
   cp -r WhiteSur-dark-solid /home/$USER/.themes/
@@ -599,12 +511,8 @@ fi
 if [ -d /home/$USER/.icons/BigSur ];then
     echo "O diretorio  /home/$USER/.icons/BigSur  ja existe"
 else
-  echo -e "\n\n\n\n Big Sur"
-  fileId=1Xi3d9-NlDfBGA1kUA2_KK_dijD3w0fuS
-  fileName=BigSur.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  echo -e "\n\n\n\n BigSur"
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1Xi3d9-NlDfBGA1kUA2_KK_dijD3w0fuS' -O BigSur.tar.gz
 
   descompactar-tar-gz BigSur.tar.gz
   cp -r BigSur /home/$USER/.icons/
@@ -618,11 +526,7 @@ if [ -d /home/$USER/.icons/Deepin ];then
     echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
 else
   echo -e "\n\n\n\n Deepin"
-  fileId=1K8XnVwkVgPGKEsYjt-Vd5HCYOk0cRALs
-  fileName=Deepin.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1K8XnVwkVgPGKEsYjt-Vd5HCYOk0cRALs' -O Deepin.tar.gz
 
   descompactar-tar-gz Deepin.tar.gz
   cp -r Deepin /home/$USER/.icons/
@@ -636,11 +540,7 @@ if [ -d /home/$USER/.icons/McMojave-cursors ];then
     echo "O diretorio  /home/$USER/.icons/McMojave-cursors  ja existe"
 else
   echo -e "\n\n\n\n MacMojave cursores"
-  fileId=1x9KWvR9GudSrvBD6XRex5yfiioGZOn_f
-  fileName=McMojave-cursors.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1x9KWvR9GudSrvBD6XRex5yfiioGZOn_f' -O McMojave-cursors.tar.gz
 
   descompactar-tar-gz McMojave-cursors.tar.gz
   cp -r McMojave-cursors /home/$USER/.icons/
