@@ -249,7 +249,7 @@ if [ -d /home/$USER/Instalacao/docker-compose-files ];then
     echo "O diretorio  /home/$USER/Instalacao/docker-compose-files ja existe"
 else
   echo -e "\n\n\n\n Docker Compose files"
-  fileId=1rCzewT_O4kZ1OndlSqf_jhCydW-UZQlH
+  fileId=1wAPMxZdkvdZ4VE5LQe_xRjF2ZF0PDeZw
   fileName=docker-compose-files.tar.gz
   curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
   code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
@@ -259,7 +259,6 @@ else
   cp -r docker-compose-files /home/$USER/Instalacao/
   rm docker-compose-files.tar.gz
 fi
-
 
 
 
@@ -605,15 +604,15 @@ if [ -d /home/$USER/.icons/Deepin ];then
     echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
 else
   echo -e "\n\n\n\n Deepin"
-  fileId=1UJRlswtZPNUSUNYEBg6G_3XOyhSvgCSK
+  fileId=1K8XnVwkVgPGKEsYjt-Vd5HCYOk0cRALs
   fileName=Deepin.tar.gz
   curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
   code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
   curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
-  descompactar-tar-gz BigSur.tar.gz
-  cp -r BigSur /home/$USER/.icons/
-  rm BigSur.tar.gz
+  descompactar-tar-gz Deepin.tar.gz
+  cp -r Deepin /home/$USER/.icons/
+  rm Deepin.tar.gz
 fi
 
 
@@ -651,7 +650,7 @@ else
   curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   descompactar-tar-gz openjdk-17_35_linux-x64_bin.tar.gz
-  sudo cp -r jdk-17 /opt/
+  sudo cp -r jdk-17/ /opt/
   rm openjdk-17_35_linux-x64_bin.tar.gz
 fi
 
@@ -693,16 +692,17 @@ else
   curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   descompactar-tar-gz apache-maven-3.9.4-bin.tar.gz
-  sudo cp -r apache-maven-3.9.4 /opt/
+  sudo cp -r apache-maven-3.9.4/ /opt/
   rm apache-maven-3.9.4-bin.tar.gz
 fi
-
 
 
 ## Configurando variaveis de ambiente do Maven
 if grep -qi "export MAVEN_HOME=/opt/apache-maven-3.9.4" /home/$USER/.bashrc ;then
     echo "Variaveis de Ambiente do Maven configurados"
 else
+    ## Espaco em branco
+    echo "" >> /home/$USER/.bashrc
     echo "export MAVEN_HOME=/opt/apache-maven-3.9.4" >> /home/$USER/.bashrc
     echo "export PATH=\$PATH:\$MAVEN_HOME/bin" >> /home/$USER/.bashrc
 fi
