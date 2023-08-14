@@ -835,6 +835,9 @@ sudo apt install -y gparted
 ## Instalando VirtualBox
 sudo apt install -y virtualbox
 
+## Instalando Kotlin
+sudo apt-get -y install kotlin
+
 ## Instalando SDKMAN
 curl -s https://get.sdkman.io | bash
 
