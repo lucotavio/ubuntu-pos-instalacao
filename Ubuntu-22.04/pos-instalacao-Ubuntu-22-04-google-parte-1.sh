@@ -49,7 +49,7 @@ mkdir -p /home/$USER/Projetos/Java
 cd /home/$USER/Downloads/Programas/
 
 ## Instalar software de terceiros
-sudo apt install -y ubuntu-restricted-extras
+sudo apt install ubuntu-restricted-extras -y
 
 ## Criando modelo de arquivo de script de banco de dados
 if [ -e /home/$USER/Modelos/TXT.txt ];then
@@ -89,12 +89,30 @@ fi
 ## logo em seguida alguns
 ## arquivos vao ser descompactados
 sudo apt update -y
-sudo apt install -y sharutils
-sudo apt install -y p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ark ncompress
+sudo apt install sharutils -y
+sudo apt install p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ark ncompress -y
 
 
 ## Instalando comando curl
-sudo apt install -y curl
+sudo apt install curl -y
+
+
+## Download Goodls
+if [ -e goodls ]
+then
+    echo "O arquivo  goodls  ja existe"
+else
+    echo -e "\n\n\n\nDownload Goodls"
+    fileId=1157bnfr9MOo2-MgTrltIu5WvGP3faN7K
+    fileName=goodls
+    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+
+    sudo cp goodls /usr/local/bin/
+fi
+
+
 
 
 ## Download Compactador
@@ -103,7 +121,7 @@ if [ -e compactar-tar-gz ];then
     sudo cp compactar-tar-gz /usr/local/bin/
 else
   echo -e "\n\n\n Compactador-tar-gz"
-  curl -L -o compactar-tar-gz https://www.dropbox.com/scl/fi/d7k90hf9wbg6ktkusnrkj/compactar-tar-gz?rlkey=63589ewcbxim2ic2qikr8s99i&dl=0
+  goodls -u https://drive.google.com/file/d/1kWXdmTjqzyCpoIFxgB1zctX1msprYEVJ/view?usp=drivesdk
 
   chmod +x compactar-tar-gz
   sudo cp compactar-tar-gz /usr/local/bin/
@@ -117,7 +135,7 @@ if [ -e descompactar-tar-gz ];then
     sudo cp descompactar-tar-gz /usr/local/bin/
 else
   echo -e "\n\n\n Descompactar-tar-gz"
-  curl -L -o descompactar-tar-gz https://www.dropbox.com/scl/fi/9yu2s8bft2wd4cp1baw5m/descompactar-tar-gz?rlkey=fq3bn68tjyw5qd8x7eljkihxf&dl=0
+  goodls -u https://drive.google.com/file/d/1h3KbeWkbDyBqZCW69FlQo5l3hp5ISJOf/view?usp=drivesdk
 
   chmod +x descompactar-tar-gz
   sudo cp descompactar-tar-gz /usr/local/bin/
@@ -131,7 +149,7 @@ then
     echo "O arquivo  4kvideodownloader_4.21.7-1_amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n 4K Video Downloader"
-    curl -L -o 4kvideodownloader_4.21.7-1_amd64.deb https://www.dropbox.com/scl/fi/sw2eu0227rspecu5pmual/4kvideodownloader_4.21.7-1_amd64.deb?rlkey=dfl9pyy85nxyhdzzapmgrvl92&dl=0
+    goodls -u https://drive.google.com/file/d/1Y_M5XaadEMoN5mkwbfHgB3aQIyS08YcK/view?usp=drivesdk
 fi
 
 
@@ -142,7 +160,7 @@ then
     echo "O arquivo  android-studio-2022.3.1.deb  ja existe"
 else
     echo -e "\n\n\n\n Android Studio"
-    curl -L -o android-studio-2022.3.1.deb https://www.dropbox.com/scl/fi/mf6q32srkrzeclpvklzs7/android-studio-2022.3.1.deb?rlkey=mqgpxlju6z13yneab7xa39qkp&dl=0
+    goodls -u https://drive.google.com/file/d/1Vzqml8ccrXcSZ-QOFhaZH2TGQnHA7-0C/view?usp=drivesdk
 fi
 
 
@@ -153,7 +171,7 @@ then
     echo "O arquivo  apache-netbeans_18-1_all.deb  ja existe"
 else
     echo -e "\n\n\n\n Apache Netbeans"
-    curl -L -o apache-netbeans_18-1_all.deb https://www.dropbox.com/scl/fi/tex4dj3n8uj7ylv2hy3o4/apache-netbeans_18-1_all.deb?rlkey=s2fq766r2ln3tvf73ap2wrus6&dl=0
+    goodls -u https://drive.google.com/file/d/1la7Y5_GT3vSB8f9dg9EhcPA9VfQ80lv6/view?usp=drivesdk
 fi
 
 
@@ -164,7 +182,7 @@ then
     echo "O arquivo  atom-amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n Atom"
-    curl -L -o atom-amd64.deb https://www.dropbox.com/scl/fi/zyujuf0gx07jslngeeb7y/atom-amd64.deb?rlkey=p1xfaul0vpj1324jbe9m9q70r&dl=0
+    goodls -u https://drive.google.com/file/d/1xazxsCtLFbMctp7SgrrWREC-Z8Ky_1u-/view?usp=drivesdk
 fi
 
 
@@ -175,7 +193,7 @@ then
     echo "O arquivo  balena-etcher_1.18.11_amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n Balena Etcher"
-    curl -L -o balena-etcher_1.18.11_amd64.deb https://www.dropbox.com/scl/fi/agv48klw7x5f9xj77rsnc/balena-etcher_1.18.11_amd64.deb?rlkey=p9e733w5frbehzayvqjzmy7kr&dl=0
+    goodls -u https://drive.google.com/file/d/1wTLeIL_PGxMmkukdzGNosQ-vBLhsXuAK/view?usp=drivesdk
 fi
 
 
@@ -185,7 +203,7 @@ if [ -e chrome-stable_current_amd64.deb ];then
     echo "O arquivo  chrome-stable_current_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Chrome"
-  curl -L -o chrome-stable_current_amd64.deb https://www.dropbox.com/scl/fi/g2rh0obc91mm3ks2q40bp/chrome-stable_current_amd64.deb?rlkey=3aoflfwa828ytttqvpbl3p5ty&dl=0
+  goodls -u https://drive.google.com/file/d/119PJ78GXF5hFl2D0yvrR5WTjYDVjBRbY/view?usp=drivesdk
 fi
 
 
@@ -195,7 +213,7 @@ if [ -e dbeaver-le_23.1.0_amd64.deb ];then
     echo "O arquivo  dbeaver-le_23.1.0_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n DBeaver"
-  curl -L -o dbeaver-le_23.1.0_amd64.deb https://www.dropbox.com/scl/fi/8c9nrdld9y2jcdeje7y8w/dbeaver-le_23.1.0_amd64.deb?rlkey=tubcnfy1v4ngrs6qx9vqiwype&dl=0
+  goodls -u https://drive.google.com/file/d/1rmBnEjP_cxVfuLhNayaWUT1T5zqCBeOP/view?usp=drivesdk
 fi
 
 
@@ -205,7 +223,7 @@ if [ -e docker-compose ];then
     echo "O arquivo  docker-compose  ja existe"
 else
   echo -e "\n\n\n\n Docker Compose"
-  curl -L -o docker-compose https://www.dropbox.com/scl/fi/4md6qgtogm6rqfw2y2616/docker-compose?rlkey=gq6gg8eof8l4lmq0dppte4wj1&dl=0
+  goodls -u https://drive.google.com/file/d/1q-vqLH0LfMasksSVytw7HfkTrOxJlCyA/view?usp=drivesdk
 fi
 
 
@@ -215,7 +233,7 @@ if [ -e dropbox_2020.03.04_amd64.deb ];then
     echo "O arquivo  dropbox_2020.03.04_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Dropbox"
-  curl -L -o dropbox_2020.03.04_amd64.deb https://www.dropbox.com/scl/fi/xjglhnapdbxuse01d2iui/dropbox_2020.03.04_amd64.deb?rlkey=5fpogm4ecnk47gocfje27d1b9&dl=0
+  goodls -u https://drive.google.com/file/d/12CO9lVV40Zmqx7cFb5Lmo3F_-lURqFjF/view?usp=drivesdk
 fi
 
 
@@ -225,7 +243,7 @@ if [ -e gitkraken-amd64.deb ];then
     echo "O arquivo  gitkraken-amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n GitKraken"
-  curl -L -o gitkraken-amd64.deb https://www.dropbox.com/scl/fi/996uutt1meglik6baii2k/gitkraken-amd64.deb?rlkey=ob4i1xm8i6oc8g83lma72fvbd&dl=0
+  goodls -u https://drive.google.com/file/d/1i47sx1P0cdtykTXw3aFrZY9t1XMJ2yAC/view?usp=drivesdk
 fi
 
 
@@ -235,7 +253,7 @@ if [ -e Insomnia.Core-2023.4.0.deb ];then
     echo "O arquivo  Insomnia.Core-2023.4.0.deb  ja existe"
 else
   echo -e "\n\n\n\n Insomnia"
-  curl -L -o Insomnia.Core-2023.4.0.deb https://www.dropbox.com/scl/fi/h7xtvlsfhtdah3pplp5gn/Insomnia.Core-2023.4.0.deb?rlkey=6a5yw80qc2l91zu20ez1q1cpy&dl=0
+  goodls -u https://drive.google.com/file/d/1M-6axTc8LNI_66iLwvvY-SyyNTmZ77Ic/view?usp=drivesdk
 fi
 
 
@@ -245,7 +263,7 @@ if [ -e insync_3.8.6.50504-jammy_amd64.deb ];then
     echo "O arquivo  insync_3.8.6.50504-jammy_amd64.deb ja existe"
 else
   echo -e "\n\n\n\n Insync"
-  curl -L -o insync_3.8.6.50504-jammy_amd64.deb https://www.dropbox.com/scl/fi/2aogduckfunw0mtr6ri94/insync_3.8.6.50504-jammy_amd64.deb?rlkey=adbcxsnt7ef3b4m7wbp98gl1x&dl=0
+  goodls -u https://drive.google.com/file/d/15Y8zCGHiXsEntMqTme_0pILFLlRv063Z/view?usp=drivesdk
 fi
 
 
@@ -255,7 +273,7 @@ if [ -e intellij-community-2023.2.deb ];then
     echo "O arquivo  intellij-community-2023.2.deb ja existe"
 else
   echo -e "\n\n\n\n Intellij Community"
-  curl -L -o intellij-community-2023.2.deb https://www.dropbox.com/scl/fi/sm7sjsh0qrjidvl2l30tu/intellij-community-2023.2.deb?rlkey=42og3v3q5d8qqmyb3t2k1xtdo&dl=0
+  goodls -u https://drive.google.com/file/d/1_GvKUI8e7Htttu0LxJgSl2SdpGCWV-9X/view?usp=drivesdk
 fi
 
 
@@ -265,7 +283,7 @@ if [ -e lombok.jar ];then
     echo "O arquivo lombok.jar ja existe"
 else
   echo -e "\n\n\n\n Lombok"
-  curl -L -o lombok.jar https://www.dropbox.com/scl/fi/neaq7xcukvkwc2l3dpspz/lombok.jar?rlkey=jfra6fg5s0m3en7z18po9v2xa&dl=0
+  goodls -u https://drive.google.com/file/d/1ZD-QAd5aky-DzDxYUrs9JEsAZS9gul5k/view?usp=drivesdk
 fi
 
 
@@ -275,7 +293,7 @@ if [ -e onlyoffice-desktopeditors_amd64.deb ];then
     echo "O arquivo  onlyoffice-desktopeditors_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Only Office"
-  curl -L -o onlyoffice-desktopeditors_amd64.deb https://www.dropbox.com/scl/fi/hs31f1ivjoii5cxpz8apy/onlyoffice-desktopeditors_amd64.deb?rlkey=pk2a5oau8g3l00jmiklcii74t&dl=0
+  goodls -u https://drive.google.com/file/d/11Stf18xGX31jm5inMxStUvk0g6VpwuNl/view?usp=drivesdk
 fi
 
 
@@ -285,7 +303,7 @@ if [ -e postman-10.17.1.deb ];then
     echo "O arquivo  postman-10.17.1.deb  ja existe"
 else
   echo -e "\n\n\n\n Postman"
-  curl -L -o postman-10.17.1.deb https://www.dropbox.com/scl/fi/u3tftai62fp354ror3nis/postman-10.17.1.deb?rlkey=l6wkuijjwujonk9dhrftfranp&dl=0
+  goodls -u https://drive.google.com/file/d/1_3P-NmeAH-9F35voO1__Niz4lhr_eSx1/view?usp=drivesdk
 fi
 
 
@@ -295,7 +313,7 @@ if [ -e spring-tool-suite-4.19.1.RELEASE.deb ];then
     echo "O arquivo  spring-tool-suite-4.19.1.RELEASE.deb  ja existe"
 else
   echo -e "\n\n\n\n Spring Tool Suite"
-  curl -L -o spring-tool-suite-4.19.1.RELEASE.deb https://www.dropbox.com/scl/fi/u023zwdap3qm0ehogn2yd/spring-tool-suite-4.19.1.RELEASE.deb?rlkey=c15vdq3ztql2ce1nh5e01bevj&dl=0
+  goodls -u https://drive.google.com/file/d/1enbYDfIX9MXXKdKR8g-zm5Gx0uAcCfPL/view?usp=drivesdk
 fi
 
 
@@ -305,7 +323,7 @@ if [ -e StarUML_5.1.0_amd64.deb ];then
     echo "O arquivo  StarUML_5.1.0_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n StarUML"
-  curl -L -o StarUML_5.1.0_amd64.deb https://www.dropbox.com/scl/fi/eo7hrf8h5nld6z05vhgua/StarUML_5.1.0_amd64.deb?rlkey=zopg6yl2omjy93ac1aue73xog&dl=0
+  goodls -u https://drive.google.com/file/d/1LH-IOmVRljnv-J35qQkWQnCwPI2t5r-a/view?usp=drivesdk
 fi
 
 
@@ -315,7 +333,7 @@ if [ -e visual_code_1.81.1-1691620686_amd64.deb ];then
     echo "O arquivo  visual_code_1.81.1-1691620686_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Visual Studio Code"
-  curl -L -o visual_code_1.81.1-1691620686_amd64.deb https://www.dropbox.com/scl/fi/pqneijolnboxzqwalhoro/visual_code_1.81.1-1691620686_amd64.deb?rlkey=15pdwcaw4zklavtq9bleyqssn&dl=0
+  goodls -u https://drive.google.com/file/d/15W3wFK2uVHSeUHW4V3HUC2PKS2KrLJUu/view?usp=drivesdk
 fi
 
 
@@ -325,7 +343,7 @@ if [ -e VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle ];then
     echo "O arquivo  VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle  ja existe"
 else
   echo -e "\n\n\n\n VMware Workstation"
-  curl -L -o VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle https://www.dropbox.com/scl/fi/f6j0c1iu7duqjpbyqz2im/VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle?rlkey=9ckvhlsfy086s3f8o3bx523nu&dl=0
+  goodls -u https://drive.google.com/file/d/1M1h1hN4nIG-OqAXoPePEneM-H17yCfIv/view?usp=drivesdk
 fi
 
 
@@ -335,7 +353,7 @@ if [ -e waterfox-G5.1.10.deb ];then
     echo "O arquivo  waterfox-G5.1.10.deb  ja existe"
 else
   echo -e "\n\n\n\n Waterfox"
-  curl -L -o waterfox-G5.1.10.deb https://www.dropbox.com/scl/fi/6hwa2b6j7bgqa9xg6g1xv/waterfox-G5.1.10.deb?rlkey=115tr1yfdq54x3t1arh4b3cev&dl=0
+  goodls -u https://drive.google.com/file/d/1dgHPXFJjTo8WkWIzsez5PljYAwD6S5ix/view?usp=drivesdk
 fi
 
 
@@ -345,7 +363,7 @@ if [ -d /home/$USER/Servidores/tomcat-9.0.68 ];then
     echo "O diretorio  /home/$USER/Servidores/tomcat-9.0.68  ja existe"
 else
   echo -e "\n\n\n\n Tomcat"
-  curl -L -o tomcat-9.0.68.tar.gz https://www.dropbox.com/scl/fi/tten8hb98flun4h3d6lrn/tomcat-9.0.68.tar.gz?rlkey=ypk0vnqui3ptmrhd61rs9twuw&dl=0
+  goodls -u https://drive.google.com/file/d/1EqMonKmeOMh3r0eP1c_2UStAN6JWrM49/view?usp=drivesdk
 
   descompactar-tar-gz tomcat-9.0.68.tar.gz
   cp -r tomcat-9.0.68 /home/$USER/Servidores/
@@ -359,7 +377,7 @@ if [ -d /home/$USER/Servidores/wildfly-29.0.0.Final ];then
     echo "O diretorio  /home/$USER/Servidores/wildfly-29.0.0.Final  ja existe"
 else
   echo -e "\n\n\n\n Wildfly"
-  curl -L -o wildfly-29.0.0.Final.tar.gz https://www.dropbox.com/scl/fi/kp4r86ckqroli8dbrxxms/wildfly-29.0.0.Final.tar.gz?rlkey=fkadhixit28q6n7imrtkg2ql9&dl=0
+  goodls -u https://drive.google.com/file/d/1q8-3vFReU_t6ZZcnvwSPrYNLUUx906BY/view?usp=drivesdk
 
   descompactar-tar-gz wildfly-29.0.0.Final.tar.gz
   cp -r wildfly-29.0.0.Final /home/$USER/Servidores/
@@ -373,7 +391,7 @@ if [ -d /home/$USER/Instalacao/netbeans-plugins ];then
       echo "O diretorio  /home/$USER/Instalacao/netbeans-plugins  ja existe"
 else
   echo -e "\n\n\n\n Netbeans Plugins"
-  curl -L -o netbeans-plugins.tar.gz https://www.dropbox.com/scl/fi/qi0gc5p9zwa0m8xrgu3ho/netbeans-plugins.tar.gz?rlkey=8jh276kug9220n8n0qx8kyl77&dl=0
+  goodls -u https://drive.google.com/file/d/1jl-Dl6DnzUDEDq-XBnfT8MDZRL2vKJJk/view?usp=drivesdk
 
   descompactar-tar-gz netbeans-plugins.tar.gz
   cp -r netbeans-plugins /home/$USER/Instalacao/
@@ -387,7 +405,7 @@ if [ -d /home/$USER/Instalacao/drivers-JDBC ];then
     echo "O diretorio  /home/$USER/Instalacao/drivers-JDBC  ja existe"
 else
   echo -e "\n\n\n\n Drivers JDBC"
-  curl -L -o drivers-JDBC.tar.gz https://www.dropbox.com/scl/fi/0kjrweecumqmf67nz00yp/drivers-JDBC.tar.gz?rlkey=fgog9cr3dojcf58vx3xsgpp21&dl=0
+  goodls -u https://drive.google.com/file/d/1FP1TVh-xppkiwjvQkwMEf5SyY4e6JwJ4/view?usp=drivesdk
 
   descompactar-tar-gz drivers-JDBC.tar.gz
   cp -r drivers-JDBC /home/$USER/Instalacao/
@@ -401,7 +419,7 @@ if [ -d /home/$USER/Imagens/wallpaper ];then
     echo "O diretorio  /home/$USER/Imagens/wallpaper  ja existe"
 else
   echo -e "\n\n\n\n Wallpapers"
-  curl -L -o wallpaper.tar.gz https://www.dropbox.com/scl/fi/6h2hn3soxnc2pgr47d083/wallpaper.tar.gz?rlkey=lttxhbfyndz4qixdoi8zcqlbb&dl=0
+  goodls -u https://drive.google.com/file/d/1j8HSlYsw8SwzF3mrZz9sBq8BrVLgGXut/view?usp=drivesdk
 
   descompactar-tar-gz wallpaper.tar.gz
   cp -r wallpaper /home/$USER/Imagens/
@@ -415,7 +433,7 @@ if [ -d /home/$USER/.themes/WhiteSur-dark-solid ];then
     echo "O diretorio  /home/$USER/.themes/WhiteSur-dark-solid  ja existe"
 else
   echo -e "\n\n\n\n WhiteSur Dark solid"
-  curl -L -o WhiteSur-dark-solid.tar.gz https://www.dropbox.com/scl/fi/9cgw5ayyx9mmnlw640lbk/WhiteSur-dark-solid.tar.gz?rlkey=9jmioj4noijqulim1kdhv5d85&dl=0
+  goodls -u https://drive.google.com/file/d/1P5kHLIcFWJHFmvQXhC8aB32SQAYOAOor/view?usp=drivesdk
 
   descompactar-tar-gz WhiteSur-dark-solid.tar.gz
   cp -r WhiteSur-dark-solid /home/$USER/.themes/
@@ -429,7 +447,7 @@ if [ -d /home/$USER/.icons/BigSur ];then
     echo "O diretorio  /home/$USER/.icons/BigSur  ja existe"
 else
   echo -e "\n\n\n\n Big Sur"
-  curl -L -o BigSur.tar.gz https://www.dropbox.com/scl/fi/2wvx6y84mh43dhk3159z3/BigSur.tar.gz?rlkey=4vig7m32fkixv3m9gy3xa12ck&dl=0
+  goodls -u https://drive.google.com/file/d/1Xi3d9-NlDfBGA1kUA2_KK_dijD3w0fuS/view?usp=drivesdk
 
   descompactar-tar-gz BigSur.tar.gz
   cp -r BigSur /home/$USER/.icons/
@@ -443,7 +461,7 @@ if [ -d /home/$USER/.icons/Deepin ];then
     echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
 else
   echo -e "\n\n\n\n Deepin"
-  curl -L -o Deepin.tar.gz https://www.dropbox.com/scl/fi/fzn51ofgbeg8daeyfvlz2/Deepin.tar.gz?rlkey=8hdt3259jql0n1tsx1ubo1h26&dl=0
+  goodls -u https://drive.google.com/file/d/1K8XnVwkVgPGKEsYjt-Vd5HCYOk0cRALs/view?usp=drivesdk
 
   descompactar-tar-gz Deepin.tar.gz
   cp -r Deepin /home/$USER/.icons/
@@ -457,7 +475,7 @@ if [ -d /home/$USER/.icons/McMojave-cursors ];then
     echo "O diretorio  /home/$USER/.icons/McMojave-cursors  ja existe"
 else
   echo -e "\n\n\n\n MacMojave cursores"
-  curl -L -o McMojave-cursors.tar.gz https://www.dropbox.com/scl/fi/djoiyo8jvq4wfzr38qkcj/McMojave-cursors.tar.gz?rlkey=did69bilywzavhfqov0zdjxbi&dl=0
+  goodls -u https://drive.google.com/file/d/1x9KWvR9GudSrvBD6XRex5yfiioGZOn_f/view?usp=drivesdk
 
   descompactar-tar-gz McMojave-cursors.tar.gz
   cp -r McMojave-cursors /home/$USER/.icons/
@@ -471,7 +489,7 @@ if [ -e cd /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml 
     echo "O arquuivo Docker Compose do MySql ja existe"
 else
   echo -e "\n\n\n\n Docker Compose do MySql"
-  curl -L -o docker-compose.yml https://www.dropbox.com/scl/fi/u4d118rodk404xotvas5w/docker-compose.yml?rlkey=nx0ckyinnpyvnzdef8kkcf4y6&dl=0
+  goodls -u https://drive.google.com/file/d/1v3gLtg1HF577do4Y9lqdXFN3OItwtBJe/view?usp=drivesdk
 
   mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml
 fi
@@ -482,7 +500,7 @@ if [ -e cd /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml 
     echo "O arquuivo Docker Compose do PostgreSQL ja existe"
 else
   echo -e "\n\n\n\n Docker Compose do MySql"
-  curl -L -o docker-compose.yml https://www.dropbox.com/scl/fi/mg8doj3yedrp208a0ni60/docker-compose.yml?rlkey=z9kt0oeh607d4xar5x5rr6exe&dl=0
+  goodls -u https://drive.google.com/file/d/1-jipcIOVVyziuUQ_QjaaTSlW_QN_Cl-L/view?usp=drivesdk
 
   mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml
 fi
@@ -493,7 +511,7 @@ fi
 echo -e "\n\n\n************************************************** INSTALACAO DO JDK-17 **************************************************************"
 
 sudo apt update -y
-sudo apt install -y openjdk-17-jdk -y
+sudo apt install openjdk-17-jdk -y
 
 
 ## Selecionando qual versão do java vai ser a padrao
@@ -548,7 +566,7 @@ echo -e "\n\n\n**************************************************** INSTALANDO  
 sudo apt update -y
 
 ## Instalando o Docker
-sudo apt install -y docker.io
+sudo apt install docker.io -y
 
 ## Adicionando o usuario logado ao grupo docker
 sudo usermod -aG docker $USER
@@ -571,7 +589,7 @@ echo "**************************************************************************
 echo -e "\n\n\n************************************* CONFIGURAR  CELULAR  PARA  DESENVOLVIMENTO  ANDROID ********************************************"
 
 sudo usermod -aG plugdev $LOGNAME
-sudo apt install -y android-sdk-platform-tools-common
+sudo apt install android-sdk-platform-tools-common -y
 
 echo "***********************************************************************************************************************************************"
 
@@ -584,56 +602,56 @@ echo -e "\n\n\n************************************************** INSTALANDO  AP
 sudo apt update -y
 
 ## Instalando fonte firecode
-sudo apt install -y fonts-firacode
+sudo apt install fonts-firacode -y
 
 ## Instalando Hardinfo
-sudo apt install -y hardinfo
+sudo apt install hardinfo -y
 
 ## Instalando fontes da Microsoft
-sudo apt install -y ttf-mscorefonts-installer
+sudo apt install ttf-mscorefonts-installer -y
 sudo fc-cache -f -v
 
 ## Instalando gcc g++
-sudo apt install -y gcc g++ make
+sudo apt install gcc g++ make -y
 
 ## Instalando o Transmission
-sudo apt install -y transmission
+sudo apt install transmission -y
 
 ## Intalando Gnome tweaks tools
-sudo apt install -y gnome-tweaks
+sudo apt install gnome-tweaks -y
 
 ## Instalando net-tools
-sudo apt install -y net-tools
+sudo apt install net-tools -y
 
 ## Instalando libglib2.0-dev
-sudo apt install -y libglib2.0-dev
+sudo apt install libglib2.0-dev -y
 
 ## Instalando libgconf-2-4
-sudo apt install -y libgconf-2-4
+sudo apt install libgconf-2-4 -y
 
 ## Instalando libfuse2
 ## Programas do tipo AppImage
 ## precisao deste pacote
-sudo apt install -y libfuse2
+sudo apt install libfuse2 -y
 
 ## Instalando VLC
-sudo apt install -y vlc
+sudo apt install vlc -y
 
 ## Instalando Browser Epiphany
-sudo apt install -y epiphany-browser
+sudo apt install epiphany-browser -y
 
 ## Instalando Gnome extensions
-sudo apt install -y gnome-shell-extensions
-sudo apt install -y chrome-gnome-shell
+sudo apt install gnome-shell-extensions -y
+sudo apt install chrome-gnome-shell -y
 
 ## Instalando o gerenciador de extensões
-sudo apt install -y gnome-shell-extension-manager
+sudo apt install gnome-shell-extension-manager -y
 
 ## Instalando Kolourpaint
-sudo apt install -y kolourpaint
+sudo apt install kolourpaint -y
 
 ## Instalando o Dconf-editor
-sudo apt install -y dconf-editor
+sudo apt install dconf-editor -y
 
 ## Instalando Spotify
 curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
@@ -642,13 +660,13 @@ sudo apt update -y
 sudo apt install spotify-client -y
 
 ## Instalando Gparted
-sudo apt install -y gparted
+sudo apt install gparted -y
 
 ## Instalando VirtualBox
-sudo apt install -y virtualbox
+sudo apt install virtualbox -y
 
 ## Instalando Kotlin
-sudo apt-get -y install kotlin
+sudo apt-get install kotlin -y
 
 ## Instalando SDKMAN
 curl -s https://get.sdkman.io | bash
@@ -661,7 +679,7 @@ echo  "*************************************************************************
 echo -e "\n\n\n************************************************** INSTALANDO  GIT *******************************************************************"
 
 ## Instalando o Git
-sudo apt install -y git
+sudo apt install git -y
 git config --global user.name "Luciano"
 git config --global user.email "luc.oliveira343@gmail.com"
 ## git config --global credential.helper store
@@ -675,7 +693,7 @@ echo "**************************************************************************
 echo -e "\n\n\n************************************************** INSTALANDO  MELD ******************************************************************"
 
 ## Instalando e configurando Meld
-sudo apt install -y meld
+sudo apt install meld -y
 git config --global diff.tool meld
 git config --global difftool.meld.path "/usr/bin/meld"
 git config --global difftool.prompt false
@@ -697,11 +715,11 @@ sudo apt update -y
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 
 ## Instalando Node.js
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt install -y nodejs
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 
 ## Instalando Angular CLI
-sudo npm install -g  @angular/cli@15.2.2
+sudo npm install -g  @angular/cli@16.2.0
 
 ## Instalando Typescript
 sudo npm install -g typescript
@@ -724,9 +742,9 @@ echo -e "\n\n\n************************************************** INSTALANDO  AD
 
 ## Instalando ADB
 sudo apt update -y
-sudo apt install -y adb
-sudo apt install -y libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
-sudo apt install -y qemu-kvm
+sudo apt install adb -y
+sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
+sudo apt install qemu-kvm -y
 sudo adduser $USER kvm
 
 echo "***********************************************************************************************************************************************"
@@ -736,8 +754,8 @@ echo "**************************************************************************
 
 echo -e "\n\n\n******************************INSTALANDO  SUPORTE  A FLATPAK***************************************************************************"
 
-sudo apt install -y flatpak
-sudo apt install -y gnome-software-plugin-flatpak
+sudo apt install flatpak -y
+sudo apt install gnome-software-plugin-flatpak -y
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 echo "***********************************************************************************************************************************************"
