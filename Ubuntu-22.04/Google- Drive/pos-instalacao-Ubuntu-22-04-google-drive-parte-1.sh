@@ -228,7 +228,9 @@ if [ -e docker-compose ];then
     echo "O arquivo  docker-compose  ja existe"
 else
   echo -e "\n\n\n\n Docker Compose"
-  goodls -u https://drive.google.com/file/d/1q-vqLH0LfMasksSVytw7HfkTrOxJlCyA/view?usp=drivesdk
+  goodls -u https://drive.google.com/file/d/1cqFtoCJW_jiIvg2uMSH1Ww8iTYzS8N5q/view?usp=drivesdk -e application/x-executable
+  chmod +x docker-compose
+  sudo cp docker-compose /usr/local/bin/
 fi
 
 
@@ -406,7 +408,7 @@ if [ -d /home/$USER/Instalacao/netbeans-plugins ];then
       echo "O diretorio  /home/$USER/Instalacao/netbeans-plugins  ja existe"
 else
   echo -e "\n\n\n\n Netbeans Plugins"
-  goodls -u https://drive.google.com/file/d/1jl-Dl6DnzUDEDq-XBnfT8MDZRL2vKJJk/view?usp=drivesdk
+  goodls -u https://drive.google.com/file/d/1jl-Dl6DnzUDEDq-XBnfT8MDZRL2vKJJk/view?usp=drivesdk -e tarball
 
   descompactar-tar-gz netbeans-plugins.tar.gz
   cp -r netbeans-plugins /home/$USER/Instalacao/
@@ -420,7 +422,7 @@ if [ -d /home/$USER/Instalacao/drivers-JDBC ];then
     echo "O diretorio  /home/$USER/Instalacao/drivers-JDBC  ja existe"
 else
   echo -e "\n\n\n\n Drivers JDBC"
-  goodls -u https://drive.google.com/file/d/1FP1TVh-xppkiwjvQkwMEf5SyY4e6JwJ4/view?usp=drivesdk
+  goodls -u https://drive.google.com/file/d/1FP1TVh-xppkiwjvQkwMEf5SyY4e6JwJ4/view?usp=drivesdk -e  tarball
 
   descompactar-tar-gz drivers-JDBC.tar.gz
   cp -r drivers-JDBC /home/$USER/Instalacao/
@@ -434,7 +436,7 @@ if [ -d /home/$USER/Imagens/wallpaper ];then
     echo "O diretorio  /home/$USER/Imagens/wallpaper  ja existe"
 else
   echo -e "\n\n\n\n Wallpapers"
-  goodls -u https://drive.google.com/file/d/1j8HSlYsw8SwzF3mrZz9sBq8BrVLgGXut/view?usp=drivesdk
+  goodls -u https://drive.google.com/file/d/1j8HSlYsw8SwzF3mrZz9sBq8BrVLgGXut/view?usp=drivesdk -e tarball
 
   descompactar-tar-gz wallpaper.tar.gz
   cp -r wallpaper /home/$USER/Imagens/
@@ -448,7 +450,7 @@ if [ -d /home/$USER/.themes/WhiteSur-dark-solid ];then
     echo "O diretorio  /home/$USER/.themes/WhiteSur-dark-solid  ja existe"
 else
   echo -e "\n\n\n\n WhiteSur Dark solid"
-  goodls -u https://drive.google.com/file/d/1P5kHLIcFWJHFmvQXhC8aB32SQAYOAOor/view?usp=drivesdk
+  goodls -u https://drive.google.com/file/d/1P5kHLIcFWJHFmvQXhC8aB32SQAYOAOor/view?usp=drivesdk -e tarball
 
   descompactar-tar-gz WhiteSur-dark-solid.tar.gz
   cp -r WhiteSur-dark-solid /home/$USER/.themes/
@@ -462,7 +464,7 @@ if [ -d /home/$USER/.icons/BigSur ];then
     echo "O diretorio  /home/$USER/.icons/BigSur  ja existe"
 else
   echo -e "\n\n\n\n Big Sur"
-  goodls -u https://drive.google.com/file/d/1Xi3d9-NlDfBGA1kUA2_KK_dijD3w0fuS/view?usp=drivesdk
+  goodls -u https://drive.google.com/file/d/1Xi3d9-NlDfBGA1kUA2_KK_dijD3w0fuS/view?usp=drivesdk -e tarball
 
   descompactar-tar-gz BigSur.tar.gz
   cp -r BigSur /home/$USER/.icons/
@@ -476,7 +478,7 @@ if [ -d /home/$USER/.icons/Deepin ];then
     echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
 else
   echo -e "\n\n\n\n Deepin"
-  goodls -u https://drive.google.com/file/d/1K8XnVwkVgPGKEsYjt-Vd5HCYOk0cRALs/view?usp=drivesdk
+  goodls -u https://drive.google.com/file/d/1K8XnVwkVgPGKEsYjt-Vd5HCYOk0cRALs/view?usp=drivesdk -e tarball
 
   descompactar-tar-gz Deepin.tar.gz
   cp -r Deepin /home/$USER/.icons/
@@ -490,7 +492,7 @@ if [ -d /home/$USER/.icons/McMojave-cursors ];then
     echo "O diretorio  /home/$USER/.icons/McMojave-cursors  ja existe"
 else
   echo -e "\n\n\n\n MacMojave cursores"
-  goodls -u https://drive.google.com/file/d/1x9KWvR9GudSrvBD6XRex5yfiioGZOn_f/view?usp=drivesdk
+  goodls -u https://drive.google.com/file/d/1x9KWvR9GudSrvBD6XRex5yfiioGZOn_f/view?usp=drivesdk -e tarball
 
   descompactar-tar-gz McMojave-cursors.tar.gz
   cp -r McMojave-cursors /home/$USER/.icons/
@@ -504,7 +506,7 @@ if [ -e cd /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml 
     echo "O arquuivo Docker Compose do MySql ja existe"
 else
   echo -e "\n\n\n\n Docker Compose do MySql"
-  goodls -u https://drive.google.com/file/d/1v3gLtg1HF577do4Y9lqdXFN3OItwtBJe/view?usp=drivesdk
+  goodls -u https://drive.google.com/file/d/1v3gLtg1HF577do4Y9lqdXFN3OItwtBJe/view?usp=drivesdk -e application/x-yaml
 
   mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml
 fi
@@ -515,7 +517,7 @@ if [ -e cd /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml 
     echo "O arquuivo Docker Compose do PostgreSQL ja existe"
 else
   echo -e "\n\n\n\n Docker Compose do MySql"
-  goodls -u https://drive.google.com/file/d/1-jipcIOVVyziuUQ_QjaaTSlW_QN_Cl-L/view?usp=drivesdk
+  goodls -u https://drive.google.com/file/d/1-jipcIOVVyziuUQ_QjaaTSlW_QN_Cl-L/view?usp=drivesdk -e application/x-yaml
 
   mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml
 fi
