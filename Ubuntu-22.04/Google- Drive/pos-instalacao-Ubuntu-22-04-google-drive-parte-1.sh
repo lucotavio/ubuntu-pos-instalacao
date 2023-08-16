@@ -289,8 +289,8 @@ fi
 
 
 ## Download arquivo Docker compose MySql
-if [ -e cd /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml ];then
-    echo "O arquuivo Docker Compose do MySql ja existe"
+if [ -e /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml ];then
+    echo "O arquivo Docker Compose do MySql ja existe"
 else
   echo -e "\n\n\n\n Docker Compose do MySql"
   goodls -u https://drive.google.com/file/d/1v3gLtg1HF577do4Y9lqdXFN3OItwtBJe/view?usp=drivesdk -e application/x-yaml
@@ -300,8 +300,8 @@ fi
 
 
 ## Download arquivo Docker compose PostgreSQL
-if [ -e cd /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml ];then
-    echo "O arquuivo Docker Compose do PostgreSQL ja existe"
+if [ -e /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml ];then
+    echo "O arquivo Docker Compose do PostgreSQL ja existe"
 else
   echo -e "\n\n\n\n Docker Compose do MySql"
   goodls -u https://drive.google.com/file/d/1-jipcIOVVyziuUQ_QjaaTSlW_QN_Cl-L/view?usp=drivesdk -e application/x-yaml
