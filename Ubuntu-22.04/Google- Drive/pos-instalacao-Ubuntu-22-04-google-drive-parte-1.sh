@@ -113,6 +113,7 @@ else
     code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
     curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
+    chmod +x goodls
     sudo cp goodls /usr/local/bin/
 fi
 
