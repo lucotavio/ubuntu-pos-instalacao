@@ -101,6 +101,10 @@ sudo apt install p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ark nco
 sudo apt install curl -y
 
 
+
+
+#####################################################################################################################################################
+
 ## Download Goodls
 if [ -e goodls ]
 then
@@ -117,8 +121,12 @@ else
     sudo cp goodls /usr/local/bin/
 fi
 
+#####################################################################################################################################################
 
 
+
+
+#####################################################################################################################################################
 
 ## Download Compactador
 if [ -e compactar-tar-gz ];then
@@ -146,8 +154,167 @@ else
   sudo cp descompactar-tar-gz /usr/local/bin/
 fi
 
+#####################################################################################################################################################
 
 
+
+
+#####################################################################################################################################################
+
+
+## Download Tomcat
+if [ -d /home/$USER/Servidores/tomcat-9.0.68 ];then
+    echo "O diretorio  /home/$USER/Servidores/tomcat-9.0.68  ja existe"
+else
+  echo -e "\n\n\n\n Tomcat"
+  goodls -u https://drive.google.com/file/d/1EqMonKmeOMh3r0eP1c_2UStAN6JWrM49/view?usp=drivesdk
+
+  descompactar-tar-gz tomcat-9.0.68.tar.gz
+  cp -r tomcat-9.0.68 /home/$USER/Servidores/
+  rm tomcat-9.0.68.tar.gz
+fi
+
+
+
+## Download Wildfly
+if [ -d /home/$USER/Servidores/wildfly-29.0.0.Final ];then
+    echo "O diretorio  /home/$USER/Servidores/wildfly-29.0.0.Final  ja existe"
+else
+  echo -e "\n\n\n\n Wildfly"
+  goodls -u https://drive.google.com/file/d/1q8-3vFReU_t6ZZcnvwSPrYNLUUx906BY/view?usp=drivesdk
+
+  descompactar-tar-gz wildfly-29.0.0.Final.tar.gz
+  cp -r wildfly-29.0.0.Final /home/$USER/Servidores/
+  rm wildfly-29.0.0.Final.tar.gz
+fi
+
+
+
+## Download Netbeans plugins
+if [ -d /home/$USER/Instalacao/netbeans-plugins ];then
+      echo "O diretorio  /home/$USER/Instalacao/netbeans-plugins  ja existe"
+else
+  echo -e "\n\n\n\n Netbeans Plugins"
+  goodls -u https://drive.google.com/file/d/1jl-Dl6DnzUDEDq-XBnfT8MDZRL2vKJJk/view?usp=drivesdk -e application/x-compressed
+
+  descompactar-tar-gz netbeans-plugins.tar.gz
+  cp -r netbeans-plugins /home/$USER/Instalacao/
+  rm netbeans-plugins.tar.gz
+fi
+
+
+
+#Download Drivers JDBC
+if [ -d /home/$USER/Instalacao/drivers-JDBC ];then
+    echo "O diretorio  /home/$USER/Instalacao/drivers-JDBC  ja existe"
+else
+  echo -e "\n\n\n\n Drivers JDBC"
+  goodls -u https://drive.google.com/file/d/1FP1TVh-xppkiwjvQkwMEf5SyY4e6JwJ4/view?usp=drivesdk -e  application/x-compressed
+
+  descompactar-tar-gz drivers-JDBC.tar.gz
+  cp -r drivers-JDBC /home/$USER/Instalacao/
+  rm drivers-JDBC.tar.gz
+fi
+
+
+
+## Download Wallpapers
+if [ -d /home/$USER/Imagens/wallpaper ];then
+    echo "O diretorio  /home/$USER/Imagens/wallpaper  ja existe"
+else
+  echo -e "\n\n\n\n Wallpapers"
+  goodls -u https://drive.google.com/file/d/1j8HSlYsw8SwzF3mrZz9sBq8BrVLgGXut/view?usp=drivesdk -e application/x-compressed
+
+  descompactar-tar-gz wallpaper.tar.gz
+  cp -r wallpaper /home/$USER/Imagens/
+  rm wallpaper.tar.gz
+fi
+
+
+
+## Download tema WhiteSur Dark solid
+if [ -d /home/$USER/.themes/WhiteSur-dark-solid ];then
+    echo "O diretorio  /home/$USER/.themes/WhiteSur-dark-solid  ja existe"
+else
+  echo -e "\n\n\n\n WhiteSur Dark solid"
+  goodls -u https://drive.google.com/file/d/1P5kHLIcFWJHFmvQXhC8aB32SQAYOAOor/view?usp=drivesdk -e application/x-compressed
+
+  descompactar-tar-gz WhiteSur-dark-solid.tar.gz
+  cp -r WhiteSur-dark-solid /home/$USER/.themes/
+  rm WhiteSur-dark-solid.tar.gz
+fi
+
+
+
+## Download icones Big Sur
+if [ -d /home/$USER/.icons/BigSur ];then
+    echo "O diretorio  /home/$USER/.icons/BigSur  ja existe"
+else
+  echo -e "\n\n\n\n Big Sur"
+  goodls -u https://drive.google.com/file/d/1QHds8ww8s-F2neoA_YnKl0j4HBgKQTBu/view?usp=sharing -e application/x-compressed
+
+  descompactar-tar-gz BigSur.tar.gz
+  cp -r BigSur /home/$USER/.icons/
+  rm BigSur.tar.gz
+fi
+
+
+
+## Download icones Deepin
+if [ -d /home/$USER/.icons/Deepin ];then
+    echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
+else
+  echo -e "\n\n\n\n Deepin"
+  goodls -u https://drive.google.com/file/d/1I4OcpJNgjfizk-7f7QOD4nc6q5M7UBSe/view?usp=sharing -e application/x-compressed
+
+  descompactar-tar-gz Deepin.tar.gz
+  cp -r Deepin /home/$USER/.icons/
+  rm Deepin.tar.gz
+fi
+
+
+
+## Download MacMojave cursores
+if [ -d /home/$USER/.icons/McMojave-cursors ];then
+    echo "O diretorio  /home/$USER/.icons/McMojave-cursors  ja existe"
+else
+  echo -e "\n\n\n\n MacMojave cursores"
+  goodls -u https://drive.google.com/file/d/1x9KWvR9GudSrvBD6XRex5yfiioGZOn_f/view?usp=drivesdk -e application/x-compressed
+
+  descompactar-tar-gz McMojave-cursors.tar.gz
+  cp -r McMojave-cursors /home/$USER/.icons/
+  rm McMojave-cursors.tar.gz
+fi
+
+
+
+## Download arquivo Docker compose MySql
+if [ -e cd /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml ];then
+    echo "O arquuivo Docker Compose do MySql ja existe"
+else
+  echo -e "\n\n\n\n Docker Compose do MySql"
+  goodls -u https://drive.google.com/file/d/1v3gLtg1HF577do4Y9lqdXFN3OItwtBJe/view?usp=drivesdk -e application/x-yaml
+
+  mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml
+fi
+
+
+## Download arquivo Docker compose PostgreSQL
+if [ -e cd /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml ];then
+    echo "O arquuivo Docker Compose do PostgreSQL ja existe"
+else
+  echo -e "\n\n\n\n Docker Compose do MySql"
+  goodls -u https://drive.google.com/file/d/1-jipcIOVVyziuUQ_QjaaTSlW_QN_Cl-L/view?usp=drivesdk -e application/x-yaml
+
+  mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml
+fi
+
+#####################################################################################################################################################
+
+
+
+
+echo -e "\n\n\n************************************************** DOWNLOAD   DE  PROGRAMAS **********************************************************"
 ## Download 4K Video Downloader
 if [ -e 4kvideodownloader_4.21.7-1_amd64.deb ]
 then
@@ -373,154 +540,7 @@ else
   goodls -u https://drive.google.com/file/d/1dgHPXFJjTo8WkWIzsez5PljYAwD6S5ix/view?usp=drivesdk
 fi
 
-
-
-## Download Tomcat
-if [ -d /home/$USER/Servidores/tomcat-9.0.68 ];then
-    echo "O diretorio  /home/$USER/Servidores/tomcat-9.0.68  ja existe"
-else
-  echo -e "\n\n\n\n Tomcat"
-  goodls -u https://drive.google.com/file/d/1EqMonKmeOMh3r0eP1c_2UStAN6JWrM49/view?usp=drivesdk
-
-  descompactar-tar-gz tomcat-9.0.68.tar.gz
-  cp -r tomcat-9.0.68 /home/$USER/Servidores/
-  rm tomcat-9.0.68.tar.gz
-fi
-
-
-
-## Download Wildfly
-if [ -d /home/$USER/Servidores/wildfly-29.0.0.Final ];then
-    echo "O diretorio  /home/$USER/Servidores/wildfly-29.0.0.Final  ja existe"
-else
-  echo -e "\n\n\n\n Wildfly"
-  goodls -u https://drive.google.com/file/d/1q8-3vFReU_t6ZZcnvwSPrYNLUUx906BY/view?usp=drivesdk
-
-  descompactar-tar-gz wildfly-29.0.0.Final.tar.gz
-  cp -r wildfly-29.0.0.Final /home/$USER/Servidores/
-  rm wildfly-29.0.0.Final.tar.gz
-fi
-
-
-
-## Download Netbeans plugins
-if [ -d /home/$USER/Instalacao/netbeans-plugins ];then
-      echo "O diretorio  /home/$USER/Instalacao/netbeans-plugins  ja existe"
-else
-  echo -e "\n\n\n\n Netbeans Plugins"
-  goodls -u https://drive.google.com/file/d/1jl-Dl6DnzUDEDq-XBnfT8MDZRL2vKJJk/view?usp=drivesdk -e tarball
-
-  descompactar-tar-gz netbeans-plugins.tar.gz
-  cp -r netbeans-plugins /home/$USER/Instalacao/
-  rm netbeans-plugins.tar.gz
-fi
-
-
-
-#Download Drivers JDBC
-if [ -d /home/$USER/Instalacao/drivers-JDBC ];then
-    echo "O diretorio  /home/$USER/Instalacao/drivers-JDBC  ja existe"
-else
-  echo -e "\n\n\n\n Drivers JDBC"
-  goodls -u https://drive.google.com/file/d/1FP1TVh-xppkiwjvQkwMEf5SyY4e6JwJ4/view?usp=drivesdk -e  tarball
-
-  descompactar-tar-gz drivers-JDBC.tar.gz
-  cp -r drivers-JDBC /home/$USER/Instalacao/
-  rm drivers-JDBC.tar.gz
-fi
-
-
-
-## Download Wallpapers
-if [ -d /home/$USER/Imagens/wallpaper ];then
-    echo "O diretorio  /home/$USER/Imagens/wallpaper  ja existe"
-else
-  echo -e "\n\n\n\n Wallpapers"
-  goodls -u https://drive.google.com/file/d/1j8HSlYsw8SwzF3mrZz9sBq8BrVLgGXut/view?usp=drivesdk -e tarball
-
-  descompactar-tar-gz wallpaper.tar.gz
-  cp -r wallpaper /home/$USER/Imagens/
-  rm wallpaper.tar.gz
-fi
-
-
-
-## Download tema WhiteSur Dark solid
-if [ -d /home/$USER/.themes/WhiteSur-dark-solid ];then
-    echo "O diretorio  /home/$USER/.themes/WhiteSur-dark-solid  ja existe"
-else
-  echo -e "\n\n\n\n WhiteSur Dark solid"
-  goodls -u https://drive.google.com/file/d/1P5kHLIcFWJHFmvQXhC8aB32SQAYOAOor/view?usp=drivesdk -e tarball
-
-  descompactar-tar-gz WhiteSur-dark-solid.tar.gz
-  cp -r WhiteSur-dark-solid /home/$USER/.themes/
-  rm WhiteSur-dark-solid.tar.gz
-fi
-
-
-
-## Download icones Big Sur
-if [ -d /home/$USER/.icons/BigSur ];then
-    echo "O diretorio  /home/$USER/.icons/BigSur  ja existe"
-else
-  echo -e "\n\n\n\n Big Sur"
-  goodls -u https://drive.google.com/file/d/1Xi3d9-NlDfBGA1kUA2_KK_dijD3w0fuS/view?usp=drivesdk -e tarball
-
-  descompactar-tar-gz BigSur.tar.gz
-  cp -r BigSur /home/$USER/.icons/
-  rm BigSur.tar.gz
-fi
-
-
-
-## Download icones Deepin
-if [ -d /home/$USER/.icons/Deepin ];then
-    echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
-else
-  echo -e "\n\n\n\n Deepin"
-  goodls -u https://drive.google.com/file/d/1K8XnVwkVgPGKEsYjt-Vd5HCYOk0cRALs/view?usp=drivesdk -e tarball
-
-  descompactar-tar-gz Deepin.tar.gz
-  cp -r Deepin /home/$USER/.icons/
-  rm Deepin.tar.gz
-fi
-
-
-
-## Download MacMojave cursores
-if [ -d /home/$USER/.icons/McMojave-cursors ];then
-    echo "O diretorio  /home/$USER/.icons/McMojave-cursors  ja existe"
-else
-  echo -e "\n\n\n\n MacMojave cursores"
-  goodls -u https://drive.google.com/file/d/1x9KWvR9GudSrvBD6XRex5yfiioGZOn_f/view?usp=drivesdk -e tarball
-
-  descompactar-tar-gz McMojave-cursors.tar.gz
-  cp -r McMojave-cursors /home/$USER/.icons/
-  rm McMojave-cursors.tar.gz
-fi
-
-
-
-## Download arquivo Docker compose MySql
-if [ -e cd /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml ];then
-    echo "O arquuivo Docker Compose do MySql ja existe"
-else
-  echo -e "\n\n\n\n Docker Compose do MySql"
-  goodls -u https://drive.google.com/file/d/1v3gLtg1HF577do4Y9lqdXFN3OItwtBJe/view?usp=drivesdk -e application/x-yaml
-
-  mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml
-fi
-
-
-## Download arquivo Docker compose PostgreSQL
-if [ -e cd /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml ];then
-    echo "O arquuivo Docker Compose do PostgreSQL ja existe"
-else
-  echo -e "\n\n\n\n Docker Compose do MySql"
-  goodls -u https://drive.google.com/file/d/1-jipcIOVVyziuUQ_QjaaTSlW_QN_Cl-L/view?usp=drivesdk -e application/x-yaml
-
-  mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml
-fi
+echo "***********************************************************************************************************************************************"
 
 
 
