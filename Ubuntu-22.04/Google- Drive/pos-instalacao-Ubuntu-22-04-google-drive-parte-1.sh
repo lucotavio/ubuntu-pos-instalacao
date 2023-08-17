@@ -101,31 +101,6 @@ sudo apt install p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ark nco
 sudo apt install curl -y
 
 
-
-
-#####################################################################################################################################################
-
-## Download Goodls
-if [ -e goodls ]
-then
-    echo "O arquivo  goodls  ja existe"
-else
-    echo -e "\n\n\n\nDownload Goodls"
-    fileId=1157bnfr9MOo2-MgTrltIu5WvGP3faN7K
-    fileName=goodls
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
-
-    chmod +x goodls
-    sudo cp goodls /usr/local/bin/
-fi
-
-#####################################################################################################################################################
-
-
-
-
 #####################################################################################################################################################
 
 ## Download Compactador
@@ -134,7 +109,11 @@ if [ -e compactar-tar-gz ];then
     sudo cp compactar-tar-gz /usr/local/bin/
 else
   echo -e "\n\n\n Compactador-tar-gz"
-  goodls -u https://drive.google.com/file/d/1kWXdmTjqzyCpoIFxgB1zctX1msprYEVJ/view?usp=drivesdk
+  fileId=1kWXdmTjqzyCpoIFxgB1zctX1msprYEVJ
+  fileName=compactar-tar-gz
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   chmod +x compactar-tar-gz
   sudo cp compactar-tar-gz /usr/local/bin/
@@ -148,7 +127,11 @@ if [ -e descompactar-tar-gz ];then
     sudo cp descompactar-tar-gz /usr/local/bin/
 else
   echo -e "\n\n\n Descompactar-tar-gz"
-  goodls -u https://drive.google.com/file/d/1h3KbeWkbDyBqZCW69FlQo5l3hp5ISJOf/view?usp=drivesdk
+  fileId=1h3KbeWkbDyBqZCW69FlQo5l3hp5ISJOf
+  fileName=descompactar-tar-gz
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   chmod +x descompactar-tar-gz
   sudo cp descompactar-tar-gz /usr/local/bin/
@@ -167,10 +150,14 @@ if [ -d /home/$USER/Servidores/tomcat-9.0.68 ];then
     echo "O diretorio  /home/$USER/Servidores/tomcat-9.0.68  ja existe"
 else
   echo -e "\n\n\n\n Tomcat"
-  goodls -u https://drive.google.com/file/d/1EqMonKmeOMh3r0eP1c_2UStAN6JWrM49/view?usp=drivesdk
+  fileId=1EqMonKmeOMh3r0eP1c_2UStAN6JWrM49
+  fileName=tomcat-9.0.68.tar.gz
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   descompactar-tar-gz tomcat-9.0.68.tar.gz
-  cp -r tomcat-9.0.68 /home/$USER/Servidores/
+  cp -r apache-tomcat-9.0.68 /home/$USER/Servidores/
   rm tomcat-9.0.68.tar.gz
 fi
 
@@ -181,7 +168,11 @@ if [ -d /home/$USER/Servidores/wildfly-29.0.0.Final ];then
     echo "O diretorio  /home/$USER/Servidores/wildfly-29.0.0.Final  ja existe"
 else
   echo -e "\n\n\n\n Wildfly"
-  goodls -u https://drive.google.com/file/d/1q8-3vFReU_t6ZZcnvwSPrYNLUUx906BY/view?usp=drivesdk
+  fileId=1q8-3vFReU_t6ZZcnvwSPrYNLUUx906BY
+  fileName=wildfly-29.0.0.Final.tar.gz
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   descompactar-tar-gz wildfly-29.0.0.Final.tar.gz
   cp -r wildfly-29.0.0.Final /home/$USER/Servidores/
@@ -195,7 +186,11 @@ if [ -d /home/$USER/Instalacao/netbeans-plugins ];then
       echo "O diretorio  /home/$USER/Instalacao/netbeans-plugins  ja existe"
 else
   echo -e "\n\n\n\n Netbeans Plugins"
-  goodls -u https://drive.google.com/file/d/1jl-Dl6DnzUDEDq-XBnfT8MDZRL2vKJJk/view?usp=drivesdk -e application/x-compressed
+  fileId=1jl-Dl6DnzUDEDq-XBnfT8MDZRL2vKJJk
+  fileName=netbeans-plugins.tar.gz
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   descompactar-tar-gz netbeans-plugins.tar.gz
   cp -r netbeans-plugins /home/$USER/Instalacao/
@@ -209,7 +204,11 @@ if [ -d /home/$USER/Instalacao/drivers-JDBC ];then
     echo "O diretorio  /home/$USER/Instalacao/drivers-JDBC  ja existe"
 else
   echo -e "\n\n\n\n Drivers JDBC"
-  goodls -u https://drive.google.com/file/d/1FP1TVh-xppkiwjvQkwMEf5SyY4e6JwJ4/view?usp=drivesdk -e  application/x-compressed
+  fileId=1FP1TVh-xppkiwjvQkwMEf5SyY4e6JwJ4
+  fileName=drivers-JDBC.tar.gz
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   descompactar-tar-gz drivers-JDBC.tar.gz
   cp -r drivers-JDBC /home/$USER/Instalacao/
@@ -223,7 +222,11 @@ if [ -d /home/$USER/Imagens/wallpaper ];then
     echo "O diretorio  /home/$USER/Imagens/wallpaper  ja existe"
 else
   echo -e "\n\n\n\n Wallpapers"
-  goodls -u https://drive.google.com/file/d/1j8HSlYsw8SwzF3mrZz9sBq8BrVLgGXut/view?usp=drivesdk -e application/x-compressed
+  fileId=1j8HSlYsw8SwzF3mrZz9sBq8BrVLgGXut
+  fileName=wallpaper.tar.gz
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   descompactar-tar-gz wallpaper.tar.gz
   cp -r wallpaper /home/$USER/Imagens/
@@ -237,7 +240,11 @@ if [ -d /home/$USER/.themes/WhiteSur-dark-solid ];then
     echo "O diretorio  /home/$USER/.themes/WhiteSur-dark-solid  ja existe"
 else
   echo -e "\n\n\n\n WhiteSur Dark solid"
-  goodls -u https://drive.google.com/file/d/1P5kHLIcFWJHFmvQXhC8aB32SQAYOAOor/view?usp=drivesdk -e application/x-compressed
+  fileId=1P5kHLIcFWJHFmvQXhC8aB32SQAYOAOor
+  fileName=WhiteSur-dark-solid.tar.gz
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   descompactar-tar-gz WhiteSur-dark-solid.tar.gz
   cp -r WhiteSur-dark-solid /home/$USER/.themes/
@@ -251,7 +258,11 @@ if [ -d /home/$USER/.icons/BigSur ];then
     echo "O diretorio  /home/$USER/.icons/BigSur  ja existe"
 else
   echo -e "\n\n\n\n Big Sur"
-  goodls -u https://drive.google.com/file/d/1QHds8ww8s-F2neoA_YnKl0j4HBgKQTBu/view?usp=sharing -e application/x-compressed
+  fileId=1QHds8ww8s-F2neoA_YnKl0j4HBgKQTBu
+  fileName=BigSur.tar.gz
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   descompactar-tar-gz BigSur.tar.gz
   cp -r BigSur /home/$USER/.icons/
@@ -265,7 +276,11 @@ if [ -d /home/$USER/.icons/Deepin ];then
     echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
 else
   echo -e "\n\n\n\n Deepin"
-  goodls -u https://drive.google.com/file/d/1I4OcpJNgjfizk-7f7QOD4nc6q5M7UBSe/view?usp=sharing -e application/x-compressed
+  fileId=1I4OcpJNgjfizk-7f7QOD4nc6q5M7UBSe
+  fileName=Deepin.tar.gz
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   descompactar-tar-gz Deepin.tar.gz
   cp -r Deepin /home/$USER/.icons/
@@ -279,7 +294,11 @@ if [ -d /home/$USER/.icons/McMojave-cursors ];then
     echo "O diretorio  /home/$USER/.icons/McMojave-cursors  ja existe"
 else
   echo -e "\n\n\n\n MacMojave cursores"
-  goodls -u https://drive.google.com/file/d/1x9KWvR9GudSrvBD6XRex5yfiioGZOn_f/view?usp=drivesdk -e application/x-compressed
+  fileId=1x9KWvR9GudSrvBD6XRex5yfiioGZOn_f
+  fileName=McMojave-cursors.tar.gz
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   descompactar-tar-gz McMojave-cursors.tar.gz
   cp -r McMojave-cursors /home/$USER/.icons/
@@ -293,18 +312,26 @@ if [ -e /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml ];t
     echo "O arquivo Docker Compose do MySql ja existe"
 else
   echo -e "\n\n\n\n Docker Compose do MySql"
-  goodls -u https://drive.google.com/file/d/1v3gLtg1HF577do4Y9lqdXFN3OItwtBJe/view?usp=drivesdk -e application/x-yaml
+  fileId=1v3gLtg1HF577do4Y9lqdXFN3OItwtBJe
+  fileName=docker-compose.yml
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml
 fi
 
 
 ## Download arquivo Docker compose PostgreSQL
-if [ -e //home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml ];then
+if [ -e /home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml ];then
     echo "O arquivo Docker Compose do PostgreSQL ja existe"
 else
-  echo -e "\n\n\n\n Docker Compose do MySql"
-  goodls -u https://drive.google.com/file/d/1-jipcIOVVyziuUQ_QjaaTSlW_QN_Cl-L/view?usp=drivesdk -e application/x-yaml
+  echo -e "\n\n\n\n Docker Compose do PostgreSql"
+  fileId=1-jipcIOVVyziuUQ_QjaaTSlW_QN_Cl-L
+  fileName=docker-compose.yml
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
   mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml
 fi
@@ -315,13 +342,18 @@ fi
 
 
 echo -e "\n\n\n************************************************** DOWNLOAD   DE  PROGRAMAS **********************************************************"
+
 ## Download 4K Video Downloader
 if [ -e 4kvideodownloader_4.21.7-1_amd64.deb ]
 then
     echo "O arquivo  4kvideodownloader_4.21.7-1_amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n 4K Video Downloader"
-    goodls -u https://drive.google.com/file/d/1Y_M5XaadEMoN5mkwbfHgB3aQIyS08YcK/view?usp=drivesdk
+    fileId=1Y_M5XaadEMoN5mkwbfHgB3aQIyS08YcK
+    fileName=4kvideodownloader_4.21.7-1_amd64.deb
+    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -332,7 +364,11 @@ then
     echo "O arquivo  android-studio-2022.3.1.deb  ja existe"
 else
     echo -e "\n\n\n\n Android Studio"
-    goodls -u https://drive.google.com/file/d/1Vzqml8ccrXcSZ-QOFhaZH2TGQnHA7-0C/view?usp=drivesdk
+    fileId=1Vzqml8ccrXcSZ-QOFhaZH2TGQnHA7-0C
+    fileName=android-studio-2022.3.1.deb
+    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -343,7 +379,11 @@ then
     echo "O arquivo  apache-netbeans_18-1_all.deb  ja existe"
 else
     echo -e "\n\n\n\n Apache Netbeans"
-    goodls -u https://drive.google.com/file/d/1la7Y5_GT3vSB8f9dg9EhcPA9VfQ80lv6/view?usp=drivesdk
+    fileId=1la7Y5_GT3vSB8f9dg9EhcPA9VfQ80lv6
+    fileName=apache-netbeans_18-1_all.deb
+    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -354,7 +394,11 @@ then
     echo "O arquivo  atom-amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n Atom"
-    goodls -u https://drive.google.com/file/d/1xazxsCtLFbMctp7SgrrWREC-Z8Ky_1u-/view?usp=drivesdk
+    fileId=1xazxsCtLFbMctp7SgrrWREC-Z8Ky_1u-
+    fileName=atom-amd64.deb
+    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -365,7 +409,11 @@ then
     echo "O arquivo  balena-etcher_1.18.11_amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n Balena Etcher"
-    goodls -u https://drive.google.com/file/d/1wTLeIL_PGxMmkukdzGNosQ-vBLhsXuAK/view?usp=drivesdk
+    fileId=1wTLeIL_PGxMmkukdzGNosQ-vBLhsXuAK
+    fileName=balena-etcher_1.18.11_amd64.deb
+    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -375,7 +423,11 @@ if [ -e chrome-stable_current_amd64.deb ];then
     echo "O arquivo  chrome-stable_current_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Chrome"
-  goodls -u https://drive.google.com/file/d/119PJ78GXF5hFl2D0yvrR5WTjYDVjBRbY/view?usp=drivesdk
+  fileId=119PJ78GXF5hFl2D0yvrR5WTjYDVjBRbY
+  fileName=chrome-stable_current_amd64.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -385,7 +437,11 @@ if [ -e dbeaver-le_23.1.0_amd64.deb ];then
     echo "O arquivo  dbeaver-le_23.1.0_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n DBeaver"
-  goodls -u https://drive.google.com/file/d/1rmBnEjP_cxVfuLhNayaWUT1T5zqCBeOP/view?usp=drivesdk
+  fileId=1rmBnEjP_cxVfuLhNayaWUT1T5zqCBeOP
+  fileName=dbeaver-le_23.1.0_amd64.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -395,7 +451,12 @@ if [ -e docker-compose ];then
     echo "O arquivo  docker-compose  ja existe"
 else
   echo -e "\n\n\n\n Docker Compose"
-  goodls -u https://drive.google.com/file/d/1cqFtoCJW_jiIvg2uMSH1Ww8iTYzS8N5q/view?usp=drivesdk -e application/x-executable
+  fileId=1cqFtoCJW_jiIvg2uMSH1Ww8iTYzS8N5q
+  fileName=docker-compose
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+
   chmod +x docker-compose
   sudo cp docker-compose /usr/local/bin/
 fi
@@ -407,7 +468,11 @@ if [ -e dropbox_2020.03.04_amd64.deb ];then
     echo "O arquivo  dropbox_2020.03.04_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Dropbox"
-  goodls -u https://drive.google.com/file/d/12CO9lVV40Zmqx7cFb5Lmo3F_-lURqFjF/view?usp=drivesdk
+  fileId=12CO9lVV40Zmqx7cFb5Lmo3F_-lURqFjF
+  fileName=dropbox_2020.03.04_amd64.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -417,7 +482,11 @@ if [ -e firefox-116.0.2.deb ];then
     echo "O arquivo  firefox-116.0.2.deb  ja existe"
 else
   echo -e "\n\n\n\n Firefox"
-  goodls -u https://drive.google.com/file/d/1zWJMssXHj2GFGdvqatsFkp2mUPlhPZQs/view?usp=drivesdk
+  fileId=1zWJMssXHj2GFGdvqatsFkp2mUPlhPZQs
+  fileName=firefox-116.0.2.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -427,7 +496,11 @@ if [ -e gitkraken-amd64.deb ];then
     echo "O arquivo  gitkraken-amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n GitKraken"
-  goodls -u https://drive.google.com/file/d/1i47sx1P0cdtykTXw3aFrZY9t1XMJ2yAC/view?usp=drivesdk
+  fileId=1i47sx1P0cdtykTXw3aFrZY9t1XMJ2yAC
+  fileName=gitkraken-amd64.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -437,7 +510,11 @@ if [ -e Insomnia.Core-2023.4.0.deb ];then
     echo "O arquivo  Insomnia.Core-2023.4.0.deb  ja existe"
 else
   echo -e "\n\n\n\n Insomnia"
-  goodls -u https://drive.google.com/file/d/1M-6axTc8LNI_66iLwvvY-SyyNTmZ77Ic/view?usp=drivesdk
+  fileId=1M-6axTc8LNI_66iLwvvY-SyyNTmZ77Ic
+  fileName=Insomnia.Core-2023.4.0.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -447,7 +524,11 @@ if [ -e insync_3.8.6.50504-jammy_amd64.deb ];then
     echo "O arquivo  insync_3.8.6.50504-jammy_amd64.deb ja existe"
 else
   echo -e "\n\n\n\n Insync"
-  goodls -u https://drive.google.com/file/d/15Y8zCGHiXsEntMqTme_0pILFLlRv063Z/view?usp=drivesdk
+  fileId=15Y8zCGHiXsEntMqTme_0pILFLlRv063Z
+  fileName=insync_3.8.6.50504-jammy_amd64.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -457,7 +538,11 @@ if [ -e intellij-community-2023.2.deb ];then
     echo "O arquivo  intellij-community-2023.2.deb ja existe"
 else
   echo -e "\n\n\n\n Intellij Community"
-  goodls -u https://drive.google.com/file/d/1_GvKUI8e7Htttu0LxJgSl2SdpGCWV-9X/view?usp=drivesdk
+  fileId=1_GvKUI8e7Htttu0LxJgSl2SdpGCWV-9X
+  fileName=intellij-community-2023.2.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -467,7 +552,11 @@ if [ -e lombok.jar ];then
     echo "O arquivo lombok.jar ja existe"
 else
   echo -e "\n\n\n\n Lombok"
-  goodls -u https://drive.google.com/file/d/1ZD-QAd5aky-DzDxYUrs9JEsAZS9gul5k/view?usp=drivesdk
+  fileId=1ZD-QAd5aky-DzDxYUrs9JEsAZS9gul5k
+  fileName=lombok.jar
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -477,7 +566,11 @@ if [ -e onlyoffice-desktopeditors_amd64.deb ];then
     echo "O arquivo  onlyoffice-desktopeditors_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Only Office"
-  goodls -u https://drive.google.com/file/d/11Stf18xGX31jm5inMxStUvk0g6VpwuNl/view?usp=drivesdk
+  fileId=11Stf18xGX31jm5inMxStUvk0g6VpwuNl
+  fileName=onlyoffice-desktopeditors_amd64.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -487,7 +580,11 @@ if [ -e postman-10.17.1.deb ];then
     echo "O arquivo  postman-10.17.1.deb  ja existe"
 else
   echo -e "\n\n\n\n Postman"
-  goodls -u https://drive.google.com/file/d/1_3P-NmeAH-9F35voO1__Niz4lhr_eSx1/view?usp=drivesdk
+  fileId=1_3P-NmeAH-9F35voO1__Niz4lhr_eSx1
+  fileName=postman-10.17.1.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -497,7 +594,11 @@ if [ -e spring-tool-suite-4.19.1.RELEASE.deb ];then
     echo "O arquivo  spring-tool-suite-4.19.1.RELEASE.deb  ja existe"
 else
   echo -e "\n\n\n\n Spring Tool Suite"
-  goodls -u https://drive.google.com/file/d/1enbYDfIX9MXXKdKR8g-zm5Gx0uAcCfPL/view?usp=drivesdk
+  fileId=1enbYDfIX9MXXKdKR8g-zm5Gx0uAcCfPL
+  fileName=spring-tool-suite-4.19.1.RELEASE.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -507,7 +608,11 @@ if [ -e StarUML_5.1.0_amd64.deb ];then
     echo "O arquivo  StarUML_5.1.0_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n StarUML"
-  goodls -u https://drive.google.com/file/d/1LH-IOmVRljnv-J35qQkWQnCwPI2t5r-a/view?usp=drivesdk
+  fileId=1-cWunhuLJ3ymZn7X7-KaenpCf7FF9wF5
+  fileName=StarUML_5.1.0_amd64.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -517,7 +622,11 @@ if [ -e visual_code_1.81.1-1691620686_amd64.deb ];then
     echo "O arquivo  visual_code_1.81.1-1691620686_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Visual Studio Code"
-  goodls -u https://drive.google.com/file/d/15W3wFK2uVHSeUHW4V3HUC2PKS2KrLJUu/view?usp=drivesdk
+  fileId=15W3wFK2uVHSeUHW4V3HUC2PKS2KrLJUu
+  fileName=visual_code_1.81.1-1691620686_amd64.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -527,7 +636,11 @@ if [ -e VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle ];then
     echo "O arquivo  VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle  ja existe"
 else
   echo -e "\n\n\n\n VMware Workstation"
-  goodls -u https://drive.google.com/file/d/1M1h1hN4nIG-OqAXoPePEneM-H17yCfIv/view?usp=drivesdk
+  fileId=1M1h1hN4nIG-OqAXoPePEneM-H17yCfIv
+  fileName=VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
@@ -537,7 +650,11 @@ if [ -e waterfox-G5.1.10.deb ];then
     echo "O arquivo  waterfox-G5.1.10.deb  ja existe"
 else
   echo -e "\n\n\n\n Waterfox"
-  goodls -u https://drive.google.com/file/d/1dgHPXFJjTo8WkWIzsez5PljYAwD6S5ix/view?usp=drivesdk
+  fileId=1dgHPXFJjTo8WkWIzsez5PljYAwD6S5ix
+  fileName=waterfox-G5.1.10.deb
+  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 echo "***********************************************************************************************************************************************"
