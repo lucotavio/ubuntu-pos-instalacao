@@ -243,7 +243,7 @@ if [ -d /home/$USER/.themes/WhiteSur-dark-solid ];then
     echo "O diretorio  /home/$USER/.themes/WhiteSur-dark-solid  ja existe"
 else
   echo -e "\n\n\n\n WhiteSur Dark solid"
-  fileId=1P5kHLIcFWJHFmvQXhC8aB32SQAYOAOor
+  fileId=1O2RG2btd2hAVR0LJBgIVSzfCU-Nx-if9
   fileName=WhiteSur-dark-solid.tar.gz
   curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
   code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
@@ -261,7 +261,7 @@ if [ -d /home/$USER/.icons/BigSur ];then
     echo "O diretorio  /home/$USER/.icons/BigSur  ja existe"
 else
   echo -e "\n\n\n\n Big Sur"
-  fileId=1QHds8ww8s-F2neoA_YnKl0j4HBgKQTBu
+  fileId=14FOG5By8jl6B-S4T_xtqcL2J4jhvM34c
   fileName=BigSur.tar.gz
   curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
   code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
@@ -279,7 +279,7 @@ if [ -d /home/$USER/.icons/Deepin ];then
     echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
 else
   echo -e "\n\n\n\n Deepin"
-  fileId=1I4OcpJNgjfizk-7f7QOD4nc6q5M7UBSe
+  fileId=1n1KIZpxOA8D5hfmSpDD2KGl7bYcJQVJg
   fileName=Deepin.tar.gz
   curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
   code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
