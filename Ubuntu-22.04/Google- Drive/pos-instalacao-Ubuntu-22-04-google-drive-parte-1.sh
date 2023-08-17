@@ -145,20 +145,23 @@ fi
 #####################################################################################################################################################
 
 
-## Download Tomcat
-if [ -d /home/$USER/Servidores/tomcat-9.0.68 ];then
-    echo "O diretorio  /home/$USER/Servidores/tomcat-9.0.68  ja existe"
-else
-  echo -e "\n\n\n\n Tomcat"
-  fileId=1EqMonKmeOMh3r0eP1c_2UStAN6JWrM49
-  fileName=tomcat-9.0.68.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 
-  descompactar-tar-gz tomcat-9.0.68.tar.gz
-  cp -r apache-tomcat-9.0.68 /home/$USER/Servidores/
-  rm tomcat-9.0.68.tar.gz
+## Download Apache Tomcat
+if [ -d /home/$USER/Servidores/apache-tomcat-9.0.79 ]
+then
+    echo "O arquivo  apache-tomcat-9.0.79.tar.gz  ja existe"
+else
+    echo -e "\n\n\n\n Apache Tomcat"
+    fileId=1DHDM93OYVnZZ0JdGT9XIrU3ddL1ne6Ub
+    fileName=apache-tomcat-9.0.79.tar.gz
+    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+
+
+    descompactar-tar-gz apache-tomcat-9.0.79.tar.gz
+    cp -r apache-tomcat-9.0.79 /home/$USER/Servidores/
+    rm apache-tomcat-9.0.79.tar.gz
 fi
 
 
@@ -604,57 +607,62 @@ fi
 
 
 ## Download StarUML
-if [ -e StarUML_5.1.0_amd64.deb ];then
-    echo "O arquivo  StarUML_5.1.0_amd64.deb  ja existe"
+if [ -e StarUML_5.1.0_amd64.deb ]
+then
+    echo "O arquivo  StarUML  ja existe"
 else
-  echo -e "\n\n\n\n StarUML"
-  fileId=1-cWunhuLJ3ymZn7X7-KaenpCf7FF9wF5
-  fileName=StarUML_5.1.0_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    echo -e "\n\n\n\n StarUML"
+    fileId=1_6BHoUxv5LRi6g2rgzZDbesqYhcJl3_K
+    fileName=StarUML_5.1.0_amd64.deb
+    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
 
+
 ## Download Visual Studio Code
-if [ -e visual_code_1.81.1-1691620686_amd64.deb ];then
-    echo "O arquivo  visual_code_1.81.1-1691620686_amd64.deb  ja existe"
+if [ -e code_1.81.1-1691620686_amd64.deb ]
+then
+    echo "O arquivo  code_1.81.1-1691620686_amd64.deb  ja existe"
 else
-  echo -e "\n\n\n\n Visual Studio Code"
-  fileId=15W3wFK2uVHSeUHW4V3HUC2PKS2KrLJUu
-  fileName=visual_code_1.81.1-1691620686_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    echo -e "\n\n\n\n Visual Studio Code"
+    fileId=109diccNIgge0TQUsoull6z7KSsuXIrJG
+    fileName=code_1.81.1-1691620686_amd64.deb
+    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
 
 ## Download VMware Workstation
-if [ -e VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle ];then
+if [ -e VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle ]
+then
     echo "O arquivo  VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle  ja existe"
 else
-  echo -e "\n\n\n\n VMware Workstation"
-  fileId=1M1h1hN4nIG-OqAXoPePEneM-H17yCfIv
-  fileName=VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    echo -e "\n\n\n\n VMware Workstation"
+    fileId=15EjCxp_PG2MDSMihpA2i9pxtMicG7i9g
+    fileName=VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
+    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 
 
 ## Download Waterfox
-if [ -e waterfox-G5.1.10.deb ];then
+if [ -e waterfox-G5.1.10.deb ]
+then
     echo "O arquivo  waterfox-G5.1.10.deb  ja existe"
 else
-  echo -e "\n\n\n\n Waterfox"
-  fileId=1dgHPXFJjTo8WkWIzsez5PljYAwD6S5ix
-  fileName=waterfox-G5.1.10.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    echo -e "\n\n\n\n Waterfox"
+    fileId=1h5bKFSOv63Wxh7Vl1GvprWGColkmsqRp
+    fileName=waterfox-G5.1.10.deb
+    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
+    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
+    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
 fi
 
 echo "***********************************************************************************************************************************************"
