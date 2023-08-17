@@ -300,7 +300,7 @@ fi
 
 
 ## Download arquivo Docker compose PostgreSQL
-if [ -e /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml ];then
+if [ -e //home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml ];then
     echo "O arquivo Docker Compose do PostgreSQL ja existe"
 else
   echo -e "\n\n\n\n Docker Compose do MySql"
