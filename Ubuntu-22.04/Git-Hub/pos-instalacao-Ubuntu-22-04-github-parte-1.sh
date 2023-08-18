@@ -242,11 +242,11 @@ if [ -d /home/$USER/.icons/Deepin ];then
     echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
 else
   echo -e "\n\n\n\n Deepin"
-  wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/Deepin.tar.gz
+  wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/deepin.tar.gz
 
-  descompactar-tar-gz Deepin.tar.gz
-  cp -r Deepin /home/$USER/.icons/
-  rm Deepin.tar.gz
+  descompactar-tar-gz deepin.tar.gz
+  cp -r deepin /home/$USER/.icons/
+  rm deepin.tar.gz
 fi
 
 
@@ -834,6 +834,25 @@ echo "**************************************************************************
 
 echo -e "\n\n\n********************************************** DESINSTALANDO  FIREFOX  SNAP  *********************************************************"
 
+## Removendo o Firefox snap
 sudo snap remove firefox
+
+
+## Colocando prioridade mais alta no Firefox feito por mim 
+if [ -e /etc/apt/preferences.d/99mozillateamppa ];then
+    echo "Arquivo  /etc/apt/preferences.d/99mozillateamppa  ja existe*"
+else
+  sudo touch /etc/apt/preferences.d/99mozillateamppa
+
+  echo "Package: firefox*" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+  echo "Pin: release o=luciano" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+  echo "Pin-Priority: 501" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+
+  echo "" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+
+  echo "Package: firefox*" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+  echo "Pin: release o=Ubuntu" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+  echo "Pin-Priority: -1" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+fi
 
 echo -e "\n\n\n******************************************REINICIAR  O  COMPUTADOR********************************************************************"
