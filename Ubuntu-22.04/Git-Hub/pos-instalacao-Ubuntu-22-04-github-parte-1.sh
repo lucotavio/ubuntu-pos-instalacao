@@ -242,11 +242,11 @@ if [ -d /home/$USER/.icons/Deepin ];then
     echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
 else
   echo -e "\n\n\n\n Deepin"
-  wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/deepin.tar.gz
+  wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/Uos-fulldistro-icons.tar.gz
 
-  descompactar-tar-gz deepin.tar.gz
-  cp -r deepin /home/$USER/.icons/
-  rm deepin.tar.gz
+  descompactar-tar-gz Uos-fulldistro-icons.tar.gz
+  cp -r Uos-fulldistro-icons /home/$USER/.icons/
+  rm Uos-fulldistro-icons.tar.gz
 fi
 
 
@@ -716,6 +716,9 @@ sudo apt install virtualbox -y
 
 ## Instalando Kotlin
 sudo apt-get install kotlin -y
+
+## Instalando o modulo "libcanberra-gtk-module" para que nao ocorra o erro: “failed to load module canberra-gtk-module”
+sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y
 
 ## Instalando SDKMAN
 curl -s https://get.sdkman.io | bash
