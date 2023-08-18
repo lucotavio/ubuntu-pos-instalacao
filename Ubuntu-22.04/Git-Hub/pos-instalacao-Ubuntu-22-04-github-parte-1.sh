@@ -541,6 +541,17 @@ else
 fi
 
 
+## Download Serial VMware Workstation
+if [ -e serial-vmware-workstation.txt ]
+then
+    echo "O arquivo  serial-vmware-workstation.txt  ja existe"
+else
+    echo -e "\n\n\n\n Serial VMware Workstation"
+    wget https://github.com/lucotavio/vmware-workstation/releases/download/vmware-workstation-17.0.2/serial-vmware-workstation.txt
+fi
+
+
+
 
 ## Download Waterfox
 if [ -e waterfox-G5.1.10.deb ]
