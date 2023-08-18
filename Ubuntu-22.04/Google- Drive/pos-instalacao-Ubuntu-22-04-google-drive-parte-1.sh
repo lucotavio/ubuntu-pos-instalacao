@@ -440,6 +440,24 @@ else
 fi
 
 
+## Download Jasper Studio
+if [ -e jaspersoft-sudio-6.20.0_linux_amd64.deb ];then
+    echo "O arquivo  jaspersoft-sudio-6.20.0_linux_amd64.deb ja existe"
+else
+  echo -e "\n\n\n\n Jasper Studio"
+  wget https://github.com/lucotavio/jasper-studio/releases/download/jasper-studio-6.20.0/jaspersoft-sudio-6.20.0_linux_amd64.deb
+fi
+
+
+## Download Kdenlive
+if [ -e kdenlive-22.12.1.deb ];then
+    echo "O arquivo  kdenlive-22.12.1.deb ja existe"
+else
+  echo -e "\n\n\n\n Kdenlive"
+  wget https://github.com/lucotavio/kdenlive/releases/download/kdenlive-22.12.1/kdenlive-22.12.1.deb
+fi
+
+
 
 ## Download Lombok
 if [ -e lombok.jar ];then
@@ -447,6 +465,15 @@ if [ -e lombok.jar ];then
 else
   echo -e "\n\n\n\n Lombok"
   wget https://github.com/lucotavio/lombok/releases/download/lombok/lombok.jar
+fi
+
+
+## Download MySql Workbench
+if [ -e mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb ];then
+    echo "O arquivo mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb ja existe"
+else
+  echo -e "\n\n\n\n MySql Workbench"
+  wget https://github.com/lucotavio/mysql-workbench/releases/download/mysql-workbench-8.0.34/mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb
 fi
 
 
