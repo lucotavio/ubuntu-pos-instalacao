@@ -238,8 +238,8 @@ fi
 
 
 ## Download icones Deepin
-if [ -d /home/$USER/.icons/Deepin ];then
-    echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
+if [ -d /home/$USER/.icons/Uos-fulldistro-icons ];then
+    echo "O diretorio  /home/$USER/.icons/Uos-fulldistro-icons  ja existe"
 else
   echo -e "\n\n\n\n Deepin"
   wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/Uos-fulldistro-icons.tar.gz
