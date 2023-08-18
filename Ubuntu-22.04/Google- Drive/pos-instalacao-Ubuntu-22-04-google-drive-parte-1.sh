@@ -109,11 +109,7 @@ if [ -e compactar-tar-gz ];then
     sudo cp compactar-tar-gz /usr/local/bin/
 else
   echo -e "\n\n\n Compactador-tar-gz"
-  fileId=1kWXdmTjqzyCpoIFxgB1zctX1msprYEVJ
-  fileName=compactar-tar-gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/compactador/releases/download/compactador/compactar-tar-gz
 
   chmod +x compactar-tar-gz
   sudo cp compactar-tar-gz /usr/local/bin/
@@ -127,11 +123,7 @@ if [ -e descompactar-tar-gz ];then
     sudo cp descompactar-tar-gz /usr/local/bin/
 else
   echo -e "\n\n\n Descompactar-tar-gz"
-  fileId=1h3KbeWkbDyBqZCW69FlQo5l3hp5ISJOf
-  fileName=descompactar-tar-gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/descompactador/releases/download/descompactador/descompactar-tar-gz
 
   chmod +x descompactar-tar-gz
   sudo cp descompactar-tar-gz /usr/local/bin/
@@ -152,12 +144,7 @@ then
     echo "O arquivo  apache-tomcat-9.0.79.tar.gz  ja existe"
 else
     echo -e "\n\n\n\n Apache Tomcat"
-    fileId=1DHDM93OYVnZZ0JdGT9XIrU3ddL1ne6Ub
-    fileName=apache-tomcat-9.0.79.tar.gz
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
-
+    wget https://github.com/lucotavio/apache-tomcat/releases/download/apache-tomcat-9.0.79/apache-tomcat-9.0.79.tar.gz
 
     descompactar-tar-gz apache-tomcat-9.0.79.tar.gz
     cp -r apache-tomcat-9.0.79 /home/$USER/Servidores/
@@ -171,11 +158,7 @@ if [ -d /home/$USER/Servidores/wildfly-29.0.0.Final ];then
     echo "O diretorio  /home/$USER/Servidores/wildfly-29.0.0.Final  ja existe"
 else
   echo -e "\n\n\n\n Wildfly"
-  fileId=1q8-3vFReU_t6ZZcnvwSPrYNLUUx906BY
-  fileName=wildfly-29.0.0.Final.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/wildfly/releases/download/wildfly-29.0.0.final/wildfly-29.0.0.Final.tar.gz
 
   descompactar-tar-gz wildfly-29.0.0.Final.tar.gz
   cp -r wildfly-29.0.0.Final /home/$USER/Servidores/
@@ -189,11 +172,7 @@ if [ -d /home/$USER/Instalacao/netbeans-plugins ];then
       echo "O diretorio  /home/$USER/Instalacao/netbeans-plugins  ja existe"
 else
   echo -e "\n\n\n\n Netbeans Plugins"
-  fileId=1jl-Dl6DnzUDEDq-XBnfT8MDZRL2vKJJk
-  fileName=netbeans-plugins.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/netbeans-plugins/releases/download/netbeans-plugins/netbeans-plugins.tar.gz
 
   descompactar-tar-gz netbeans-plugins.tar.gz
   cp -r netbeans-plugins /home/$USER/Instalacao/
@@ -207,11 +186,7 @@ if [ -d /home/$USER/Instalacao/drivers-JDBC ];then
     echo "O diretorio  /home/$USER/Instalacao/drivers-JDBC  ja existe"
 else
   echo -e "\n\n\n\n Drivers JDBC"
-  fileId=1FP1TVh-xppkiwjvQkwMEf5SyY4e6JwJ4
-  fileName=drivers-JDBC.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/drivers-jdbc/releases/download/drivers-jdbc/drivers-JDBC.tar.gz
 
   descompactar-tar-gz drivers-JDBC.tar.gz
   cp -r drivers-JDBC /home/$USER/Instalacao/
@@ -225,11 +200,7 @@ if [ -d /home/$USER/Imagens/wallpaper ];then
     echo "O diretorio  /home/$USER/Imagens/wallpaper  ja existe"
 else
   echo -e "\n\n\n\n Wallpapers"
-  fileId=1j8HSlYsw8SwzF3mrZz9sBq8BrVLgGXut
-  fileName=wallpaper.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/wallpapers/releases/download/wallpapers/wallpaper.tar.gz
 
   descompactar-tar-gz wallpaper.tar.gz
   cp -r wallpaper /home/$USER/Imagens/
@@ -243,11 +214,7 @@ if [ -d /home/$USER/.themes/WhiteSur-dark-solid ];then
     echo "O diretorio  /home/$USER/.themes/WhiteSur-dark-solid  ja existe"
 else
   echo -e "\n\n\n\n WhiteSur Dark solid"
-  fileId=1O2RG2btd2hAVR0LJBgIVSzfCU-Nx-if9
-  fileName=WhiteSur-dark-solid.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/gnome-themes/releases/download/gnome-themes/WhiteSur-dark-solid.tar.gz
 
   descompactar-tar-gz WhiteSur-dark-solid.tar.gz
   cp -r WhiteSur-dark-solid /home/$USER/.themes/
@@ -261,11 +228,7 @@ if [ -d /home/$USER/.icons/BigSur ];then
     echo "O diretorio  /home/$USER/.icons/BigSur  ja existe"
 else
   echo -e "\n\n\n\n Big Sur"
-  fileId=14FOG5By8jl6B-S4T_xtqcL2J4jhvM34c
-  fileName=BigSur.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/BigSur.tar.gz
 
   descompactar-tar-gz BigSur.tar.gz
   cp -r BigSur /home/$USER/.icons/
@@ -279,11 +242,7 @@ if [ -d /home/$USER/.icons/Deepin ];then
     echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
 else
   echo -e "\n\n\n\n Deepin"
-  fileId=1n1KIZpxOA8D5hfmSpDD2KGl7bYcJQVJg
-  fileName=Deepin.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/Deepin.tar.gz
 
   descompactar-tar-gz Deepin.tar.gz
   cp -r Deepin /home/$USER/.icons/
@@ -297,11 +256,7 @@ if [ -d /home/$USER/.icons/McMojave-cursors ];then
     echo "O diretorio  /home/$USER/.icons/McMojave-cursors  ja existe"
 else
   echo -e "\n\n\n\n MacMojave cursores"
-  fileId=1x9KWvR9GudSrvBD6XRex5yfiioGZOn_f
-  fileName=McMojave-cursors.tar.gz
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/gnome-cursors/releases/download/gnome-cursors/McMojave-cursors.tar.gz
 
   descompactar-tar-gz McMojave-cursors.tar.gz
   cp -r McMojave-cursors /home/$USER/.icons/
@@ -315,11 +270,7 @@ if [ -e /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml ];t
     echo "O arquivo Docker Compose do MySql ja existe"
 else
   echo -e "\n\n\n\n Docker Compose do MySql"
-  fileId=1v3gLtg1HF577do4Y9lqdXFN3OItwtBJe
-  fileName=docker-compose.yml
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/mysql-docker-compose/releases/download/mysql-docker-compose/docker-compose.yml
 
   mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml
 fi
@@ -330,11 +281,7 @@ if [ -e /home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml 
     echo "O arquivo Docker Compose do PostgreSQL ja existe"
 else
   echo -e "\n\n\n\n Docker Compose do PostgreSql"
-  fileId=1-jipcIOVVyziuUQ_QjaaTSlW_QN_Cl-L
-  fileName=docker-compose.yml
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/postgre-docker-compose/releases/download/postgre-docker-compose/docker-compose.yml
 
   mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml
 fi
@@ -352,11 +299,7 @@ then
     echo "O arquivo  4kvideodownloader_4.21.7-1_amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n 4K Video Downloader"
-    fileId=1Y_M5XaadEMoN5mkwbfHgB3aQIyS08YcK
-    fileName=4kvideodownloader_4.21.7-1_amd64.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget https://github.com/lucotavio/4k-video-downloader/releases/download/4k-video-downloader/4kvideodownloader_4.21.7-1_amd64.deb
 fi
 
 
@@ -366,12 +309,8 @@ if [ -e android-studio-2022.3.1.deb ]
 then
     echo "O arquivo  android-studio-2022.3.1.deb  ja existe"
 else
-    echo -e "\n\n\n\n Android Studio"
-    fileId=1Vzqml8ccrXcSZ-QOFhaZH2TGQnHA7-0C
-    fileName=android-studio-2022.3.1.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  echo -e "\n\n\n\n Android Studio"
+    wget https://github.com/lucotavio/android-studio/releases/download/android-studio-2022.3.1/android-studio-2022.3.1.deb
 fi
 
 
@@ -382,11 +321,7 @@ then
     echo "O arquivo  apache-netbeans_18-1_all.deb  ja existe"
 else
     echo -e "\n\n\n\n Apache Netbeans"
-    fileId=1la7Y5_GT3vSB8f9dg9EhcPA9VfQ80lv6
-    fileName=apache-netbeans_18-1_all.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget https://github.com/lucotavio/apache-netbeans/releases/download/apache-netbeans-18-1/apache-netbeans_18-1_all.deb
 fi
 
 
@@ -397,11 +332,7 @@ then
     echo "O arquivo  atom-amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n Atom"
-    fileId=1xazxsCtLFbMctp7SgrrWREC-Z8Ky_1u-
-    fileName=atom-amd64.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget https://github.com/lucotavio/atom/releases/download/atom/atom-amd64.deb
 fi
 
 
@@ -412,11 +343,7 @@ then
     echo "O arquivo  balena-etcher_1.18.11_amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n Balena Etcher"
-    fileId=1wTLeIL_PGxMmkukdzGNosQ-vBLhsXuAK
-    fileName=balena-etcher_1.18.11_amd64.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget https://github.com/lucotavio/balena-etcher/releases/download/balena-etcher-1.18.11/balena-etcher_1.18.11_amd64.deb
 fi
 
 
@@ -426,11 +353,7 @@ if [ -e chrome-stable_current_amd64.deb ];then
     echo "O arquivo  chrome-stable_current_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Chrome"
-  fileId=119PJ78GXF5hFl2D0yvrR5WTjYDVjBRbY
-  fileName=chrome-stable_current_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/chrome/releases/download/chrome/chrome-stable_current_amd64.deb
 fi
 
 
@@ -440,11 +363,7 @@ if [ -e dbeaver-le_23.1.0_amd64.deb ];then
     echo "O arquivo  dbeaver-le_23.1.0_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n DBeaver"
-  fileId=1rmBnEjP_cxVfuLhNayaWUT1T5zqCBeOP
-  fileName=dbeaver-le_23.1.0_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/dbeaver/releases/download/dbeaver-lite-23.1.0/dbeaver-le_23.1.0_amd64.deb
 fi
 
 
@@ -454,11 +373,7 @@ if [ -e docker-compose ];then
     echo "O arquivo  docker-compose  ja existe"
 else
   echo -e "\n\n\n\n Docker Compose"
-  fileId=1cqFtoCJW_jiIvg2uMSH1Ww8iTYzS8N5q
-  fileName=docker-compose
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/docker-compose-program/releases/download/docker-compose/docker-compose
 
   chmod +x docker-compose
   sudo cp docker-compose /usr/local/bin/
@@ -471,11 +386,7 @@ if [ -e dropbox_2020.03.04_amd64.deb ];then
     echo "O arquivo  dropbox_2020.03.04_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Dropbox"
-  fileId=12CO9lVV40Zmqx7cFb5Lmo3F_-lURqFjF
-  fileName=dropbox_2020.03.04_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/dropbox/releases/download/dropbox-2020.03.04/dropbox_2020.03.04_amd64.deb
 fi
 
 
@@ -485,11 +396,7 @@ if [ -e firefox-116.0.2.deb ];then
     echo "O arquivo  firefox-116.0.2.deb  ja existe"
 else
   echo -e "\n\n\n\n Firefox"
-  fileId=1zWJMssXHj2GFGdvqatsFkp2mUPlhPZQs
-  fileName=firefox-116.0.2.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/firefox/releases/download/firefox-116.0.2/firefox-116.0.2.deb
 fi
 
 
@@ -499,11 +406,7 @@ if [ -e gitkraken-amd64.deb ];then
     echo "O arquivo  gitkraken-amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n GitKraken"
-  fileId=1i47sx1P0cdtykTXw3aFrZY9t1XMJ2yAC
-  fileName=gitkraken-amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/gitkraken/releases/download/git-kraken/gitkraken-amd64.deb
 fi
 
 
@@ -513,11 +416,7 @@ if [ -e Insomnia.Core-2023.4.0.deb ];then
     echo "O arquivo  Insomnia.Core-2023.4.0.deb  ja existe"
 else
   echo -e "\n\n\n\n Insomnia"
-  fileId=1M-6axTc8LNI_66iLwvvY-SyyNTmZ77Ic
-  fileName=Insomnia.Core-2023.4.0.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/insomnia/releases/download/insomnia-2023.4.0/Insomnia.Core-2023.4.0.deb
 fi
 
 
@@ -527,11 +426,7 @@ if [ -e insync_3.8.6.50504-jammy_amd64.deb ];then
     echo "O arquivo  insync_3.8.6.50504-jammy_amd64.deb ja existe"
 else
   echo -e "\n\n\n\n Insync"
-  fileId=15Y8zCGHiXsEntMqTme_0pILFLlRv063Z
-  fileName=insync_3.8.6.50504-jammy_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/insync/releases/download/insync-3.8.6/insync_3.8.6.50504-jammy_amd64.deb
 fi
 
 
@@ -541,11 +436,7 @@ if [ -e intellij-community-2023.2.deb ];then
     echo "O arquivo  intellij-community-2023.2.deb ja existe"
 else
   echo -e "\n\n\n\n Intellij Community"
-  fileId=1_GvKUI8e7Htttu0LxJgSl2SdpGCWV-9X
-  fileName=intellij-community-2023.2.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/intellij-community/releases/download/intellij-community-2023.2/intellij-community-2023.2.deb
 fi
 
 
@@ -555,11 +446,7 @@ if [ -e lombok.jar ];then
     echo "O arquivo lombok.jar ja existe"
 else
   echo -e "\n\n\n\n Lombok"
-  fileId=1ZD-QAd5aky-DzDxYUrs9JEsAZS9gul5k
-  fileName=lombok.jar
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/lombok/releases/download/lombok/lombok.jar
 fi
 
 
@@ -569,11 +456,7 @@ if [ -e onlyoffice-desktopeditors_amd64.deb ];then
     echo "O arquivo  onlyoffice-desktopeditors_amd64.deb  ja existe"
 else
   echo -e "\n\n\n\n Only Office"
-  fileId=11Stf18xGX31jm5inMxStUvk0g6VpwuNl
-  fileName=onlyoffice-desktopeditors_amd64.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/only-office/releases/download/only-office/onlyoffice-desktopeditors_amd64.deb
 fi
 
 
@@ -583,11 +466,7 @@ if [ -e postman-10.17.1.deb ];then
     echo "O arquivo  postman-10.17.1.deb  ja existe"
 else
   echo -e "\n\n\n\n Postman"
-  fileId=1_3P-NmeAH-9F35voO1__Niz4lhr_eSx1
-  fileName=postman-10.17.1.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/postman/releases/download/postman-10.17.1/postman-10.17.1.deb
 fi
 
 
@@ -597,11 +476,7 @@ if [ -e spring-tool-suite-4.19.1.RELEASE.deb ];then
     echo "O arquivo  spring-tool-suite-4.19.1.RELEASE.deb  ja existe"
 else
   echo -e "\n\n\n\n Spring Tool Suite"
-  fileId=1enbYDfIX9MXXKdKR8g-zm5Gx0uAcCfPL
-  fileName=spring-tool-suite-4.19.1.RELEASE.deb
-  curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-  code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-  curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+  wget https://github.com/lucotavio/spring-tool-suite/releases/download/spring-tool-suite-4.19.1/spring-tool-suite-4.19.1.RELEASE.deb
 fi
 
 
@@ -612,11 +487,7 @@ then
     echo "O arquivo  StarUML  ja existe"
 else
     echo -e "\n\n\n\n StarUML"
-    fileId=1_6BHoUxv5LRi6g2rgzZDbesqYhcJl3_K
-    fileName=StarUML_5.1.0_amd64.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget https://github.com/lucotavio/star-uml/releases/download/star-uml-5.1.0/StarUML_5.1.0_amd64.deb
 fi
 
 
@@ -628,11 +499,7 @@ then
     echo "O arquivo  code_1.81.1-1691620686_amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n Visual Studio Code"
-    fileId=109diccNIgge0TQUsoull6z7KSsuXIrJG
-    fileName=code_1.81.1-1691620686_amd64.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget https://github.com/lucotavio/visual-studio-code/releases/download/visual-studio-code-1.81.1/code_1.81.1-1691620686_amd64.deb
 fi
 
 
@@ -643,11 +510,7 @@ then
     echo "O arquivo  VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle  ja existe"
 else
     echo -e "\n\n\n\n VMware Workstation"
-    fileId=15EjCxp_PG2MDSMihpA2i9pxtMicG7i9g
-    fileName=VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget https://github.com/lucotavio/vmware-workstation/releases/download/vmware-workstation-17.0.2/VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
 fi
 
 
@@ -658,11 +521,7 @@ then
     echo "O arquivo  waterfox-G5.1.10.deb  ja existe"
 else
     echo -e "\n\n\n\n Waterfox"
-    fileId=1h5bKFSOv63Wxh7Vl1GvprWGColkmsqRp
-    fileName=waterfox-G5.1.10.deb
-    curl -sc /tmp/cookie "https://drive.google.com/uc?export=download&id=${fileId}" > /dev/null
-    code="$(awk '/_warning_/ {print $NF}' /tmp/cookie)"
-    curl -Lb /tmp/cookie "https://drive.google.com/uc?export=download&confirm=${code}&id=${fileId}" -o ${fileName}
+    wget https://github.com/lucotavio/waterfox/releases/download/waterfox-G5.1.10/waterfox-G5.1.10.deb
 fi
 
 echo "***********************************************************************************************************************************************"
