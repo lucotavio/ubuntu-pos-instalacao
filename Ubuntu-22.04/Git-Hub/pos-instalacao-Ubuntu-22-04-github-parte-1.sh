@@ -838,7 +838,7 @@ echo -e "\n\n\n********************************************** DESINSTALANDO  FIR
 sudo snap remove firefox
 
 
-## Colocando prioridade mais alta no Firefox feito por mim 
+## Colocando prioridade mais alta no Firefox feito por mim
 if [ -e /etc/apt/preferences.d/99mozillateamppa ];then
     echo "Arquivo  /etc/apt/preferences.d/99mozillateamppa  ja existe*"
 else
@@ -855,4 +855,4 @@ else
   echo "Pin-Priority: -1" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
 fi
 
-echo -e "\n\n\n******************************************REINICIAR  O  COMPUTADOR********************************************************************"
+echo -e "\n\n\n******************************************REINICIAR  O  COMPUTADOR*******************************************************************"
