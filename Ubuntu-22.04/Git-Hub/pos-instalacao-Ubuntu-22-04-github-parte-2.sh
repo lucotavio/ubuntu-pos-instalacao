@@ -227,6 +227,7 @@ sudo apt --fix-broken install -y
 ## Only Office
 sudo dpkg -i onlyoffice-desktopeditors_amd64.deb
 sudo apt --fix-broken install -y
+sudo sed -i '/Terminal=false/a StartupWMClass=DesktopEditors' /usr/share/applications/onlyoffice-desktopeditors.desktop
 
 
 ## Postman
