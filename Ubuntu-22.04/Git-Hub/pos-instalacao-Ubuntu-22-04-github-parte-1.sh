@@ -714,6 +714,9 @@ sudo apt install gparted -y
 ## Instalando VirtualBox
 sudo apt install virtualbox -y
 
+## Instalando Gimp
+sudo apt install gimp -y
+
 ## Instalando Kotlin
 sudo apt-get install kotlin -y
 
