@@ -2,9 +2,6 @@
 
 
 
-#!/bin/bash
-
-
 ## Criando diretorio Programas onde vao
 ## ficar os programaas que precisao de
 ## dwonloads para serem istalados
@@ -40,20 +37,14 @@ mkdir -p /home/$USER/Instalacao/docker-compose-files/mysql/
 ## Criando diretorio onde vai ficar o arquivo do docker compose do PostgreSQL
 mkdir -p /home/$USER/Instalacao/docker-compose-files/postgres/
 
-##Criando diretorio Angular dentro do diretorio Projetos
-mkdir -p /home/$USER/Projetos/Angular
-
-##Criando diretorio Angular-Spring dentro do diretorio Projetos
-mkdir -p /home/$USER/Projetos/Angular-Spring
-
-##Criando diretorio Java dentro do diretorio Projetos
-mkdir -p /home/$USER/Projetos/Java
 
 ## Entrando na para pasta de programas
 cd /home/$USER/Downloads/Programas/
 
+
 ## Instalar software de terceiros
 sudo apt install ubuntu-restricted-extras -y
+
 
 ## Criando modelo de arquivo de script de banco de dados
 if [ -e /home/$USER/Modelos/TXT.txt ];then
@@ -85,6 +76,14 @@ if [ -e /home/$USER/Modelos/XML.xml ];then
     echo "O arquivo  XML.xml  ja existe"
 else
     touch /home/$USER/Modelos/XML.xml
+fi
+
+
+## Criando modelo de arquivo java
+if [ -e /home/$USER/Modelos/JAVA.java ];then
+    echo "O arquivo  JAVA.java  ja existe"
+else
+    touch /home/$USER/Modelos/JAVA.java
 fi
 
 
@@ -744,7 +743,7 @@ if [ -d /home/$USER/Projetos/ ];then
 else
   echo -e "\n\n\n\n Clonando repositorio Projetos do Git Hub"
   git clone https://github.com/lucotavio/Projetos.git
-  mv Projetos/ /home/$USER/
+  cp Projetos/ /home/$USER/
 fi
 
 ## git config --global credential.helper store
