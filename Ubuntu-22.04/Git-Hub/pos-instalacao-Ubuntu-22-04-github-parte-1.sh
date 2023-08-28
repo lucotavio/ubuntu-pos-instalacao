@@ -716,6 +716,9 @@ sudo apt install virtualbox -y
 ## Instalando Gimp
 sudo apt install gimp -y
 
+## Instalando Gerenciador de pacote Synaptic
+sudo apt install synaptic -y
+
 ## Instalando Kotlin
 sudo apt-get install kotlin -y
 
