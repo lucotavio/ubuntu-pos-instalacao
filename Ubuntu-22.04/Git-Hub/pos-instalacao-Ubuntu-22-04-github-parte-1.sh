@@ -736,6 +736,7 @@ echo  "*************************************************************************
 echo -e "\n\n\n************************************************** INSTALANDO  GIT *******************************************************************"
 
 ## Instalando o Git
+sudo apt update -y
 sudo apt install git -y
 git config --global user.name "Luciano"
 git config --global user.email "luc.oliveira343@gmail.com"
@@ -746,7 +747,7 @@ if [ -d /home/$USER/Projetos/ ];then
 else
   echo -e "\n\n\n\n Clonando repositorio Projetos do Git Hub"
   git clone https://github.com/lucotavio/Projetos.git
-  cp Projetos/ /home/$USER/
+  cp -r Projetos/ /home/$USER/
 fi
 
 ## git config --global credential.helper store

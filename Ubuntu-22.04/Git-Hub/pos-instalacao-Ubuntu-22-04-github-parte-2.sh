@@ -153,11 +153,6 @@ sudo dpkg -i android-studio-2022.3.1.deb
 sudo apt --fix-broken install -y
 
 
-## Apache Netbeans
-sudo dpkg -i apache-netbeans_18-1_all.deb
-sudo apt --fix-broken install -y
-
-
 ## Atom
 sudo dpkg -i atom-amd64.deb
 sudo apt --fix-broken install -y
@@ -253,6 +248,29 @@ sudo apt --fix-broken install -y
 ## Waterfox
 sudo dpkg -i waterfox-G5.1.10.deb
 sudo apt --fix-broken install -y
+
+
+############################################################## INSTALANDO  APACHE  NETBEANS #########################################################
+
+## Apache Netbeans
+sudo dpkg -i apache-netbeans_18-1_all.deb
+sudo apt --fix-broken install -y
+
+
+## Baixando repositorio Classes do Git Hub
+if [ -d /home/$USER/.netbeans/18/config/Templates/Classes/ ];then
+    echo "O diretorio  /home/$USER/.netbeans/18/config/Templates/Classes/  ja existe"
+else
+
+  ## Criando a pasta onde vao ficar os templates modificados
+  mkdir -p /home/$USER/.netbeans/18/config/Templates/
+
+  echo -e "\n\n\n\n Clonando repositorio Classes do Git Hub"
+  git clone https://github.com/lucotavio/Classes.git
+  cp -r Classes/ /home/$USER/.netbeans/18/config/Templates/
+fi
+
+########################################################## FIM DA  INSTALACAO  DO  APACHE  NETBEANS##################################################
 
 echo "***********************************************************************************************************************************************"
 
