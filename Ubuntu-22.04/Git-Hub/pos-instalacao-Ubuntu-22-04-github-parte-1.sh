@@ -100,6 +100,22 @@ sudo apt install p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ark nco
 sudo apt install curl -y
 
 
+
+
+echo -e "\n\n\n************************************************** INSTALANDO  GIT *******************************************************************"
+
+## Instalando o Git
+sudo apt update -y
+sudo apt install git -y
+git config --global user.name "Luciano"
+git config --global user.email "luc.oliveira343@gmail.com"
+## git config --global credential.helper store
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
 #####################################################################################################################################################
 
 ## Download Compactador
@@ -199,11 +215,9 @@ if [ -d /home/$USER/Imagens/wallpaper ];then
     echo "O diretorio  /home/$USER/Imagens/wallpaper  ja existe"
 else
   echo -e "\n\n\n\n Wallpapers"
-  wget https://github.com/lucotavio/wallpapers/releases/download/wallpapers/wallpaper.tar.gz
+  https://github.com/lucotavio/wallpapers.git
 
-  descompactar-tar-gz wallpaper.tar.gz
-  cp -r wallpaper /home/$USER/Imagens/
-  rm wallpaper.tar.gz
+  cp -r wallpapers /home/$USER/Imagens/
 fi
 
 
@@ -241,11 +255,11 @@ if [ -d /home/$USER/.icons/Uos-fulldistro-icons ];then
     echo "O diretorio  /home/$USER/.icons/Uos-fulldistro-icons  ja existe"
 else
   echo -e "\n\n\n\n Deepin"
-  wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/Uos-fulldistro-icons.tar.gz
+  wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/Uos-fulldistro-icons.tar.xz
 
-  descompactar-tar-gz Uos-fulldistro-icons.tar.gz
+  tar -xvf Uos-fulldistro-icons.tar.xz
   cp -r Uos-fulldistro-icons /home/$USER/.icons/
-  rm Uos-fulldistro-icons.tar.gz
+  rm Uos-fulldistro-icons.tar.xz
 fi
 
 
@@ -260,6 +274,17 @@ else
   descompactar-tar-gz McMojave-cursors.tar.gz
   cp -r McMojave-cursors /home/$USER/.icons/
   rm McMojave-cursors.tar.gz
+fi
+
+
+## Baixando repositorio Projetos do Git Hub
+if [ -d /home/$USER/Projetos/ ];then
+    echo "O diretorio  /home/$USER/Projetos/  ja existe"
+else
+  echo -e "\n\n\n\n Clonando repositorio Projetos do Git Hub"
+  git clone https://github.com/lucotavio/Projetos.git
+  cp -r Projetos/ /home/$USER/
+  rm -r Projetos
 fi
 
 
@@ -284,6 +309,7 @@ else
 
   mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml
 fi
+
 
 #####################################################################################################################################################
 

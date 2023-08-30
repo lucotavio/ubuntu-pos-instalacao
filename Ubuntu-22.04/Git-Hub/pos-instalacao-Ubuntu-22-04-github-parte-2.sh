@@ -268,6 +268,7 @@ else
   echo -e "\n\n\n\n Clonando repositorio Classes do Git Hub"
   git clone https://github.com/lucotavio/Classes.git
   cp -r Classes/ /home/$USER/.netbeans/18/config/Templates/
+  rm -r Classes
 fi
 
 ########################################################## FIM DA  INSTALACAO  DO  APACHE  NETBEANS##################################################
