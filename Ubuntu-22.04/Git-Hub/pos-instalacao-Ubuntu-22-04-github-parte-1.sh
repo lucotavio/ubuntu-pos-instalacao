@@ -215,9 +215,8 @@ if [ -d /home/$USER/Imagens/wallpaper ];then
     echo "O diretorio  /home/$USER/Imagens/wallpaper  ja existe"
 else
   echo -e "\n\n\n\n Wallpapers"
-  https://github.com/lucotavio/wallpapers.git
-
-  cp -r wallpapers /home/$USER/Imagens/
+  git clone https://github.com/lucotavio/wallpapers.git
+  cp -r wallpapers/ /home/$USER/Imagens/
 fi
 
 
@@ -284,7 +283,6 @@ else
   echo -e "\n\n\n\n Clonando repositorio Projetos do Git Hub"
   git clone https://github.com/lucotavio/Projetos.git
   cp -r Projetos/ /home/$USER/
-  rm -r Projetos
 fi
 
 
@@ -766,16 +764,6 @@ sudo apt update -y
 sudo apt install git -y
 git config --global user.name "Luciano"
 git config --global user.email "luc.oliveira343@gmail.com"
-
-## Baixando repositorio Projetos do Git Hub
-if [ -d /home/$USER/Projetos/ ];then
-    echo "O diretorio  /home/$USER/Projetos/  ja existe"
-else
-  echo -e "\n\n\n\n Clonando repositorio Projetos do Git Hub"
-  git clone https://github.com/lucotavio/Projetos.git
-  cp -r Projetos/ /home/$USER/
-fi
-
 ## git config --global credential.helper store
 
 
