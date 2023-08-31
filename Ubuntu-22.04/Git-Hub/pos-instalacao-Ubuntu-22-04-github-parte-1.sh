@@ -297,7 +297,7 @@ fi
 
 ## Download Docker Compose dos bancos de dados
 if [ -d /home/$USER/Instalacao/database-docker-compose/ ];then
-    echo "O arquivo Docker Compose do MySql ja existe"
+    echo "O diretorio  database-docker-compose  ja existe"
 else
   echo -e "\n\n\n\n Docker Compose dos bancos de dados"
   git clone https://github.com/lucotavio/database-docker-compose.git
