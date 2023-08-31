@@ -19,9 +19,6 @@ mkdir -p /home/$USER/Temp/
 ## Criando diretorio Servidores
 mkdir -p /home/$USER/Servidores/
 
-## Criando diretorio Docker-Compose
-mkdir -p /home/$USER/Docker-Compose/
-
 ## Criando diretorio do OBS Studio
 mkdir -p /home/$USER/Vídeos/OBS-Studio/
 
@@ -31,19 +28,11 @@ mkdir -p /home/$USER/Instalacao/ISO/
 ## Criando diretorio Script dentro da pasta InstalacaoF/usr/-
 mkdir -p /home/$USER/Instalacao/Script/
 
-## Criando diretorio onde vai ficar o arquivo do docker compose do MySql
-mkdir -p /home/$USER/Instalacao/docker-compose-files/mysql/
-
-## Criando diretorio onde vai ficar o arquivo do docker compose do PostgreSQL
-mkdir -p /home/$USER/Instalacao/docker-compose-files/postgres/
 
 
 ## Entrando na para pasta de programas
 cd /home/$USER/Downloads/Programas/
 
-
-## Instalar software de terceiros
-sudo apt install ubuntu-restricted-extras -y
 
 
 ## Criando modelo de arquivo de script de banco de dados
@@ -96,6 +85,20 @@ fi
 
 
 
+
+echo -e "\n\n\n********************************************** INSTALANDO  FONTES  DA  MICROSOFT *****************************************************"
+
+sudo apt install ttf-mscorefonts-installer -y
+sudo fc-cache -f -v
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
+
+echo -e "\n\n\n********************************************** INSTALANDO  COMPACTADORES *************************************************************"
+
 ## E nescessario instalar os compactadores
 ## e descompactadores aqui, porque
 ## logo em seguida alguns
@@ -104,9 +107,16 @@ sudo apt update -y
 sudo apt install sharutils -y
 sudo apt install p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ark ncompress -y
 
+echo "***********************************************************************************************************************************************"
 
-## Instalando comando curl
+
+
+
+echo -e "\n\n\n********************************************** INSTALANDO  COMANDO  CURL *************************************************************"
+
 sudo apt install curl -y
+
+echo "***********************************************************************************************************************************************"
 
 
 
@@ -220,12 +230,23 @@ fi
 
 
 ## Download Wallpapers
-if [ -d /home/$USER/Imagens/wallpaper ];then
+if [ -d /home/$USER/Imagens/wallpaper/ ];then
     echo "O diretorio  /home/$USER/Imagens/wallpaper  ja existe"
 else
   echo -e "\n\n\n\n Wallpapers"
   git clone https://github.com/lucotavio/wallpapers.git
   cp -r wallpapers/ /home/$USER/Imagens/
+fi
+
+
+
+## Download dos scripts de instalacao do Ubuntu
+if [ -d /home/$USER/Instalacao/Script/ubuntu-pos-instalacao-22-04/ ];then
+    echo "O diretorio  /home/$USER/Instalacao/Script/ubuntu-pos-instalacao-22-04/  ja existe"
+else
+  echo -e "\n\n\n\n Scripts de instalacao do Ubuntu 22.04"
+  git clone https://github.com/lucotavio/ubuntu-pos-instalacao.git
+  mv /home/$USER/Downloads/Programas/ubuntu-pos-instalacao/  /home/$USER/Instalacao/Script/ubuntu-pos-instalacao-22-04/
 fi
 
 
@@ -675,10 +696,6 @@ sudo apt install fonts-firacode -y
 
 ## Instalando Hardinfo
 sudo apt install hardinfo -y
-
-## Instalando fontes da Microsoft
-sudo apt install ttf-mscorefonts-installer -y
-sudo fc-cache -f -v
 
 ## Instalando gcc g++
 sudo apt install gcc g++ make -y
