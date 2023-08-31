@@ -87,6 +87,15 @@ else
 fi
 
 
+## Criando modelo de arquivo yml
+if [ -e /home/$USER/Modelos/YML.yml ];then
+    echo "O arquivo  YML.yml  ja existe"
+else
+    touch /home/$USER/Modelos/YML.yml
+fi
+
+
+
 ## E nescessario instalar os compactadores
 ## e descompactadores aqui, porque
 ## logo em seguida alguns
@@ -286,26 +295,14 @@ else
 fi
 
 
-
-## Download arquivo Docker compose MySql
-if [ -e /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml ];then
+## Download Docker Compose dos bancos de dados
+if [ -d /home/$USER/Instalacao/database-docker-compose/ ];then
     echo "O arquivo Docker Compose do MySql ja existe"
 else
-  echo -e "\n\n\n\n Docker Compose do MySql"
-  wget https://github.com/lucotavio/mysql-docker-compose/releases/download/mysql-docker-compose/docker-compose.yml
+  echo -e "\n\n\n\n Docker Compose dos bancos de dados"
+  git clone https://github.com/lucotavio/database-docker-compose.git
 
-  mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/mysql/docker-compose.yml
-fi
-
-
-## Download arquivo Docker compose PostgreSQL
-if [ -e /home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml ];then
-    echo "O arquivo Docker Compose do PostgreSQL ja existe"
-else
-  echo -e "\n\n\n\n Docker Compose do PostgreSql"
-  wget https://github.com/lucotavio/postgre-docker-compose/releases/download/postgre-docker-compose/docker-compose.yml
-
-  mv /home/$USER/Downloads/Programas/docker-compose.yml /home/$USER/Instalacao/docker-compose-files/postgres/docker-compose.yml
+  cp -r /home/$USER/Downloads/Programas/database-docker-compose/ /home/$USER/Instalacao/
 fi
 
 
@@ -847,7 +844,17 @@ echo "**************************************************************************
 
 echo -e "\n\n\n************************************************** INSTALANDO  MYSQL  ****************************************************************"
 
-cd /home/$USER/Instalacao/docker-compose-files/mysql/
+cd /home/$USER/Instalacao/database-docker-compose/mysql/
+sudo docker-compose up -d
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n************************************************** INSTALANDO  MARIADB  **************************************************************"
+
+cd /home/$USER/Instalacao/database-docker-compose/MariaDB/
 sudo docker-compose up -d
 
 echo "***********************************************************************************************************************************************"
@@ -857,7 +864,7 @@ echo "**************************************************************************
 
 echo -e "\n\n\n************************************************** INSTALANDO  POSTGRESQL  ***********************************************************"
 
-cd /home/$USER/Instalacao/docker-compose-files/postgres/
+cd /home/$USER/Instalacao/database-docker-compose/postgres/
 sudo docker-compose up -d
 
 echo "***********************************************************************************************************************************************"
