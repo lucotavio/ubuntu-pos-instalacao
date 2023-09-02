@@ -30,6 +30,20 @@ echo -e "\n\n*******************************************************************
 
 
 
+echo -e "\n\n\n *************************************  INSTALANDO  SPRING TOOLS  SUITE  COM  LOMBOK **************************************************"
+
+## Spring tool Suite
+sudo dpkg -i spring-tool-suite-4.19.1.RELEASE.deb
+sudo apt --fix-broken install -y
+
+## Instalando Lombok no Spring Tools Suite
+sudo java -jar lombok.jar
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
 echo -e "\n\n\n**************************************************INSTALANDO  VMWARE  PLAYER *********************************************************"
 
 chmod +x VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
@@ -105,26 +119,6 @@ do
         echo -e "\n\nOpcao invalida"
     fi
 done
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************************** INSTALANDO  PACOTES  FLATPACK *****************************************************"
-
-flatpak install flathub fr.handbrake.ghb -y
-flatpak install flathub com.obsproject.Studio -y
-flatpak install flathub org.kde.umbrello -y
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************************** INSTALANDO  PACOTES  SNAP *********************************************************"
-
-sudo snap install deezer-unofficial-player
 
 echo "***********************************************************************************************************************************************"
 
@@ -219,6 +213,11 @@ sudo dpkg -i mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb
 sudo apt --fix-broken install -y
 
 
+## One Drive
+sudo dpkg -i onedriver_0.14.0-1_amd64.deb
+sudo apt --fix-broken install -y
+
+
 ## Only Office
 sudo dpkg -i onlyoffice-desktopeditors_amd64.deb
 sudo apt --fix-broken install -y
@@ -227,11 +226,6 @@ sudo sed -i '/Terminal=false/a StartupWMClass=DesktopEditors' /usr/share/applica
 
 ## Postman
 sudo dpkg -i postman-10.17.1.deb
-sudo apt --fix-broken install -y
-
-
-## Spring tool Suite
-sudo dpkg -i spring-tool-suite-4.19.1.RELEASE.deb
 sudo apt --fix-broken install -y
 
 
@@ -277,33 +271,11 @@ echo "**************************************************************************
 
 
 
-echo -e "\n\n\n *************************************  INSTALANDO  LOMBOK  SPRING TOOLS  SUITE ******************************************************"
-
-sudo java -jar lombok.jar
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n****************************DELETANDO  ARQUIVOS  DA  PASTA  MODELO  CRIADOS  AUTOMATICAMENTE *****************************************"
-
-# sudo rm /home/$USER/Modelos/DOC\ Document.docx
-# sudo rm /home/$USER/Modelos/DOCX\ Document.docx
-#sudo rm /home/$USER/Modelos/PPT\ Presentation.ppt
-# sudo rm /home/$USER/Modelos/PPTX\ Presentation.pptx
-# sudo rm /home/$USER/Modelos/XLS\ Worksheet.xls
-# sudo rm /home/$USER/Modelos/XLSX\ Worksheet.xlsx
-
-echo -e "\n\n\n**************************************************************************************************************************************"
-
-
-
 ## Atualizando a maneira de atualizar as keys dos repositorio sao salva
 sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d
 
 
 ## Deletando dependencias que nao estao sendo utilizadas
-sudo apt autoremove
+sudo apt autoremove -y
 
 echo -e "\n\n\n******************************************REINICIAR  O  COMPUTADOR********************************************************************"

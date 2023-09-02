@@ -97,7 +97,7 @@ echo "**************************************************************************
 
 
 
-echo -e "\n\n\n********************************************** INSTALANDO  COMPACTADORES *************************************************************"
+echo -e "\n\n\n************************************* INSTALANDO  COMPACTADORES  E  DESCOMPACTADORES  ************************************************"
 
 ## E nescessario instalar os compactadores
 ## e descompactadores aqui, porque
@@ -135,7 +135,7 @@ echo "**************************************************************************
 
 
 
-#####################################################################################################################################################
+echo -e "\n\n\n******************************************************* MISCELANIA *******************************************************************"
 
 ## Download Compactador
 if [ -e compactar-tar-gz ];then
@@ -162,13 +162,6 @@ else
   chmod +x descompactar-tar-gz
   sudo cp descompactar-tar-gz /usr/local/bin/
 fi
-
-#####################################################################################################################################################
-
-
-
-
-#####################################################################################################################################################
 
 
 
@@ -326,8 +319,7 @@ else
   cp -r /home/$USER/Downloads/Programas/database-docker-compose/ /home/$USER/Instalacao/
 fi
 
-
-#####################################################################################################################################################
+echo "***********************************************************************************************************************************************"
 
 
 
@@ -405,19 +397,6 @@ if [ -e dbeaver-le_23.1.0_amd64.deb ];then
 else
   echo -e "\n\n\n\n DBeaver"
   wget https://github.com/lucotavio/dbeaver/releases/download/dbeaver-lite-23.1.0/dbeaver-le_23.1.0_amd64.deb
-fi
-
-
-
-## Download Docker Compose
-if [ -e docker-compose ];then
-    echo "O arquivo  docker-compose  ja existe"
-else
-  echo -e "\n\n\n\n Docker Compose"
-  wget https://github.com/lucotavio/docker-compose-program/releases/download/docker-compose/docker-compose
-
-  chmod +x docker-compose
-  sudo cp docker-compose /usr/local/bin/
 fi
 
 
@@ -515,6 +494,16 @@ if [ -e mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb ];then
 else
   echo -e "\n\n\n\n MySql Workbench"
   wget https://github.com/lucotavio/mysql-workbench/releases/download/mysql-workbench-8.0.34/mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb
+fi
+
+
+
+## Download One Drive
+if [ -e onedriver_0.14.0-1_amd64.deb ];then
+    echo "O arquivo  onedriver_0.14.0-1_amd64.deb  ja existe"
+else
+  echo -e "\n\n\n\n One Drive"
+  wget https://github.com/lucotavio/one-drive/releases/download/one-drive/onedriver_0.14.0-1_amd64.deb
 fi
 
 
@@ -635,7 +624,7 @@ echo "**************************************************************************
 
 
 
-echo -e "\n\n\n**********************************************INSTALANDO  O  MAVEN *******************************************************************"
+echo -e "\n\n\n********************************************** INSTALANDO  O  MAVEN ******************************************************************"
 
 sudo apt update -y
 sudo apt install maven -y
@@ -676,10 +665,42 @@ echo "**************************************************************************
 
 
 
+echo -e "\n\n\n******************************************** INSTALANDO  O  DOCKER-COMPOSE ***********************************************************"
+
+if [ -e docker-compose ];then
+    echo "O arquivo  docker-compose  ja existe copiando ele para pasta   /usr/local/bin/"
+    sudo cp docker-compose /usr/local/bin/
+else
+  echo -e "\n\n\n\n Docker Compose"
+  wget https://github.com/lucotavio/docker-compose-program/releases/download/docker-compose/docker-compose
+
+  chmod +x docker-compose
+  sudo cp docker-compose /usr/local/bin/
+fi
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
 echo -e "\n\n\n************************************* CONFIGURAR  CELULAR  PARA  DESENVOLVIMENTO  ANDROID ********************************************"
 
 sudo usermod -aG plugdev $LOGNAME
 sudo apt install android-sdk-platform-tools-common -y
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n************************************************** INSTALANDO  ADB *******************************************************************"
+
+## Instalando ADB
+sudo apt update -y
+sudo apt install adb -y
+sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
+sudo apt install qemu-kvm -y
+sudo adduser $USER kvm
 
 echo "***********************************************************************************************************************************************"
 
@@ -757,6 +778,15 @@ sudo apt install gimp -y
 ## Instalando Gerenciador de pacote Synaptic
 sudo apt install synaptic -y
 
+## Instalando OBS Studio
+sudo apt install obs-studio -y
+
+## Instalando Handbrake
+sudo apt install handbrake -y
+
+## Instalando Umbrelo
+sudo apt install umbrello -y
+
 ## Instalando Kotlin
 sudo apt-get install kotlin -y
 
@@ -767,21 +797,6 @@ sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y
 curl -s https://get.sdkman.io | bash
 
 echo  "**********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************************** INSTALANDO  GIT *******************************************************************"
-
-## Instalando o Git
-sudo apt update -y
-sudo apt install git -y
-git config --global user.name "Luciano"
-git config --global user.email "luc.oliveira343@gmail.com"
-## git config --global credential.helper store
-
-
-echo "***********************************************************************************************************************************************"
 
 
 
@@ -802,53 +817,7 @@ echo "**************************************************************************
 
 
 
-echo -e "\n\n\n************************ INSTALANDO  NODE, ANGULAR CLI, TYPESCRIPT, VUE.JS, VUEL CLI E QUASAR ****************************************"
-
-#Atualizando indices de repositorio
-sudo apt update -y
-
-## aumentando o numero de arquivos que o sistema pode monitorar
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
-
-## Instalando Node.js
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
-
-## Instalando Angular CLI
-sudo npm install -g  @angular/cli@16.2.0
-
-## Instalando Typescript
-sudo npm install -g typescript
-
-## Instalando Vue.js
-sudo npm install vue
-
-## Instalando Vue CLI
-sudo npm install -g @vue/cli
-
-## Instalando o Quasar
-sudo npm i -g @quasar/cli
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************************** INSTALANDO  ADB *******************************************************************"
-
-## Instalando ADB
-sudo apt update -y
-sudo apt install adb -y
-sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
-sudo apt install qemu-kvm -y
-sudo adduser $USER kvm
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n******************************INSTALANDO  SUPORTE  A FLATPAK***************************************************************************"
+echo -e "\n\n\n****************************** INSTALANDO  SUPORTE  A FLATPAK**************************************************************************"
 
 sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
