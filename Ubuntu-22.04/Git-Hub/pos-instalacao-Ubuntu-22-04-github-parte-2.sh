@@ -178,6 +178,11 @@ sudo dpkg -i firefox-116.0.2.deb
 sudo apt --fix-broken install -y
 
 
+## FreTube
+sudo dpkg -i freetube_0.19.0_amd64.deb
+sudo apt --fix-broken install -y
+
+
 ## GitKraken
 sudo dpkg -i gitkraken-amd64.deb
 sudo apt --fix-broken install -y

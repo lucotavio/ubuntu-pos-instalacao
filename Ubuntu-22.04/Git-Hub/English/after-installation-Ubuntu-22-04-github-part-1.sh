@@ -304,7 +304,6 @@ if [ -d /home/$USER/Projects ];then
 else
   echo -e "\n\n\n\n Clonando repositorio Projetos do Git Hub"
   git clone https://github.com/lucotavio/Projetos.git
-  cp -r Projetos/ /home/$USER/
   mv Projetos/ /home/$USER/Projects
 fi
 
