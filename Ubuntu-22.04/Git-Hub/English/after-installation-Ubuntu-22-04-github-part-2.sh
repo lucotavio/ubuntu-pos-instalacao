@@ -37,6 +37,7 @@ sudo dpkg -i spring-tool-suite-4.19.1.RELEASE.deb
 sudo apt --fix-broken install -y
 
 ## Instalando Lombok no Spring Tools Suite
+chmod +x lombok.jar
 sudo java -jar lombok.jar
 
 echo "***********************************************************************************************************************************************"
@@ -126,11 +127,6 @@ echo "**************************************************************************
 
 
 echo -e "\n\n\n************************************************** INSTALANDO  ARQUIVOS  .DEB ********************************************************"
-
-## Tornando todos os arquivos .jar
-## em arquivos executaveis
-chmod +x lombok.jar
-
 
 ## Tornando todos os arquivos .deb
 ## em arquivos executavies
