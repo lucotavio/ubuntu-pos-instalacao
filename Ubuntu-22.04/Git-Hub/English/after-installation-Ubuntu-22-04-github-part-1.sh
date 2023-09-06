@@ -843,6 +843,9 @@ sudo apt install handbrake -y
 ## Instalando Umbrelo
 sudo apt install umbrello -y
 
+## instalando o Gnome Pomodoro
+sudo apt install gnome-shell-pomodoro
+
 ## Instalando Kotlin
 sudo apt-get install kotlin -y
 
