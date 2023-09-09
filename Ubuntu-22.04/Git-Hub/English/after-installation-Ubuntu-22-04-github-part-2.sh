@@ -209,6 +209,11 @@ sudo dpkg -i kdenlive-22.12.1.deb
 sudo apt --fix-broken install -y
 
 
+## Microsoft Edge
+sudo dpkg -i microsoft-edge-stable_116.0.1938.76-1_amd64.deb
+sudo apt --fix-broken install -y
+
+
 ## MySql Workbench
 sudo dpkg -i mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb
 sudo apt --fix-broken install -y

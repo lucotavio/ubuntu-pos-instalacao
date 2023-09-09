@@ -497,6 +497,17 @@ else
 fi
 
 
+
+## Download Microsoft Edge
+if [ -e microsoft-edge-stable_116.0.1938.76-1_amd64.deb ];then
+    echo "O arquivo  microsoft-edge-stable_116.0.1938.76-1_amd64.deb ja  existe"
+else
+  echo -e "\n\n\n\n Microsoft Edge"
+  wget https://github.com/lucotavio/microsoft-edge/releases/download/microsoft-edge/microsoft-edge-stable_116.0.1938.76-1_amd64.deb
+fi
+
+
+
 ## Download MySql Workbench
 if [ -e mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb ];then
     echo "O arquivo mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb ja existe"
@@ -851,6 +862,11 @@ sudo apt-get install kotlin -y
 
 ## Instalando o modulo "libcanberra-gtk-module" para que nao ocorra o erro: “failed to load module canberra-gtk-module”
 sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y
+
+## Instalando Chromium
+sudo add-apt-repository ppa:savoury1/chromium -y
+sudo apt update -y
+sudo apt install chromium-browser -y
 
 ## Instalando SDKMAN
 curl -s https://get.sdkman.io | bash
