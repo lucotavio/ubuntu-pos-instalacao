@@ -19,9 +19,6 @@ mkdir -p /home/$USER/Temp/
 ## Criando diretorio Servers
 mkdir -p /home/$USER/Servers/
 
-## Criando diretorio do OBS Studio
-mkdir -p /home/$USER/Videos/OBS-Studio/
-
 ## Criando diretorio ISO dentro da pasta Instalacao
 mkdir -p /home/$USER/Installation/ISO/
 
@@ -60,27 +57,11 @@ else
 fi
 
 
-## Criando modelo de arquivo xml
-if [ -e /home/$USER/Templates/XML.xml ];then
-    echo "O arquivo  XML.xml  ja existe"
-else
-    touch /home/$USER/Templates/XML.xml
-fi
-
-
 ## Criando modelo de arquivo java
 if [ -e /home/$USER/Templates/JAVA.java ];then
     echo "O arquivo  JAVA.java  ja existe"
 else
     touch /home/$USER/Templates/JAVA.java
-fi
-
-
-## Criando modelo de arquivo yml
-if [ -e /home/$USER/Templates/YML.yml ];then
-    echo "O arquivo  YML.yml  ja existe"
-else
-    touch /home/$USER/Templates/YML.yml
 fi
 
 
@@ -124,8 +105,8 @@ echo -e "\n\n\n************************************************** INSTALANDO  GI
 ## Instalando o Git
 sudo apt update -y
 sudo apt install git -y
-git config --global user.name "Luciano"
-git config --global user.email "luc.oliveira343@gmail.com"
+git config --global user.name "Tulio"
+git config --global user.email "tuliofonseca10@hotmail.com"
 ## git config --global credential.helper store
 
 echo "***********************************************************************************************************************************************"
@@ -231,17 +212,6 @@ fi
 
 
 
-## Download dos scripts de instalacao do Ubuntu
-if [ -d /home/$USER/Installation/Script/ubuntu-after-installation-22-04/ ];then
-    echo "O diretorio  /home/$USER/Installation/Script/ubuntu-after-installation-22-04/  ja existe"
-else
-  echo -e "\n\n\n\n Scripts de instalacao do Ubuntu 22.04"
-  git clone https://github.com/lucotavio/ubuntu-pos-instalacao.git
-  mv /home/$USER/Downloads/Softwares/ubuntu-pos-instalacao/  /home/$USER/Installation/Script/ubuntu-after-installation-22-04/
-fi
-
-
-
 ## Download tema WhiteSur Dark solid
 if [ -d /home/$USER/.themes/WhiteSur-dark-solid ];then
     echo "O diretorio  /home/$USER/.themes/WhiteSur-dark-solid  ja existe"
@@ -297,15 +267,6 @@ else
 fi
 
 
-## Baixando repositorio Projetos do Git Hub
-if [ -d /home/$USER/Projects ];then
-    echo "O diretorio  /home/$USER/Projects  ja existe"
-else
-  echo -e "\n\n\n\n Clonando repositorio Projetos do Git Hub"
-  git clone https://github.com/lucotavio/Projetos.git
-  mv Projetos/ /home/$USER/Projects
-fi
-
 
 ## Download Docker Compose dos bancos de dados
 if [ -d /home/$USER/Installation/database-docker-compose/ ];then
@@ -323,28 +284,6 @@ echo "**************************************************************************
 
 
 echo -e "\n\n\n************************************************** DOWNLOAD   DE  PROGRAMAS **********************************************************"
-
-## Download 4K Video Downloader
-if [ -e 4kvideodownloader_4.21.7-1_amd64.deb ]
-then
-    echo "O arquivo  4kvideodownloader_4.21.7-1_amd64.deb  ja existe"
-else
-    echo -e "\n\n\n\n 4K Video Downloader"
-    wget https://github.com/lucotavio/4k-video-downloader/releases/download/4k-video-downloader/4kvideodownloader_4.21.7-1_amd64.deb
-fi
-
-
-
-## Download Android Studio
-if [ -e android-studio-2022.3.1.deb ]
-then
-    echo "O arquivo  android-studio-2022.3.1.deb  ja existe"
-else
-  echo -e "\n\n\n\n Android Studio"
-    wget https://github.com/lucotavio/android-studio/releases/download/android-studio-2022.3.1/android-studio-2022.3.1.deb
-fi
-
-
 
 ## Download Apache Netbeans
 if [ -e apache-netbeans_18-1_all.deb ]
@@ -398,43 +337,12 @@ else
 fi
 
 
-
-## Download Dropbox
-if [ -e dropbox_2020.03.04_amd64.deb ];then
-    echo "O arquivo  dropbox_2020.03.04_amd64.deb  ja existe"
-else
-  echo -e "\n\n\n\n Dropbox"
-  wget https://github.com/lucotavio/dropbox/releases/download/dropbox-2020.03.04/dropbox_2020.03.04_amd64.deb
-fi
-
-
-
 ## Download Firefox
 if [ -e firefox-116.0.2.deb ];then
     echo "O arquivo  firefox-116.0.2.deb  ja existe"
 else
   echo -e "\n\n\n\n Firefox"
   wget https://github.com/lucotavio/firefox/releases/download/firefox-116.0.2/firefox-116.0.2.deb
-fi
-
-
-
-## Download FreeTube
-if [ -e freetube_0.19.0_amd64.deb ];then
-    echo "O arquivo  freetube_0.19.0_amd64.deb  ja existe"
-else
-  echo -e "\n\n\n\n FreeTube"
-  wget https://github.com/lucotavio/free-tube/releases/download/free-tube/freetube_0.19.0_amd64.deb
-fi
-
-
-
-## Download GitKraken
-if [ -e gitkraken-amd64.deb ];then
-    echo "O arquivo  gitkraken-amd64.deb  ja existe"
-else
-  echo -e "\n\n\n\n GitKraken"
-  wget https://github.com/lucotavio/gitkraken/releases/download/git-kraken/gitkraken-amd64.deb
 fi
 
 
@@ -448,17 +356,6 @@ else
 fi
 
 
-
-## Download Insync
-if [ -e insync_3.8.6.50504-jammy_amd64.deb ];then
-    echo "O arquivo  insync_3.8.6.50504-jammy_amd64.deb ja existe"
-else
-  echo -e "\n\n\n\n Insync"
-  wget https://github.com/lucotavio/insync/releases/download/insync-3.8.6/insync_3.8.6.50504-jammy_amd64.deb
-fi
-
-
-
 ## Download Intellij Community
 if [ -e intellij-community-2023.2.deb ];then
     echo "O arquivo  intellij-community-2023.2.deb ja existe"
@@ -466,25 +363,6 @@ else
   echo -e "\n\n\n\n Intellij Community"
   wget https://github.com/lucotavio/intellij-community/releases/download/intellij-community-2023.2/intellij-community-2023.2.deb
 fi
-
-
-## Download Jasper Studio
-if [ -e jaspersoft-sudio-6.20.0_linux_amd64.deb ];then
-    echo "O arquivo  jaspersoft-sudio-6.20.0_linux_amd64.deb ja existe"
-else
-  echo -e "\n\n\n\n Jasper Studio"
-  wget https://github.com/lucotavio/jasper-studio/releases/download/jasper-studio-6.20.0/jaspersoft-sudio-6.20.0_linux_amd64.deb
-fi
-
-
-## Download Kdenlive
-if [ -e kdenlive-22.12.1.deb ];then
-    echo "O arquivo  kdenlive-22.12.1.deb ja existe"
-else
-  echo -e "\n\n\n\n Kdenlive"
-  wget https://github.com/lucotavio/kdenlive/releases/download/kdenlive-22.12.1/kdenlive-22.12.1.deb
-fi
-
 
 
 ## Download Lombok
@@ -513,16 +391,6 @@ if [ -e mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb ];then
 else
   echo -e "\n\n\n\n MySql Workbench"
   wget https://github.com/lucotavio/mysql-workbench/releases/download/mysql-workbench-8.0.34/mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb
-fi
-
-
-
-## Download One Drive
-if [ -e onedriver_0.14.0-1_amd64.deb ];then
-    echo "O arquivo  onedriver_0.14.0-1_amd64.deb  ja existe"
-else
-  echo -e "\n\n\n\n One Drive"
-  wget https://github.com/lucotavio/one-drive/releases/download/one-drive/onedriver_0.14.0-1_amd64.deb
 fi
 
 
@@ -557,18 +425,6 @@ fi
 
 
 
-## Download StarUML
-if [ -e StarUML_5.1.0_amd64.deb ]
-then
-    echo "O arquivo  StarUML  ja existe"
-else
-    echo -e "\n\n\n\n StarUML"
-    wget https://github.com/lucotavio/star-uml/releases/download/star-uml-5.1.0/StarUML_5.1.0_amd64.deb
-fi
-
-
-
-
 ## Download Visual Studio Code
 if [ -e code_1.81.1-1691620686_amd64.deb ]
 then
@@ -579,37 +435,6 @@ else
 fi
 
 
-
-## Download VMware Workstation
-if [ -e VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle ]
-then
-    echo "O arquivo  VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle  ja existe"
-else
-    echo -e "\n\n\n\n VMware Workstation"
-    wget https://github.com/lucotavio/vmware-workstation/releases/download/vmware-workstation-17.0.2/VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
-fi
-
-
-## Download Serial VMware Workstation
-if [ -e serial-vmware-workstation.txt ]
-then
-    echo "O arquivo  serial-vmware-workstation.txt  ja existe"
-else
-    echo -e "\n\n\n\n Serial VMware Workstation"
-    wget https://github.com/lucotavio/vmware-workstation/releases/download/vmware-workstation-17.0.2/serial-vmware-workstation.txt
-fi
-
-
-
-
-## Download Waterfox
-if [ -e waterfox-G5.1.10.deb ]
-then
-    echo "O arquivo  waterfox-G5.1.10.deb  ja existe"
-else
-    echo -e "\n\n\n\n Waterfox"
-    wget https://github.com/lucotavio/waterfox/releases/download/waterfox-G5.1.10/waterfox-G5.1.10.deb
-fi
 
 echo "***********************************************************************************************************************************************"
 
@@ -702,87 +527,11 @@ echo "**************************************************************************
 
 
 
-echo -e "\n\n\n************************************* CONFIGURAR  CELULAR  PARA  DESENVOLVIMENTO  ANDROID ********************************************"
-
-sudo usermod -aG plugdev $LOGNAME
-sudo apt install android-sdk-platform-tools-common -y
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************************** INSTALANDO  ADB *******************************************************************"
-
-## Instalando ADB
-sudo apt update -y
-sudo apt install adb -y
-sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
-sudo apt install qemu-kvm -y
-sudo adduser $USER kvm
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************************** INSTALANDO  NODE.JS ***************************************************************"
-
-## Instalando o Node.js
-sudo apt update -y
-sudo apt install ca-certificates -y
-sudo apt install gnupg -y
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-
-NODE_MAJOR=18
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg, arch=amd64] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-
-sudo apt update -y
-sudo apt install nodejs -y
-
-## Como ver versao do Node.js
-node -v
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************************** INSTALANDO  ANGULAR ***************************************************************"
-
-sudo npm install -g  @angular/cli@16.2.0
-
-#### Como ver versao do Angular
-## ng v
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************************** INSTALANDO  TYPESCRIPT ************************************************************"
-
-sudo npm install -g typescript
-
-## Como ver versao do Typescript
-tsc -v
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
 echo -e "\n\n\n************************************************** INSTALANDO  APLICATIVOS  APT ******************************************************"
 
 ## Atualizando PPA
 sudo apt update -y
 
-## Instalando fonte firecode
-sudo apt install fonts-firacode -y
-
-## Instalando Hardinfo
-sudo apt install hardinfo -y
 
 ## Instalando gcc g++
 sudo apt install gcc g++ make -y
@@ -838,26 +587,11 @@ sudo apt install gparted -y
 ## Instalando VirtualBox
 sudo apt install virtualbox -y
 
-## Instalando Gimp
-sudo apt install gimp -y
-
 ## Instalando Gerenciador de pacote Synaptic
 sudo apt install synaptic -y
 
-## Instalando OBS Studio
-sudo apt install obs-studio -y
-
-## Instalando Handbrake
-sudo apt install handbrake -y
-
-## Instalando Umbrelo
-sudo apt install umbrello -y
-
 ## instalando o Gnome Pomodoro
 sudo apt install gnome-shell-pomodoro
-
-## Instalando Kotlin
-sudo apt-get install kotlin -y
 
 ## Instalando o modulo "libcanberra-gtk-module" para que nao ocorra o erro: “failed to load module canberra-gtk-module”
 sudo apt install libcanberra-gtk-module libcanberra-gtk3-module -y
@@ -867,26 +601,7 @@ sudo add-apt-repository ppa:savoury1/chromium -y
 sudo apt update -y
 sudo apt install chromium-browser -y
 
-## Instalando SDKMAN
-curl -s https://get.sdkman.io | bash
-
 echo  "**********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************************** INSTALANDO  MELD ******************************************************************"
-
-## Instalando e configurando Meld
-sudo apt install meld -y
-git config --global diff.tool meld
-git config --global difftool.meld.path "/usr/bin/meld"
-git config --global difftool.prompt false
-git config --global merge.tool meld
-git config --global mergetool.meld.path "/usr/bin/meld"
-git config --global mergetool.prompt false
-
-echo "************************************************************************************************************************************************"
 
 
 
