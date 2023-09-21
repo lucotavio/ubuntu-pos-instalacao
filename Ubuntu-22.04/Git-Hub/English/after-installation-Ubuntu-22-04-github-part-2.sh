@@ -40,6 +40,31 @@ sudo apt --fix-broken install -y
 chmod +x lombok.jar
 sudo java -jar lombok.jar
 
+## Removendo o arquivo .eclipseproduct
+sudo rm /.eclipseproduct
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n ***************************************************  INSTALANDO  PYTHON 3.11 ********************************************************"
+
+## Instalando Python 3.11
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+sudo apt update -y
+sudo apt install python3.11 -y
+
+## Adicionando como alternativa o Python 3.10 e o 3.11
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2
+
+## Escolhendo a versao do Python
+sudo update-alternatives --config python3
+
+## Mostrando versao do Python escolhida
+python3 -V
+
 echo "***********************************************************************************************************************************************"
 
 
@@ -169,6 +194,11 @@ sudo dpkg -i dropbox_2020.03.04_amd64.deb
 sudo apt --fix-broken install -y
 
 
+## Eclipse cpp
+sudo dpkg -i eclipse-cpp-2023-09.deb
+sudo apt --fix-broken install -y
+
+
 ## Firefox
 sudo dpkg -i firefox-116.0.2.deb
 sudo apt --fix-broken install -y
@@ -194,8 +224,8 @@ sudo dpkg -i insync_3.8.6.50504-jammy_amd64.deb
 sudo apt --fix-broken install -y
 
 
-## Intellij Community
-sudo dpkg -i intellij-community-2023.2.deb
+## Intellij Ultimate
+sudo dpkg -i intellij-ultimate-2023-02.deb
 sudo apt --fix-broken install -y
 
 
@@ -271,6 +301,25 @@ else
 fi
 
 ########################################################## FIM DA  INSTALACAO  DO  APACHE  NETBEANS##################################################
+
+
+
+#################################################################### INSTALANDO  RIDER ##############################################################
+
+## Atualizando lista de pacotes nos repositorios instalados
+sudo apt update -y
+
+## Instalando dpendencias
+sudo apt install dirmngr gnupg apt-transport-https ca-certificates software-properties-common -y
+
+## Adicionando repositorio do Removendo
+echo "deb [arch=amd64] https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+
+## Atualizando lista de pacotes nos repositorios instalados
+sudo apt update -y
+
+## Instalando o Mono
+sudo apt install mono-devel -y
 
 echo "***********************************************************************************************************************************************"
 
