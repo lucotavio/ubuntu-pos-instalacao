@@ -10,7 +10,8 @@ echo -e "\n\n******************************************** INSTALANDO  IMPRESSORA
 ## https://th.canon/en/support/PIXMA%20G3010/model
 ## Download Driver Impressora
 echo -e "\n\n\n Driver Impressora"
-if [ -d /impressora-Canon-G-3110-deb ];then
+if [ -d /impressora-Canon-G-3110-deb ];
+then
   cd impressora-Canon-G-3110-deb/
   chmod +x install.sh
   sudo ./install.sh
@@ -32,8 +33,11 @@ echo -e "\n\n*******************************************************************
 
 echo -e "\n\n\n *************************************  INSTALANDO  SPRING TOOLS  SUITE  COM  LOMBOK **************************************************"
 
+## Selecionando qual versão do java vai ser a padrao
+sudo update-alternatives --config java
+
 ## Spring tool Suite
-sudo dpkg -i spring-tool-suite-4.19.1.RELEASE.deb
+sudo dpkg -i spring-tool-suite-4.20.0.RELEASE.deb
 sudo apt --fix-broken install -y
 
 ## Instalando Lombok no Spring Tools Suite
@@ -91,7 +95,8 @@ sudo ./VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
 vmware
 
 ## Consertando o problema de 3d não suportado
-if grep -qi 'mks.gl.allowBlacklistedDrivers = "TRUE"' /home/$USER/.vmware/preferences; then
+if grep -qi 'mks.gl.allowBlacklistedDrivers = "TRUE"' /home/$USER/.vmware/preferences;
+then
     echo "VMWare ja configurado"
 else
     echo 'mks.gl.allowBlacklistedDrivers = "TRUE"' >> /home/$USER/.vmware/preferences
@@ -118,7 +123,8 @@ do
     sudo ubuntu-drivers devices
     sudo apt install -y ubuntu-advantage-tools
 
-    if [ $opcao -eq 1 ];then
+    if [ $opcao -eq 1 ];
+    then
         echo -e "\n\n*************************************DESKTOP *****************************************************"
 
         sudo apt install -y nvidia-driver-390
@@ -126,7 +132,8 @@ do
 
         echo -e "\n\n**************************************************************************************************"
         break
-    elif [ $opcao -eq 2 ];then
+    elif [ $opcao -eq 2 ];
+    then
         echo -e "\n\n*********************************** NOTEBOOK LUCIANO *********************************************"
 
         sudo apt install -y nvidia-driver-525
@@ -134,7 +141,8 @@ do
 
         echo -e "\n\n**************************************************************************************************"
         break
-    elif [ $opcao -eq 3 ];then
+    elif [ $opcao -eq 3 ];
+    then
         echo -e "\n\n********************************* NOTEBOOK EMPRESA ***********************************************"
 
         sudo ua attach C12Jp442FKeioyspXdSyrbG9aHn9hw
@@ -184,8 +192,18 @@ sudo dpkg -i chrome-stable_current_amd64.deb
 sudo apt --fix-broken install -y
 
 
+## CLion
+sudo dpkg -i clion-2023.2.2.deb
+sudo apt --fix-broken install -y
+
+
+## DataGrip
+sudo dpkg -i data-grip-2023.2.1.deb
+udo apt --fix-broken install -y
+
+
 ## Dbeaver
-sudo dpkg -i dbeaver-le_23.1.0_amd64.deb
+sudo dpkg -i dbeaver-le_23.2.0_amd64.deb
 sudo apt --fix-broken install -y
 
 
@@ -194,18 +212,8 @@ sudo dpkg -i dropbox_2020.03.04_amd64.deb
 sudo apt --fix-broken install -y
 
 
-## Eclipse cpp
-sudo dpkg -i eclipse-cpp-2023-09.deb
-sudo apt --fix-broken install -y
-
-
 ## Firefox
 sudo dpkg -i firefox-116.0.2.deb
-sudo apt --fix-broken install -y
-
-
-## FreeTube
-sudo dpkg -i freetube_0.19.0_amd64.deb
 sudo apt --fix-broken install -y
 
 
@@ -215,7 +223,7 @@ sudo apt --fix-broken install -y
 
 
 ## Insomnia
-sudo dpkg -i Insomnia.Core-2023.4.0.deb
+sudo dpkg -i Insomnia.Core-2023.5.8.deb
 sudo apt --fix-broken install -y
 
 
@@ -225,7 +233,7 @@ sudo apt --fix-broken install -y
 
 
 ## Intellij Ultimate
-sudo dpkg -i intellij-ultimate-2023-02.deb
+sudo dpkg -i intellij-ultimate-2023-2-2.deb
 sudo apt --fix-broken install -y
 
 
@@ -249,11 +257,6 @@ sudo dpkg -i mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb
 sudo apt --fix-broken install -y
 
 
-## One Drive
-sudo dpkg -i onedriver_0.14.0-1_amd64.deb
-sudo apt --fix-broken install -y
-
-
 ## Only Office
 sudo dpkg -i onlyoffice-desktopeditors_amd64.deb
 sudo apt --fix-broken install -y
@@ -261,7 +264,7 @@ sudo sed -i '/Terminal=false/a StartupWMClass=DesktopEditors' /usr/share/applica
 
 
 ## Postman
-sudo dpkg -i postman-10.17.1.deb
+sudo dpkg -i postman-10.18.5.deb
 sudo apt --fix-broken install -y
 
 
@@ -271,24 +274,21 @@ sudo apt --fix-broken install -y
 
 
 ## Visual Studio Code
-sudo dpkg -i code_1.81.1-1691620686_amd64.deb
+sudo dpkg -i visual_studio_code_1.82.2-1694671812_amd64.deb
 sudo apt --fix-broken install -y
 
-
-## Waterfox
-sudo dpkg -i waterfox-G5.1.10.deb
-sudo apt --fix-broken install -y
 
 
 ############################################################## INSTALANDO  APACHE  NETBEANS #########################################################
 
 ## Apache Netbeans
-sudo dpkg -i apache-netbeans_18-1_all.deb
+sudo dpkg -i apache-netbeans_19-1_all.deb
 sudo apt --fix-broken install -y
 
 
 ## Baixando repositorio Classes do Git Hub
-if [ -d /home/$USER/.netbeans/18/config/Templates/Classes/ ];then
+if [ -d /home/$USER/.netbeans/18/config/Templates/Classes/ ];
+then
     echo "O diretorio  /home/$USER/.netbeans/18/config/Templates/Classes/  ja existe"
 else
 
@@ -303,24 +303,6 @@ fi
 ########################################################## FIM DA  INSTALACAO  DO  APACHE  NETBEANS##################################################
 
 
-
-#################################################################### INSTALANDO  RIDER ##############################################################
-
-## Atualizando lista de pacotes nos repositorios instalados
-sudo apt update -y
-
-## Instalando dpendencias
-sudo apt install dirmngr gnupg apt-transport-https ca-certificates software-properties-common -y
-
-## Adicionando repositorio do Removendo
-echo "deb [arch=amd64] https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
-
-## Atualizando lista de pacotes nos repositorios instalados
-sudo apt update -y
-
-## Instalando o Mono
-sudo apt install mono-devel -y
-
 echo "***********************************************************************************************************************************************"
 
 
@@ -332,5 +314,9 @@ sudo cp /etc/apt/trusted.gpg /etc/apt/trusted.gpg.d
 
 ## Deletando dependencias que nao estao sendo utilizadas
 sudo apt autoremove -y
+
+
+## Selecionando qual versão do java vai ser a padrao
+sudo update-alternatives --config java
 
 echo -e "\n\n\n******************************************REINICIAR  O  COMPUTADOR********************************************************************"

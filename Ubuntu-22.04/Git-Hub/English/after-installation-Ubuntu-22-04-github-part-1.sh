@@ -228,25 +228,43 @@ fi
 
 
 
-## Download Gnome Icons
+## Download Deepin Icon
+if [ -d /home/$USER/.icons/Deepin ];
+then
+    echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
+else
+  wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/Uos-fulldistro-icons.tar.xz
+  cp Uos-fulldistro-icons.tar.xz /home/$USER/.icons/
+  cd /home/$USER/.icons/
+  tar -xvf Uos-fulldistro-icons.tar.xz
+  mv Uos-fulldistro-icons/ Deepin/
+  rm Uos-fulldistro-icons.tar.xz
+
+  ## Entrando na para pasta de programas
+  cd /home/$USER/Downloads/Softwares/
+fi
+
+
+## Download BigSur Icon
 if [ -d /home/$USER/.icons/BigSur ];
 then
-    echo "O diretorio  /home/$USER/.icons/BigSur  ja existe"
+    echo "O diretorio  /home/$USER/.icons/BigSur ja existe"
 else
-    echo -e "\n\n\n\n Gnome Icons"
-    git clone https://github.com/lucotavio/gnome-icons.git
+  wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/BigSur.tar.gz
+  cp BigSur.tar.gz /home/$USER/.icons/
+  cd /home/$USER/.icons/
+  tar -xvzf BigSur.tar.gz
+  rm BigSur.tar.gz
 
-    ## Copiando icones do BigSur
-    cp -r /home/$USER/Downloads/Softwares/gnome-icons/BigSur/ /home/$USER/.icons/
-
-    ## Copiando icones do Deepin
-    cp -r /home/$USER/Downloads/Softwares/gnome-icons/Uos-fulldistro-icons/ /home/$USER/.icons/
+  ## Entrando na para pasta de programas
+  cd /home/$USER/Downloads/Softwares/
 fi
 
 
 
 ## Download MacMojave cursores
-if [ -d /home/$USER/.icons/McMojave-cursors ];then
+if [ -d /home/$USER/.icons/McMojave-cursors ];
+then
     echo "O diretorio  /home/$USER/.icons/McMojave-cursors  ja existe"
 else
   echo -e "\n\n\n\n MacMojave cursores"
@@ -256,7 +274,8 @@ fi
 
 
 ## Baixando repositorio Projetos do Git Hub
-if [ -d /home/$USER/Projects ];then
+if [ -d /home/$USER/Projects ];
+then
     echo "O diretorio  /home/$USER/Projects  ja existe"
 else
   echo -e "\n\n\n\n Clonando repositorio Projetos do Git Hub"
@@ -266,7 +285,8 @@ fi
 
 
 ## Download Docker Compose dos bancos de dados
-if [ -d /home/$USER/Installation/database-docker-compose/ ];then
+if [ -d /home/$USER/Installation/database-docker-compose/ ];
+then
     echo "O diretorio  database-docker-compose  ja existe"
 else
   echo -e "\n\n\n\n Docker Compose dos bancos de dados"
@@ -283,7 +303,7 @@ echo "**************************************************************************
 echo -e "\n\n\n************************************************** DOWNLOAD   DE  PROGRAMAS **********************************************************"
 
 ## Download 4K Video Downloader
-if [ -e 4kvideodownloader_4.21.7-1_amd64.deb ]
+if [ -e 4kvideodownloader_4.21.7-1_amd64.deb ];
 then
     echo "O arquivo  4kvideodownloader_4.21.7-1_amd64.deb  ja existe"
 else
@@ -294,7 +314,7 @@ fi
 
 
 ## Download Android Studio
-if [ -e android-studio-2022.3.1.deb ]
+if [ -e android-studio-2022.3.1.deb ];
 then
     echo "O arquivo  android-studio-2022.3.1.deb  ja existe"
 else
@@ -305,7 +325,7 @@ fi
 
 
 ## Download Apache Netbeans
-if [ -e apache-netbeans_19-1_all.deb ]
+if [ -e apache-netbeans_19-1_all.deb ];
 then
     echo "O arquivo  apache-netbeans_19-1_all.deb  ja existe"
 else
@@ -316,7 +336,7 @@ fi
 
 
 ## Download Atom
-if [ -e atom-amd64.deb ]
+if [ -e atom-amd64.deb ];
 then
     echo "O arquivo  atom-amd64.deb  ja existe"
 else
@@ -327,7 +347,7 @@ fi
 
 
 ## Download Balena Etcher
-if [ -e balena-etcher_1.18.11_amd64.deb ]
+if [ -e balena-etcher_1.18.11_amd64.deb ];
 then
     echo "O arquivo  balena-etcher_1.18.11_amd64.deb  ja existe"
 else
@@ -512,12 +532,12 @@ fi
 
 
 ## Download Postman
-if [ -e postman-10.17.1.deb ];
+if [ -e postman-10.18.5.deb ];
 then
-    echo "O arquivo  postman-10.17.1.deb  ja existe"
+    echo "O arquivo  postman-10.18.5.deb  ja existe"
 else
   echo -e "\n\n\n\n Postman"
-  wget https://github.com/lucgithub343/postman/releases/download/postman/postman-10.17.1.deb
+  wget https://github.com/lucgithub343/postman/releases/download/postman/postman-10.18.5.deb
 fi
 
 
@@ -534,18 +554,18 @@ fi
 
 
 ## Download Spring Tool Suite
-if [ -e spring-tool-suite-4.19.1.RELEASE.deb ];
+if [ -e spring-tool-suite-4.20.0.RELEASE.deb ];
 then
-    echo "O arquivo  spring-tool-suite-4.19.1.RELEASE.deb  ja existe"
+    echo "O arquivo  spring-tool-suite-4.20.0.RELEASE.deb  ja existe"
 else
   echo -e "\n\n\n\n Spring Tool Suite"
-  wget https://github.com/lucgithub343/spring-tool-suite/releases/download/spring-tool-suite/spring-tool-suite-4.19.1.RELEASE.deb
+  wget https://github.com/lucgithub343/spring-tool-suite/releases/download/spring-tool-suite/spring-tool-suite-4.20.0.RELEASE.deb
 fi
 
 
 
 ## Download StarUML
-if [ -e StarUML_5.1.0_amd64.deb ]
+if [ -e StarUML_5.1.0_amd64.deb ];
 then
     echo "O arquivo  StarUML_5.1.0_amd64.deb  ja existe"
 else
@@ -557,7 +577,7 @@ fi
 
 
 ## Download Visual Studio Code
-if [ -e visual_studio_code_1.82.2-1694671812_amd64.deb ]
+if [ -e visual_studio_code_1.82.2-1694671812_amd64.deb ];
 then
     echo "O arquivo  visual_studio_code_1.82.2-1694671812_amd64.deb   ja existe"
 else
@@ -568,7 +588,7 @@ fi
 
 
 ## Download VMware Workstation
-if [ -e VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle ]
+if [ -e VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle ];
 then
     echo "O arquivo  VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle  ja existe"
 else
@@ -579,7 +599,7 @@ fi
 
 
 ## Download Serial VMware Workstation
-if [ -e serial-vmware-workstation.txt ]
+if [ -e serial-vmware-workstation.txt ];
 then
     echo "O arquivo  serial-vmware-workstation.txt  ja existe"
 else
@@ -590,7 +610,7 @@ fi
 
 
 ## Download WebStorm
-if [ -e web-storm-2023-2-2.deb ]
+if [ -e web-storm-2023-2-2.deb ];
 then
     echo "O arquivo  web-storm-2023-2-2.deb  ja existe"
 else
@@ -605,33 +625,47 @@ echo "**************************************************************************
 
 echo -e "\n\n\n************************************************** INSTALACAO DO JDK-21 **************************************************************"
 
-if [ -e jdk-21_linux-x64_bin.deb ]
+## testando para ver se apasta   /usr/lib/jvm/  ja existe
+if [ -d /usr/lib/jvm/ ];
 then
-    echo "O arquivo  jdk-21_linux-x64_bin.deb  ja existe"
+    echo "O diretorio  /usr/lib/jvm/  ja existe "
 else
-    echo -e "\n\n\n\n JDK-21"
-    wget https://github.com/lucgithub343/jdk/releases/download/jdk/jdk-21_linux-x64_bin.deb
+    echo "Criando o  diretorio  /usr/lib/jvm/  ja existe "
+    sudo mkdir -p /usr/lib/jvm/
 fi
 
-sudo dpkg -i jdk-21_linux-x64_bin.deb
-sudo apt --fix-broken install -y
+
+## testando para ver se apasta   /jdk-21/  ja existe
+if [ -d jdk-21 ];
+then
+    echo "O diretorio  /jdk-21/  ja existe e esta sendo copiado para pasta /usr/lib/jvm/"
+    sudo cp -r jdk-21/ /usr/lib/jvm/
+else
+    echo -e "\n\n\n\n Download JDK-21"
+    wget https://github.com/lucgithub343/jdk/releases/download/jdk/openjdk-21_linux-x64_bin.tar.gz
+
+    tar -xvzf openjdk-21_linux-x64_bin.tar.gz
+    sudo cp -r jdk-21/ /usr/lib/jvm/
+    rm openjdk-21_linux-x64_bin.tar.gz
+fi
 
 
 ## Selecionando qual versão do java vai ser a padrao
-sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-21-oracle-x64/bin/java 2
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-21/bin/java 1081
 sudo update-alternatives --config java
 
 
 ## Configurando variaveis de ambiente do Java
-if grep -qi "export JAVA_HOME=/usr/lib/jvm/jdk-21-oracle-x64" /home/$USER/.bashrc; then
+if grep -qi "export JAVA_HOME=/usr/lib/jvm/jdk-21" /home/$USER/.bashrc;
+then
     echo "Variaveis de ambiente Java ja configurados"
 else
-    echo "export JAVA_HOME=/usr/lib/jvm/jdk-21-oracle-x64" >> /home/$USER/.bashrc
+    echo "export JAVA_HOME=/usr/lib/jvm/jdk-21" >> /home/$USER/.bashrc
     echo "export PATH=\$PATH:\$JAVA_HOME/bin" >> /home/$USER/.bashrc
 fi
 
 ## Usando o comando source para executar o arquivo .bashrc
-source /home/$USER/.bashrc
+## source /home/$USER/.bashrc
 
 echo "***********************************************************************************************************************************************"
 
@@ -645,7 +679,8 @@ sudo apt install maven -y
 
 
 ## Configurando variaveis de ambiente do Maven
-if grep -qi "export MAVEN_HOME=/usr/share/maven" /home/$USER/.bashrc ;then
+if grep -qi "export MAVEN_HOME=/usr/share/maven" /home/$USER/.bashrc;
+then
     echo "Variaveis de Ambiente do Maven configurados"
 else
     ## Espaco em branco
@@ -656,7 +691,7 @@ fi
 
 
 ## Usando o comando source para executar o arquivo .bashrc
-source /home/$USER/.bashrc
+## source /home/$USER/.bashrc
 
 echo "***********************************************************************************************************************************************"
 
@@ -681,7 +716,8 @@ echo "**************************************************************************
 
 echo -e "\n\n\n******************************************** INSTALANDO  O  DOCKER-COMPOSE ***********************************************************"
 
-if [ -e docker-compose ];then
+if [ -e docker-compose ];
+then
     echo "O arquivo  docker-compose  ja existe copiando ele para pasta   /usr/local/bin/"
     sudo cp docker-compose /usr/local/bin/
 else
@@ -852,7 +888,7 @@ sudo apt install handbrake -y
 sudo apt install umbrello -y
 
 ## instalando o Gnome Pomodoro
-sudo apt install gnome-shell-pomodoro
+sudo apt install gnome-shell-pomodoro -y
 
 ## Instalando Kotlin
 sudo apt-get install kotlin -y
@@ -947,7 +983,8 @@ sudo snap remove firefox
 
 
 ## Colocando prioridade mais alta no Firefox feito por mim
-if [ -e /etc/apt/preferences.d/99mozillateamppa ];then
+if [ -e /etc/apt/preferences.d/99mozillateamppa ];
+then
     echo "Arquivo  /etc/apt/preferences.d/99mozillateamppa  ja existe*"
 else
   sudo touch /etc/apt/preferences.d/99mozillateamppa
