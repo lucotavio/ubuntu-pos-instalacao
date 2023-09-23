@@ -547,7 +547,7 @@ if [ -e pycharm-2023.2.1.deb ];
 then
     echo "O arquivo  pycharm-2023.2.1.deb  ja existe"
 else
-  echo -e "\n\n\n\n Postman"
+  echo -e "\n\n\n\n Pycharm"
   wget https://github.com/lucgithub343/pycharm/releases/download/pycharm/pycharm-2023.2.1.deb
 fi
 
@@ -628,9 +628,9 @@ echo -e "\n\n\n************************************************** INSTALACAO DO 
 ## testando para ver se apasta   /usr/lib/jvm/  ja existe
 if [ -d /usr/lib/jvm/ ];
 then
-    echo "O diretorio  /usr/lib/jvm/  ja existe "
+    echo "O diretorio  /usr/lib/jvm/  ja existe"
 else
-    echo "Criando o  diretorio  /usr/lib/jvm/  ja existe "
+    echo "Criando o  diretorio  /usr/lib/jvm/"
     sudo mkdir -p /usr/lib/jvm/
 fi
 
