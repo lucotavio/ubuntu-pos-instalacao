@@ -301,7 +301,7 @@ then
 else
 
   ## Criando a pasta onde vao ficar os templates modificados
-  mkdir -p /home/$USER/.netbeans/18/config/Templates/
+  mkdir -p /home/$USER/.netbeans/19/config/Templates/
 
   echo -e "\n\n\n\n Clonando repositorio Classes do Git Hub"
   git clone https://github.com/lucotavio/Classes.git
