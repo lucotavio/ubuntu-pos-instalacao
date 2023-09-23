@@ -79,9 +79,9 @@ echo -e "\n\n\n**************************************************INSTALANDO  VMW
 chmod +x VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
 
 ## Dependencias do VMware
-sudo apt update -y
-sudo apt install build-essential -y
-sudo apt install manpages-dev  -y
+## sudo apt update -y
+## sudo apt install build-essential -y
+## sudo apt install manpages-dev  -y
 
 ## Instalando VMware
 sudo ./VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle
