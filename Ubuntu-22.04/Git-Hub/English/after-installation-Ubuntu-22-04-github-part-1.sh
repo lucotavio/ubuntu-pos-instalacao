@@ -4,7 +4,7 @@
 
 ## Criando diretorio Programas onde vao
 ## ficar os programaas que precisao de
-## dwonloads para serem istalados
+## dwonloads para serem istalado
 mkdir -p /home/$USER/Downloads/Softwares/
 
 ## Criando diretorio .icons
