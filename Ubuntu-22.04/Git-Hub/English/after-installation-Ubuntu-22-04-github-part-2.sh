@@ -276,6 +276,11 @@ sudo dpkg -i postman-10.18.5.deb
 sudo apt --fix-broken install -y
 
 
+## Pycharm
+sudo dpkg -i pycharm-2023.2.1.deb
+sudo apt --fix-broken install -y
+
+
 ## Star UML
 sudo dpkg -i StarUML_5.1.0_amd64.deb
 sudo apt --fix-broken install -y
@@ -295,7 +300,7 @@ sudo apt --fix-broken install -y
 
 
 ## Baixando repositorio Classes do Git Hub
-if [ -d /home/$USER/.netbeans/18/config/Templates/Classes/ ];
+if [ -d /home/$USER/.netbeans/19/config/Templates/Classes/ ];
 then
     echo "O diretorio  /home/$USER/.netbeans/18/config/Templates/Classes/  ja existe"
 else

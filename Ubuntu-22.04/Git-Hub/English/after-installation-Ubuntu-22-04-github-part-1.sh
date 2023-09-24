@@ -4,7 +4,7 @@
 
 ## Criando diretorio Programas onde vao
 ## ficar os programaas que precisao de
-## dwonloads para serem istalado
+## dwonloads para serem istalados
 mkdir -p /home/$USER/Downloads/Softwares/
 
 ## Criando diretorio .icons
@@ -228,71 +228,51 @@ fi
 
 
 
-## Download Deepin Icon
-if [ -d /home/$USER/.icons/Deepin ];
-then
-    echo "O diretorio  /home/$USER/.icons/Deepin  ja existe"
-else
-    wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/Uos-fulldistro-icons.tar.xz
-    cp Uos-fulldistro-icons.tar.xz /home/$USER/.icons/
-    cd /home/$USER/.icons/
-    tar -xvf Uos-fulldistro-icons.tar.xz
-    mv Uos-fulldistro-icons/ Deepin/
-    rm Uos-fulldistro-icons.tar.xz
-
-    ## Entrando na para pasta de programas
-    cd /home/$USER/Downloads/Softwares/
-fi
-
-
-## Download BigSur Icon
+## Download Gnome Icons
 if [ -d /home/$USER/.icons/BigSur ];
 then
-    echo "O diretorio  /home/$USER/.icons/BigSur ja existe"
+    echo "O diretorio  /home/$USER/.icons/BigSur  ja existe"
 else
-    wget https://github.com/lucotavio/gnome-icons/releases/download/gnome-icons/BigSur.tar.gz
-    cp BigSur.tar.gz /home/$USER/.icons/
-    cd /home/$USER/.icons/
-    tar -xvzf BigSur.tar.gz
-    rm BigSur.tar.gz
+    echo -e "\n\n\n\n Gnome Icons"
+    git clone https://github.com/lucotavio/gnome-icons.git
 
-    ## Entrando na para pasta de programas
-    cd /home/$USER/Downloads/Softwares/
+    ## Copiando icones do BigSur
+    cp -r /home/$USER/Downloads/Softwares/gnome-icons/BigSur/ /home/$USER/.icons/
+
+    ## Copiando icones do Deepin
+    cp -r /home/$USER/Downloads/Softwares/gnome-icons/Uos-fulldistro-icons/ /home/$USER/.icons/
 fi
 
 
 
 ## Download MacMojave cursores
-if [ -d /home/$USER/.icons/McMojave-cursors ];
-then
+if [ -d /home/$USER/.icons/McMojave-cursors ];then
     echo "O diretorio  /home/$USER/.icons/McMojave-cursors  ja existe"
 else
-    echo -e "\n\n\n\n MacMojave cursores"
-    git clone https://github.com/lucotavio/gnome-cursors.git
-    cp -r /home/$USER/Downloads/Softwares/gnome-cursors/McMojave-cursors/ /home/$USER/.icons/
+  echo -e "\n\n\n\n MacMojave cursores"
+  git clone https://github.com/lucotavio/gnome-cursors.git
+  cp -r /home/$USER/Downloads/Softwares/gnome-cursors/McMojave-cursors/ /home/$USER/.icons/
 fi
 
 
 ## Baixando repositorio Projetos do Git Hub
-if [ -d /home/$USER/Projects ];
-then
+if [ -d /home/$USER/Projects ];then
     echo "O diretorio  /home/$USER/Projects  ja existe"
 else
-    echo -e "\n\n\n\n Clonando repositorio Projetos do Git Hub"
-    git clone https://github.com/lucotavio/Projetos.git
-    mv Projetos/ /home/$USER/Projects
+  echo -e "\n\n\n\n Clonando repositorio Projetos do Git Hub"
+  git clone https://github.com/lucotavio/Projetos.git
+  mv Projetos/ /home/$USER/Projects
 fi
 
 
 ## Download Docker Compose dos bancos de dados
-if [ -d /home/$USER/Installation/database-docker-compose/ ];
-then
+if [ -d /home/$USER/Installation/database-docker-compose/ ];then
     echo "O diretorio  database-docker-compose  ja existe"
 else
-    echo -e "\n\n\n\n Docker Compose dos bancos de dados"
-    git clone https://github.com/lucotavio/database-docker-compose.git
+  echo -e "\n\n\n\n Docker Compose dos bancos de dados"
+  git clone https://github.com/lucotavio/database-docker-compose.git
 
-    cp -r /home/$USER/Downloads/Softwares/database-docker-compose/ /home/$USER/Installation/
+  cp -r /home/$USER/Downloads/Softwares/database-docker-compose/ /home/$USER/Installation/
 fi
 
 echo "***********************************************************************************************************************************************"
@@ -303,7 +283,7 @@ echo "**************************************************************************
 echo -e "\n\n\n************************************************** DOWNLOAD   DE  PROGRAMAS **********************************************************"
 
 ## Download 4K Video Downloader
-if [ -e 4kvideodownloader_4.21.7-1_amd64.deb ];
+if [ -e 4kvideodownloader_4.21.7-1_amd64.deb ]
 then
     echo "O arquivo  4kvideodownloader_4.21.7-1_amd64.deb  ja existe"
 else
@@ -314,18 +294,18 @@ fi
 
 
 ## Download Android Studio
-if [ -e android-studio-2022.3.1.deb ];
+if [ -e android-studio-2022.3.1.deb ]
 then
     echo "O arquivo  android-studio-2022.3.1.deb  ja existe"
 else
-    echo -e "\n\n\n\n Android Studio"
+  echo -e "\n\n\n\n Android Studio"
     wget https://github.com/lucgithub343/android-studio/releases/download/android-studio/android-studio-2022.3.1.deb
 fi
 
 
 
 ## Download Apache Netbeans
-if [ -e apache-netbeans_19-1_all.deb ];
+if [ -e apache-netbeans_19-1_all.deb ]
 then
     echo "O arquivo  apache-netbeans_19-1_all.deb  ja existe"
 else
@@ -336,7 +316,7 @@ fi
 
 
 ## Download Atom
-if [ -e atom-amd64.deb ];
+if [ -e atom-amd64.deb ]
 then
     echo "O arquivo  atom-amd64.deb  ja existe"
 else
@@ -347,7 +327,7 @@ fi
 
 
 ## Download Balena Etcher
-if [ -e balena-etcher_1.18.11_amd64.deb ];
+if [ -e balena-etcher_1.18.11_amd64.deb ]
 then
     echo "O arquivo  balena-etcher_1.18.11_amd64.deb  ja existe"
 else
@@ -362,8 +342,8 @@ if [ -e chrome-stable_current_amd64.deb ];
 then
     echo "O arquivo  chrome-stable_current_amd64.deb  ja existe"
 else
-    echo -e "\n\n\n\n Chrome"
-    wget https://github.com/lucgithub343/chrome/releases/download/chrome/chrome-stable_current_amd64.deb
+  echo -e "\n\n\n\n Chrome"
+  wget https://github.com/lucgithub343/chrome/releases/download/chrome/chrome-stable_current_amd64.deb
 fi
 
 
@@ -373,8 +353,8 @@ if [ -e clion-2023.2.2.deb ];
 then
     echo "O arquivo  clion-2023.2.2.deb  ja existe"
 else
-    echo -e "\n\n\n\n CLion"
-    wget https://github.com/lucgithub343/clion/releases/download/clion/clion-2023.2.2.deb
+  echo -e "\n\n\n\n CLion"
+  wget https://github.com/lucgithub343/clion/releases/download/clion/clion-2023.2.2.deb
 fi
 
 
@@ -384,8 +364,8 @@ if [ -e data-grip-2023.2.1.deb ];
 then
     echo "O arquivo  data-grip-2023.2.1.deb  ja existe"
 else
-    echo -e "\n\n\n\n DataGrip"
-    wget https://github.com/lucgithub343/data-grip/releases/download/data-grip/data-grip-2023.2.1.deb
+  echo -e "\n\n\n\n DataGrip"
+  wget https://github.com/lucgithub343/data-grip/releases/download/data-grip/data-grip-2023.2.1.deb
 fi
 
 
@@ -395,8 +375,8 @@ if [ -e dbeaver-le_23.2.0_amd64.deb ];
 then
     echo "O arquivo  dbeaver-le_23.2.0_amd64.deb  ja existe"
 else
-    echo -e "\n\n\n\n DBeaver"
-    wget https://github.com/lucgithub343/dbeaver/releases/download/dbeaver/dbeaver-le_23.2.0_amd64.deb
+  echo -e "\n\n\n\n DBeaver"
+  wget https://github.com/lucgithub343/dbeaver/releases/download/dbeaver/dbeaver-le_23.2.0_amd64.deb
 fi
 
 
@@ -406,8 +386,8 @@ if [ -e dropbox_2020.03.04_amd64.deb ];
 then
     echo "O arquivo  dropbox_2020.03.04_amd64.deb  ja existe"
 else
-    echo -e "\n\n\n\n Dropbox"
-    wget https://github.com/lucgithub343/dropbox/releases/download/dropbox/dropbox_2020.03.04_amd64.deb
+  echo -e "\n\n\n\n Dropbox"
+  wget https://github.com/lucgithub343/dropbox/releases/download/dropbox/dropbox_2020.03.04_amd64.deb
 fi
 
 
@@ -417,8 +397,8 @@ if [ -e firefox-116.0.2.deb ];
 then
     echo "O arquivo  firefox-116.0.2.deb  ja existe"
 else
-    echo -e "\n\n\n\n Firefox"
-    wget https://github.com/lucgithub343/firefox/releases/download/firefox/firefox-116.0.2.deb
+  echo -e "\n\n\n\n Firefox"
+  wget https://github.com/lucgithub343/firefox/releases/download/firefox/firefox-116.0.2.deb
 fi
 
 
@@ -428,8 +408,8 @@ if [ -e gitkraken-amd64.deb ];
 then
     echo "O arquivo  gitkraken-amd64.deb  ja existe"
 else
-    echo -e "\n\n\n\n GitKraken"
-    wget https://github.com/lucgithub343/git-kraken/releases/download/git-kraken/gitkraken-amd64.deb
+  echo -e "\n\n\n\n GitKraken"
+  wget https://github.com/lucgithub343/git-kraken/releases/download/git-kraken/gitkraken-amd64.deb
 fi
 
 
@@ -439,8 +419,8 @@ if [ -e Insomnia.Core-2023.5.8.deb ];
 then
     echo "O arquivo  Insomnia.Core-2023.5.8.deb  ja existe"
 else
-    echo -e "\n\n\n\n Insomnia"
-    wget https://github.com/lucgithub343/insomnia/releases/download/insomnia/Insomnia.Core-2023.5.8.deb
+  echo -e "\n\n\n\n Insomnia"
+  wget https://github.com/lucgithub343/insomnia/releases/download/insomnia/Insomnia.Core-2023.5.8.deb
 fi
 
 
@@ -450,8 +430,8 @@ if [ -e insync_3.8.6.50504-jammy_amd64.deb ];
 then
     echo "O arquivo  insync_3.8.6.50504-jammy_amd64.deb ja existe"
 else
-    echo -e "\n\n\n\n Insync"
-    wget https://github.com/lucgithub343/insync/releases/download/insync/insync_3.8.6.50504-jammy_amd64.deb
+  echo -e "\n\n\n\n Insync"
+  wget https://github.com/lucgithub343/insync/releases/download/insync/insync_3.8.6.50504-jammy_amd64.deb
 fi
 
 
@@ -461,8 +441,8 @@ if [ -e intellij-ultimate-2023-2-2.deb ];
 then
     echo "O arquivo  intellij-ultimate-2023-2-2.deb ja existe"
 else
-    echo -e "\n\n\n\n Intellij Ultimate"
-    wget https://github.com/lucgithub343/intellij/releases/download/intellij/intellij-ultimate-2023-2-2.deb
+  echo -e "\n\n\n\n Intellij Ultimate"
+  wget https://github.com/lucgithub343/intellij/releases/download/intellij/intellij-ultimate-2023-2-2.deb
 fi
 
 
@@ -471,8 +451,8 @@ if [ -e jaspersoft-sudio-6.20.0_linux_amd64.deb ];
 then
     echo "O arquivo  jaspersoft-sudio-6.20.0_linux_amd64.deb ja existe"
 else
-    echo -e "\n\n\n\n Jasper Studio"
-    wget https://github.com/lucgithub343/jaspersoft-studio/releases/download/jaspersoft-studio/jaspersoft-sudio-6.20.0_linux_amd64.deb
+  echo -e "\n\n\n\n Jasper Studio"
+  wget https://github.com/lucgithub343/jaspersoft-studio/releases/download/jaspersoft-studio/jaspersoft-sudio-6.20.0_linux_amd64.deb
 fi
 
 
@@ -481,8 +461,8 @@ if [ -e kdenlive-22.12.1.deb ];
 then
     echo "O arquivo  kdenlive-22.12.1.deb ja existe"
 else
-    echo -e "\n\n\n\n Kdenlive"
-    wget https://github.com/lucgithub343/kdenlive/releases/download/kdenlive/kdenlive-22.12.1.deb
+  echo -e "\n\n\n\n Kdenlive"
+  wget https://github.com/lucgithub343/kdenlive/releases/download/kdenlive/kdenlive-22.12.1.deb
 fi
 
 
@@ -492,8 +472,8 @@ if [ -e lombok.jar ];
 then
     echo "O arquivo lombok.jar ja existe"
 else
-    echo -e "\n\n\n\n Lombok"
-    wget https://github.com/lucgithub343/lombok/releases/download/lombok/lombok.jar
+  echo -e "\n\n\n\n Lombok"
+  wget https://github.com/lucgithub343/lombok/releases/download/lombok/lombok.jar
 fi
 
 
@@ -503,8 +483,8 @@ if [ -e microsoft-edge-stable_116.0.1938.76-1_amd64.deb ];
 then
     echo "O arquivo  microsoft-edge-stable_116.0.1938.76-1_amd64.deb ja  existe"
 else
-    echo -e "\n\n\n\n Microsoft Edge"
-    wget https://github.com/lucgithub343/microsoft-edge/releases/download/microsoft-edge/microsoft-edge-stable_116.0.1938.76-1_amd64.deb
+  echo -e "\n\n\n\n Microsoft Edge"
+  wget https://github.com/lucgithub343/microsoft-edge/releases/download/microsoft-edge/microsoft-edge-stable_116.0.1938.76-1_amd64.deb
 fi
 
 
@@ -514,8 +494,8 @@ if [ -e mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb ];
 then
     echo "O arquivo   mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb  ja existe"
 else
-    echo -e "\n\n\n\n MySql Workbench"
-    wget https://github.com/lucgithub343/mysql-workbench/releases/download/mysql-workbench/mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb
+  echo -e "\n\n\n\n MySql Workbench"
+  wget https://github.com/lucgithub343/mysql-workbench/releases/download/mysql-workbench/mysql-workbench-community_8.0.34-1ubuntu22.04_amd64.deb
 fi
 
 
@@ -525,8 +505,8 @@ if [ -e onlyoffice-desktopeditors_amd64.deb ];
 then
     echo "O arquivo  onlyoffice-desktopeditors_amd64.deb  ja existe"
 else
-    echo -e "\n\n\n\n Only Office"
-    wget https://github.com/lucgithub343/onlyoffice/releases/download/onlyoffice/onlyoffice-desktopeditors_amd64.deb
+  echo -e "\n\n\n\n Only Office"
+  wget https://github.com/lucgithub343/onlyoffice/releases/download/onlyoffice/onlyoffice-desktopeditors_amd64.deb
 fi
 
 
@@ -536,8 +516,8 @@ if [ -e postman-10.18.5.deb ];
 then
     echo "O arquivo  postman-10.18.5.deb  ja existe"
 else
-    echo -e "\n\n\n\n Postman"
-    wget https://github.com/lucgithub343/postman/releases/download/postman/postman-10.18.5.deb
+  echo -e "\n\n\n\n Postman"
+  wget https://github.com/lucgithub343/postman/releases/download/postman/postman-10.18.5.deb
 fi
 
 
@@ -547,8 +527,8 @@ if [ -e pycharm-2023.2.1.deb ];
 then
     echo "O arquivo  pycharm-2023.2.1.deb  ja existe"
 else
-    echo -e "\n\n\n\n Pycharm"
-    wget https://github.com/lucgithub343/pycharm/releases/download/pycharm/pycharm-2023.2.1.deb
+  echo -e "\n\n\n\n Postman"
+  wget https://github.com/lucgithub343/pycharm/releases/download/pycharm/pycharm-2023.2.1.deb
 fi
 
 
@@ -558,14 +538,14 @@ if [ -e spring-tool-suite-4.20.0.RELEASE.deb ];
 then
     echo "O arquivo  spring-tool-suite-4.20.0.RELEASE.deb  ja existe"
 else
-    echo -e "\n\n\n\n Spring Tool Suite"
-    wget https://github.com/lucgithub343/spring-tool-suite/releases/download/spring-tool-suite/spring-tool-suite-4.20.0.RELEASE.deb
+  echo -e "\n\n\n\n Spring Tool Suite"
+  wget https://github.com/lucgithub343/spring-tool-suite/releases/download/spring-tool-suite/spring-tool-suite-4.20.0.RELEASE.deb
 fi
 
 
 
 ## Download StarUML
-if [ -e StarUML_5.1.0_amd64.deb ];
+if [ -e StarUML_5.1.0_amd64.deb ]
 then
     echo "O arquivo  StarUML_5.1.0_amd64.deb  ja existe"
 else
@@ -577,7 +557,7 @@ fi
 
 
 ## Download Visual Studio Code
-if [ -e visual_studio_code_1.82.2-1694671812_amd64.deb ];
+if [ -e visual_studio_code_1.82.2-1694671812_amd64.deb ]
 then
     echo "O arquivo  visual_studio_code_1.82.2-1694671812_amd64.deb   ja existe"
 else
@@ -588,7 +568,7 @@ fi
 
 
 ## Download VMware Workstation
-if [ -e VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle ];
+if [ -e VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle ]
 then
     echo "O arquivo  VMware-Workstation-Full-17.0.2-21581411.x86_64.bundle  ja existe"
 else
@@ -599,7 +579,7 @@ fi
 
 
 ## Download Serial VMware Workstation
-if [ -e serial-vmware-workstation.txt ];
+if [ -e serial-vmware-workstation.txt ]
 then
     echo "O arquivo  serial-vmware-workstation.txt  ja existe"
 else
@@ -610,7 +590,7 @@ fi
 
 
 ## Download WebStorm
-if [ -e web-storm-2023-2-2.deb ];
+if [ -e web-storm-2023-2-2.deb ]
 then
     echo "O arquivo  web-storm-2023-2-2.deb  ja existe"
 else
@@ -625,48 +605,33 @@ echo "**************************************************************************
 
 echo -e "\n\n\n************************************************** INSTALACAO DO JDK-21 **************************************************************"
 
-## Testando para ver se o diretorio /usr/lib/jvm/ ja existe
-if [ -d /usr/lib/jvm/ ];
+if [ -e jdk-21_linux-x64_bin.deb ]
 then
-    echo "O  DIRETORIO  /usr/lib/jvm/  JA  EXISTE"
+    echo "O arquivo  jdk-21_linux-x64_bin.deb  ja existe"
 else
-    echo "CRIANDO  O  DIRETORIO  /usr/lib/jvm/"
-    sudo mkdir -p /usr/lib/jvm/
+    echo -e "\n\n\n\n JDK-21"
+    wget https://github.com/lucgithub343/jdk/releases/download/jdk/jdk-21_linux-x64_bin.deb
 fi
 
-
-## Instalando o JDK-21
-if [ -d jdk-21 ];
-then
-    echo "O diretorio  /jdk-21/  ja existe e esta sendo copiado para pasta /usr/lib/jvm/"
-    sudo cp -r jdk-21/ /usr/lib/jvm/
-else
-    echo -e "\n\n\n\n Download JDK-21"
-    wget https://github.com/lucgithub343/jdk/releases/download/jdk/openjdk-21_linux-x64_bin.tar.gz
-
-    tar -xvzf openjdk-21_linux-x64_bin.tar.gz
-    sudo cp -r jdk-21/ /usr/lib/jvm/
-    rm openjdk-21_linux-x64_bin.tar.gz
-fi
+sudo dpkg -i jdk-21_linux-x64_bin.deb
+sudo apt --fix-broken install -y
 
 
 ## Selecionando qual versão do java vai ser a padrao
-sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-21/bin/java 4
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-21-oracle-x64/bin/java 2
 sudo update-alternatives --config java
 
 
 ## Configurando variaveis de ambiente do Java
-if grep -qi "export JAVA_HOME=/usr/lib/jvm/jdk-21" /home/$USER/.bashrc;
-then
+if grep -qi "export JAVA_HOME=/usr/lib/jvm/jdk-21-oracle-x64" /home/$USER/.bashrc; then
     echo "Variaveis de ambiente Java ja configurados"
 else
-    echo "" >> /home/$USER/.bashrc
-    echo "export JAVA_HOME=/usr/lib/jvm/jdk-21" >> /home/$USER/.bashrc
+    echo "export JAVA_HOME=/usr/lib/jvm/jdk-21-oracle-x64" >> /home/$USER/.bashrc
     echo "export PATH=\$PATH:\$JAVA_HOME/bin" >> /home/$USER/.bashrc
 fi
 
 ## Usando o comando source para executar o arquivo .bashrc
-## source /home/$USER/.bashrc
+source /home/$USER/.bashrc
 
 echo "***********************************************************************************************************************************************"
 
@@ -680,8 +645,7 @@ sudo apt install maven -y
 
 
 ## Configurando variaveis de ambiente do Maven
-if grep -qi "export MAVEN_HOME=/usr/share/maven" /home/$USER/.bashrc;
-then
+if grep -qi "export MAVEN_HOME=/usr/share/maven" /home/$USER/.bashrc ;then
     echo "Variaveis de Ambiente do Maven configurados"
 else
     ## Espaco em branco
@@ -692,7 +656,7 @@ fi
 
 
 ## Usando o comando source para executar o arquivo .bashrc
-## source /home/$USER/.bashrc
+source /home/$USER/.bashrc
 
 echo "***********************************************************************************************************************************************"
 
@@ -717,16 +681,15 @@ echo "**************************************************************************
 
 echo -e "\n\n\n******************************************** INSTALANDO  O  DOCKER-COMPOSE ***********************************************************"
 
-if [ -e docker-compose ];
-then
+if [ -e docker-compose ];then
     echo "O arquivo  docker-compose  ja existe copiando ele para pasta   /usr/local/bin/"
     sudo cp docker-compose /usr/local/bin/
 else
-    echo -e "\n\n\n\n Docker Compose"
-    wget https://github.com/lucotavio/docker-compose-program/releases/download/docker-compose/docker-compose
+  echo -e "\n\n\n\n Docker Compose"
+  wget https://github.com/lucotavio/docker-compose-program/releases/download/docker-compose/docker-compose
 
-    chmod +x docker-compose
-    sudo cp docker-compose /usr/local/bin/
+  chmod +x docker-compose
+  sudo cp docker-compose /usr/local/bin/
 fi
 
 echo "***********************************************************************************************************************************************"
@@ -889,7 +852,7 @@ sudo apt install handbrake -y
 sudo apt install umbrello -y
 
 ## instalando o Gnome Pomodoro
-sudo apt install gnome-shell-pomodoro -y
+sudo apt install gnome-shell-pomodoro
 
 ## Instalando Kotlin
 sudo apt-get install kotlin -y
@@ -984,21 +947,20 @@ sudo snap remove firefox
 
 
 ## Colocando prioridade mais alta no Firefox feito por mim
-if [ -e /etc/apt/preferences.d/99mozillateamppa ];
-then
+if [ -e /etc/apt/preferences.d/99mozillateamppa ];then
     echo "Arquivo  /etc/apt/preferences.d/99mozillateamppa  ja existe*"
 else
-    sudo touch /etc/apt/preferences.d/99mozillateamppa
+  sudo touch /etc/apt/preferences.d/99mozillateamppa
 
-    echo "Package: firefox*" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
-    echo "Pin: release o=luciano" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
-    echo "Pin-Priority: 501" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+  echo "Package: firefox*" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+  echo "Pin: release o=luciano" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+  echo "Pin-Priority: 501" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
 
-    echo "" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+  echo "" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
 
-    echo "Package: firefox*" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
-    echo "Pin: release o=Ubuntu" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
-    echo "Pin-Priority: -1" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+  echo "Package: firefox*" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+  echo "Pin: release o=Ubuntu" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
+  echo "Pin-Priority: -1" | sudo tee -a /etc/apt/preferences.d/99mozillateamppa
 fi
 
 echo -e "\n\n\n******************************************REINICIAR  O  COMPUTADOR*******************************************************************"
