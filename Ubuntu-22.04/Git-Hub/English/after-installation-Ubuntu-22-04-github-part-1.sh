@@ -122,7 +122,7 @@ echo "**************************************************************************
 
 
 
-echo -e "\n\n\n************************************************** INSTALANDO  GIT ******************************************************************"
+echo -e "\n\n\n************************************************** INSTALANDO  GIT *******************************************************************"
 
 ## Instalando o Git
 sudo apt update -y
@@ -162,6 +162,17 @@ else
 
     chmod +x descompactar-tar-gz
     sudo cp descompactar-tar-gz /usr/local/bin/
+fi
+
+
+
+## Download plugin LanguageTool para o OnlyOffice
+if [ -e languagetool.plugin ];
+then
+    echo "O arquivo  languagetool.plugin  ja existe"
+else
+    echo -e "\n\n\n Plugin Language Tool para o OnlyOffice"
+    wget https://github.com/lucgithub343/language-tool/releases/download/language-tool/languagetool.plugin
 fi
 
 
