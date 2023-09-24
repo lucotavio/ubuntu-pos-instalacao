@@ -86,6 +86,11 @@ sudo dpkg -i postman-10.17.1.deb
 sudo apt --fix-broken install -y
 
 
+## Pycharm
+sudo dpkg -i pycharm/pycharm-2023.2.1.deb
+sudo apt --fix-broken install -y
+
+
 ## Visual Studio Code
 sudo dpkg -i code_1.81.1-1691620686_amd64.deb
 sudo apt --fix-broken install -y
